@@ -16,74 +16,59 @@
         header, footer {
             background-color: #1E3A5F;
             color: #FFFFFF;
-            padding: 1em;
-        }
-        header a, footer a {
-            color: #D4AF37;
-            text-decoration: none;
+            padding: 20px;
+            text-align: center;
         }
         nav {
-            display: flex;
-            justify-content: space-between;
             background-color: #2563EB;
-            padding: 1em;
+            overflow: hidden;
         }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            gap: 1em;
-        }
-        nav ul li {
-            display: inline;
-        }
-        nav ul li a {
-            color: #FFFFFF;
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
             text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #D4AF37;
+            color: black;
+        }
+        .container {
+            padding: 20px;
         }
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
             color: #1E3A5F;
-        }
-        .content {
-            padding: 2em;
-        }
-        .content p, .content ul {
-            margin-bottom: 1em;
-        }
-        .content ul {
-            padding-left: 1.5em;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="index.html" title="Zur Startseite Universität zu Köln">
-        <img src="logo.png" alt="Logo Universität zu Köln">
-    </a>
     <h1>Universität zu Köln</h1>
+    <p>Uni Köln auf einen Blick - Wissenschaft und Lehre</p>
 </header>
 
 <nav>
-    <ul>
-        <li><a href="studienangebot-studienangebot.html">Studienangebot</a></li>
-        <li><a href="bewerbung-bewerbung.html">Bewerbung</a></li>
-        <li><a href="inklusion-inklusion.html">Inklusion</a></li>
-        <li><a href="termine-fristen-termine-fristen.html">Termine + Fristen</a></li>
-        <li><a href="oeffnungszeiten-adressen.html">Öffnungszeiten + Adressen</a></li>
-        <li><a href="klips-2-0-klips-2-0.html">KLIPS 2.0</a></li>
-        <li><a href="vorlesungsverzeichnis.html">Vorlesungsverzeichnis</a></li>
-        <li><a href="ilias-elearning-ilias-elearning.html">ILIAS eLearning</a></li>
-        <li><a href="jobportal-jobportal.html">Jobportal</a></li>
-    </ul>
+    <a href="index.html">Startseite</a>
+    <a href="studienangebot-studienangebot.html">Studienangebot</a>
+    <a href="bewerbung-bewerbung.html">Bewerbung</a>
+    <a href="inklusion-inklusion.html">Inklusion</a>
+    <a href="termine-fristen-termine-fristen.html">Termine + Fristen</a>
+    <a href="oeffnungszeiten-adressen.html">Öffnungszeiten + Adressen</a>
+    <a href="klips-2-0-klips-2-0.html">KLIPS 2.0</a>
+    <a href="vorlesungsverzeichnis.html">Vorlesungsverzeichnis</a>
+    <a href="ilias-elearning-ilias-elearning.html">ILIAS eLearning</a>
+    <a href="jobportal-jobportal.html">Jobportal</a>
 </nav>
 
-<div class="content">
-    <h2>Uni Köln auf einen Blick</h2>
+<div class="container">
+    <h2>Überblick</h2>
     <p>Die Universität zu Köln ist eine der ältesten und größten Universitäten Europas. Aufgrund ihrer herausragenden wissenschaftlichen Leistungen und der hohen Qualität und Vielfalt ihrer Studiengänge genießt sie international einen ausgezeichneten Ruf.</p>
-    <p>Ein zentrales Anliegen ist es, Wissen zu schaffen, zu bewahren und zu vermitteln, den Studierenden und Nachwuchswissenschaftler*innen eine hervorragende akademische Ausbildung zu bieten, sie für akademische und berufliche Karrieren zu qualifizieren, Spitzenforschung zu fördern und Innovationen voranzutreiben, wobei der Fokus auf den sich ständig verändernden Bedürfnissen und Herausforderungen der heutigen Gesellschaft liegt.</p>
+
+    <h3>Fakultäten und Einrichtungen</h3>
     <ul>
         <li>Fakultäten: 6</li>
         <li>Exzellenzcluster: 5</li>
@@ -93,8 +78,16 @@
         <li>Leibniz-Preisträger*innen: 11</li>
         <li>Alexander von Humboldt Professuren: 7</li>
         <li>An-Institute: 15</li>
+    </ul>
+
+    <h3>Finanzen</h3>
+    <ul>
         <li>Drittmitteleinnahmen: 239,2 Mio. € (davon Med. Fakultät 103,9 Mio. €) (2023)</li>
         <li>Gesamtfinanzierung: 920 Mio. € (davon Med. Fakultät 263,7 Mio. €) (2023)</li>
+    </ul>
+
+    <h3>Personal und Studierende</h3>
+    <ul>
         <li>Wissenschaftliches Personal: 4.768 (inkl. Professor*innen / inkl. Klinikum) (2023)</li>
         <li>Personal Technik und Verwaltung: 4.041 (inkl. Med. Fakultät + Klinikum ohne Pflegepersonal) (2023)</li>
         <li>Professor*innen: 616 (2023)</li>
@@ -103,21 +96,24 @@
         <li>Absolvent*innen: 6.941 (2023)</li>
         <li>Promotionen: 747 (2023)</li>
     </ul>
+
     <h3>Kontakt</h3>
-    <p>Universität zu Köln</p>
-    <p>Rektor Prof. Dr. Joybrato Mukherjee</p>
-    <p>Tel.: +49 221 470-2201</p>
-    <p>E-Mail: <a href="mailto:rektor@uni-koeln.de">rektor@uni-koeln.de</a></p>
+    <p>Universität zu Köln<br>
+    Rektor Prof. Dr. Joybrato Mukherjee<br>
+    Tel.: +49 221 470-2201<br>
+    E-Mail: <a href="mailto:rektor@uni-koeln.de">rektor@uni-koeln.de</a></p>
 </div>
 
 <footer>
-    <nav>
-        <ul>
-            <li><a href="index.html">Zurück zur Startseite</a></li>
-            <li><a href="#">Social Media</a></li>
-        </ul>
-    </nav>
     <p>© Universität zu Köln</p>
+    <div>
+        <a href="#" style="color: #FFFFFF;">Facebook</a> |
+        <a href="#" style="color: #FFFFFF;">YouTube</a> |
+        <a href="#" style="color: #FFFFFF;">LinkedIn</a> |
+        <a href="#" style="color: #FFFFFF;">Mastodon</a> |
+        <a href="#" style="color: #FFFFFF;">Bluesky</a> |
+        <a href="#" style="color: #FFFFFF;">Instagram</a>
+    </div>
 </footer>
 
 </body>

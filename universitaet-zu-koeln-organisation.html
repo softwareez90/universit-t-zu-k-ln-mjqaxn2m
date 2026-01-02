@@ -1,158 +1,123 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universität zu Köln: Organisation & Struktur</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Lato', sans-serif;
-            color: #1F2937;
             background-color: #FFFFFF;
+            color: #1F2937;
             margin: 0;
             padding: 0;
         }
-
-        header {
+        header, footer {
             background-color: #1E3A5F;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            font-family: 'Playfair Display', serif;
             color: #FFFFFF;
-            margin: 0;
+            padding: 1rem;
+            text-align: center;
         }
-
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #2563EB;
+            padding: 0.5rem;
+        }
         nav a {
             color: #FFFFFF;
-            margin: 0 15px;
+            margin: 0 1rem;
             text-decoration: none;
         }
-
-        .content {
-            padding: 20px;
-        }
-
-        h2 {
+        h1, h2, h3 {
             font-family: 'Playfair Display', serif;
             color: #1E3A5F;
         }
-
+        .content {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .quicklinks {
+            background-color: #f9fafb;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 2rem;
+        }
+        .quicklinks h3 {
+            margin-top: 0;
+        }
+        .quicklinks ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .quicklinks ul li {
+            margin: 0.5rem 0;
+        }
+        .quicklinks a {
+            color: #2563EB;
+            text-decoration: none;
+        }
+        .quicklinks a:hover {
+            text-decoration: underline;
+        }
         footer {
-            background-color: #1E3A5F;
-            color: #FFFFFF;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-
-        .icon {
-            color: #D4AF37;
-            margin-right: 5px;
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav a {
-                margin: 10px 0;
-            }
+            font-size: 0.8rem;
         }
     </style>
 </head>
-
 <body>
-    <header>
-        <h1>Universität zu Köln</h1>
-        <nav>
-            <a href="index.html">Startseite</a>
-            <a href="studienangebot-studienangebot.html">Studienangebot</a>
-            <a href="bewerbung-bewerbung.html">Bewerbung</a>
-            <a href="inklusion-inklusion.html">Inklusion</a>
-            <a href="termine-fristen-termine-fristen.html">Termine + Fristen</a>
-            <a href="oeffnungszeiten-adressen.html">Öffnungszeiten + Adressen</a>
-            <a href="klips-2-0-klips-2-0.html">KLIPS 2.0</a>
-            <a href="vorlesungsverzeichnis.html">Vorlesungsverzeichnis</a>
-            <a href="ilias-elearning-ilias-elearning.html">ILIAS eLearning</a>
-            <a href="jobportal-jobportal.html">Jobportal</a>
-        </nav>
-    </header>
 
-    <div class="content">
-        <h2>Organisation & Struktur</h2>
-        <p>Organisation und Struktur der Universität zu Köln ergeben sich aus den gesetzlichen Bestimmungen und der
-            Grundordnung (PDF) der Universität. Die zentralen Leitungsgremien sind das Rektorat, der Hochschulrat und
-            der Senat. Das Rektorat leitet die Universität. Es besteht derzeit aus dem Rektor, sechs Proektorinnen und
-            Prorektoren und dem Kanzler. Der Rektor sitzt dem Rektorat vor und vertritt die Universität nach außen. Der
-            Hochschulrat berät das Rektorat und übt die Aufsicht über dessen Geschäftsführung aus. Der Senat ist
-            zuständig für Angelegenheiten der Forschung, Kunst, Lehre und des Studiums, die die gesamte Universität oder
-            zentrale Einrichtungen betreffen oder von grundlegender Bedeutung sind. Seine Mitglieder bilden zusammen mit
-            den Mitgliedern des Hochschulrates die Hochschulwahlversammlung, die die Mitglieder des Rektorats wählt. Die
-            Arbeit von Rektorat, Hochschulrat und Senat wird durch weitere Ausschüsse und Gremien unterstützt, wie etwa
-            den Wissenschaftlichen Beirat, der das Rektorat und die Fakultäten in allen wichtigen wissenschaftlichen
-            Fragen berät.</p>
+<header>
+    <h1>Universität zu Köln</h1>
+    <a href="index.html" style="color: #FFFFFF;">Zur Startseite</a>
+</header>
 
-        <h3>Hochschulleitung</h3>
+<nav>
+    <a href="studienangebot-studienangebot.html">Studienangebot</a>
+    <a href="bewerbung-bewerbung.html">Bewerbung</a>
+    <a href="inklusion-inklusion.html">Inklusion</a>
+    <a href="termine-fristen-termine-fristen.html">Termine + Fristen</a>
+    <a href="oeffnungszeiten-adressen.html">Öffnungszeiten + Adressen</a>
+    <a href="klips-2-0-klips-2-0.html">KLIPS 2.0</a>
+    <a href="vorlesungsverzeichnis.html">Vorlesungsverzeichnis</a>
+    <a href="ilias-elearning-ilias-elearning.html">ILIAS eLearning</a>
+    <a href="jobportal-jobportal.html">Jobportal</a>
+</nav>
+
+<div class="content">
+    <h2>Organisation & Struktur</h2>
+    <p>Organisation und Struktur der Universität zu Köln ergeben sich aus den gesetzlichen Bestimmungen und der Grundordnung (PDF) der Universität. Die zentralen Leitungsgremien sind das Rektorat, der Hochschulrat und der Senat. Das Rektorat leitet die Universität. Es besteht derzeit aus dem Rektor, sechs Proektorinnen und Prorektoren und dem Kanzler.</p>
+    <p>Der Rektor sitzt dem Rektorat vor und vertritt die Universität nach außen. Der Hochschulrat berät das Rektorat und übt die Aufsicht über dessen Geschäftsführung aus. Der Senat ist zuständig für Angelegenheiten der Forschung, Kunst, Lehre und des Studiums, die die gesamte Universität oder zentrale Einrichtungen betreffen oder von grundlegender Bedeutung sind. Seine Mitglieder bilden zusammen mit den Mitgliedern des Hochschulrates die Hochschulwahlversammlung, die die Mitglieder des Rektorats wählt.</p>
+    <p>Die Arbeit von Rektorat, Hochschulrat und Senat wird durch weitere Ausschüsse und Gremien unterstützt, wie etwa den Wissenschaftlichen Beirat, der das Rektorat und die Fakultäten in allen wichtigen wissenschaftlichen Fragen berät.</p>
+
+    <div class="quicklinks">
+        <h3>Quicklinks</h3>
         <ul>
-            <li>Senat <span class="icon">▶</span></li>
-            <li>Hochschulrat <span class="icon">▶</span></li>
-            <li>Hochschulkonferenz <span class="icon">▶</span></li>
-            <li>Wissenschaftlicher Beirat <span class="icon">▶</span></li>
-            <li>Kommissionen und sonstige Gremien <span class="icon">▶</span></li>
-        </ul>
-
-        <h3>Fakultäten</h3>
-        <ul>
-            <li>Wirtschafts- und Sozialwissenschaftliche Fakultät <span class="icon">▶</span></li>
-            <li>Rechtswissenschaftliche Fakultät <span class="icon">▶</span></li>
-            <li>Medizinische Fakultät <span class="icon">▶</span></li>
-            <li>Philosophische Fakultät <span class="icon">▶</span></li>
-            <li>Mathematisch-Naturwissenschaftliche Fakultät <span class="icon">▶</span></li>
-            <li>Humanwissenschaftliche Fakultät <span class="icon">▶</span></li>
-        </ul>
-
-        <h3>Stabsstellen & Dezernate</h3>
-        <ul>
-            <li>Stabsstelle 01: Informationstechnologie <span class="icon">▶</span></li>
-            <li>Stabsstelle 02: Rechts-, Sicherheits- und Umweltangelegenheiten <span class="icon">▶</span></li>
-            <li>Stabsstelle 03: Berufungen <span class="icon">▶</span></li>
-            <li>Dezernat 1: Hochschulentwicklung und akademische Angelegenheiten <span class="icon">▶</span></li>
-            <li>Dezernat 2: Studierendenangelegenheiten <span class="icon">▶</span></li>
-            <li>Dezernat 4: Personal <span class="icon">▶</span></li>
-            <li>Dezernat 5: Gebäude- und Liegenschaftsmanagement <span class="icon">▶</span></li>
-            <li>Dezernat 6: Wirtschaft und Finanzen <span class="icon">▶</span></li>
-            <li>Dezernat 7: Forschungsmanagement <span class="icon">▶</span></li>
-            <li>Dezernat 8: Kommunikation und Marketing <span class="icon">▶</span></li>
-            <li>Dezernat 9: Internationales <span class="icon">▶</span></li>
-        </ul>
-
-        <h3>Weitere Gremien</h3>
-        <ul>
-            <li>Gleichstellungsbeauftragte <span class="icon">▶</span></li>
-            <li>Gleichstellungskommission <span class="icon">▶</span></li>
-            <li>Beauftragte, Ombudspersonen und Vertrauensdozierende <span class="icon">▶</span></li>
-            <li>Meldestelle nach dem Hinweisgeberschutzgesetz (HinSchG) <span class="icon">▶</span></li>
-            <li>Personalräte <span class="icon">▶</span></li>
-            <li>Schwerbehindertenvertretung <span class="icon">▶</span></li>
-            <li>AStA <span class="icon">▶</span></li>
+            <li><a href="#">Hochschulleitung</a></li>
+            <li><a href="#">Senat</a></li>
+            <li><a href="#">Hochschulrat</a></li>
+            <li><a href="#">Wissenschaftlicher Beirat</a></li>
+            <li><a href="#">Kommissionen und sonstige Gremien</a></li>
+            <li><a href="#">Wirtschafts- und Sozialwissenschaftliche Fakultät</a></li>
+            <li><a href="#">Rechtswissenschaftliche Fakultät</a></li>
+            <li><a href="#">Medizinische Fakultät</a></li>
+            <li><a href="#">Philosophische Fakultät</a></li>
+            <li><a href="#">Mathematisch-Naturwissenschaftliche Fakultät</a></li>
+            <li><a href="#">Humanwissenschaftliche Fakultät</a></li>
+            <li><a href="#">Stabsstellen & Dezernate</a></li>
+            <li><a href="#">Gleichstellungsbeauftragte</a></li>
+            <li><a href="#">AStA</a></li>
+            <li><a href="#">Weitere Gremien</a></li>
         </ul>
     </div>
+</div>
 
-    <footer>
-        <p>© Universität zu Köln</p>
-    </footer>
+<footer>
+    <p>© Universität zu Köln</p>
+    <p><a href="#" style="color: #FFFFFF;">Datenschutz</a> | <a href="#" style="color: #FFFFFF;">Impressum</a></p>
+</footer>
+
 </body>
-
 </html>

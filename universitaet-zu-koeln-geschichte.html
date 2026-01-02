@@ -14,64 +14,54 @@
             margin: 0;
             padding: 0;
         }
-
-        header {
+        
+        header, footer {
             background-color: #1E3A5F;
             color: #FFFFFF;
-            padding: 1rem;
+            padding: 10px 20px;
         }
-
-        header a {
+        
+        header a, footer a {
             color: #FFFFFF;
             text-decoration: none;
-            margin-right: 1rem;
+            margin: 0 10px;
         }
-
+        
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
         }
-
-        .logo {
+        
+        h1, h2, h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: bold;
         }
-
-        .content {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 1rem;
-        }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
+        
+        h1 {
             color: #2563EB;
         }
-
-        a {
+        
+        main {
+            padding: 20px;
+        }
+        
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            margin-bottom: 20px;
+        }
+        
+        .section a {
             color: #2563EB;
             text-decoration: none;
         }
-
-        footer {
-            background-color: #1E3A5F;
-            color: #FFFFFF;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        .quicklinks, .social-media {
-            margin-top: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+        
+        .section a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -79,9 +69,10 @@
 <body>
     <header>
         <nav>
-            <div class="logo">Universität zu Köln</div>
             <div>
-                <a href="index.html">Startseite</a>
+                <a href="index.html">Logo Universität zu Köln</a>
+            </div>
+            <div>
                 <a href="studienangebot-studienangebot.html">Studienangebot</a>
                 <a href="bewerbung-bewerbung.html">Bewerbung</a>
                 <a href="inklusion-inklusion.html">Inklusion</a>
@@ -95,55 +86,51 @@
         </nav>
     </header>
 
-    <div class="content">
-        <h2>Geschichte & Archiv</h2>
-        <p>Das Gedächtnis der Universität an ihre Vergangenheit sichert, erschließt und verwahrt alle historisch relevanten Dokumente. Mehr als ein Jahrhundert, nachdem die französische Regierung die alte Universitas coloniensis 1798 geschlossen hatte, wurde ein lang gehegter Wunsch der Kölnerinnen und Kölner wahr: Im Jahr 1919 entstand eine neue Universität. 2019 beging die Universität das 100jährige Jubiläum.</p>
-        <a href="#">Weitere Informationen</a>
+    <main>
+        <div class="content">
+            <h1>Geschichte & Archiv</h1>
 
-        <h2>Rektoren der Universität</h2>
-        <p>In dieser Liste sind alle Rektoren der Universität seit Gründung der "Neuen Universität" im Jahr 1919 aufgeführt, von Prof. Dr. Dr. Christian Eckert bis Prof. Dr. Joybrato Mukherjee.</p>
-        <a href="#">Weitere Informationen</a>
+            <div class="section">
+                <p>Das Gedächtnis der Universität an ihre Vergangenheit sichert, erschließt und verwahrt alle historisch relevanten Dokumente. Mehr als ein Jahrhundert, nachdem die französische Regierung die alte Universitas coloniensis 1798 geschlossen hatte, wurde ein lang gehegter Wunsch der Kölnerinnen und Kölner wahr: Im Jahr 1919 entstand eine neue Universität. 2019 beging die Universität das 100jährige Jubiläum.</p>
+                <a href="#">Weitere Informationen</a>
+            </div>
 
-        <h2>Ehrensenator*innen und Träger*innen der Univeritätsmedaille</h2>
-        <p>Persönlichkeiten, die sich um die Universität in besonderer Weise verdient gemacht, oder als Angehörige*r der Universität außerordentliche Leistungen erbracht haben, die weit über die Erfüllung der Dienstpflichten hinausgehen.</p>
-        <a href="#">Weitere Informationen</a>
+            <div class="section">
+                <p>In dieser Liste sind alle Rektoren der Universität seit Gründung der "Neuen Universität" im Jahr 1919 aufgeführt, von Prof. Dr. Dr. Christian Eckert bis Prof. Dr. Joybrato Mukherjee.</p>
+                <a href="#">Weitere Informationen</a>
+            </div>
 
-        <h2>Galerie der Professorinnen und Professoren</h2>
-        <p>Die "Galerie der Professorinnen und Professoren" der Universität zu Köln versammelt biographische Daten zu allen Habilitierten sowie den Honorarprofessorinnen und -professoren der "Neuen Universität" von 1919 bis 2021.</p>
-        <a href="#">Weitere Informationen</a>
+            <div class="section">
+                <p>Persönlichkeiten, die sich um die Universität in besonderer Weise verdient gemacht, oder als Angehörige*r der Universität außerordentliche Leistungen erbracht haben, die weit über die Erfüllung der Dienstpflichten hinausgehen.</p>
+                <a href="#">Weitere Informationen</a>
+            </div>
 
-        <h2>Galerie der Kanzler und ihrer Vertreterinnen und Vertreter</h2>
-        <p>Die "Galerie der Kanzler und ihrer Vertreterinnen und Vertreter" stellt die Inhaber dieses Amtes an der Universität zu Köln sowie ihre Vertreterinnen und Vertreter vom Jahr 1954 bis in die Gegenwart zusammen.</p>
-        <a href="#">Weitere Informationen</a>
+            <div class="section">
+                <p>Die "Galerie der Professorinnen und Professoren" der Universität zu Köln versammelt biographische Daten zu allen Habilitierten sowie den Honorarprofessorinnen und -professoren der "Neuen Universität" von 1919 bis 2021.</p>
+                <a href="#">Weitere Informationen</a>
+            </div>
 
-        <div class="quicklinks">
-            <h3>Quicklinks</h3>
-            <ul>
-                <li><a href="#">Universitätsarchiv</a></li>
-                <li><a href="#">Rektoren der Universität</a></li>
-                <li><a href="#">Ehrensenator*innen und Träger*innen der Univeritätsmedaille</a></li>
-                <li><a href="#">Informationen für</a></li>
-                <li><a href="#">Fakultäten & Einrichtungen</a></li>
-                <li><a href="#">Schnellzugriff</a></li>
-                <li><a href="#">Universität zu Köln</a></li>
-            </ul>
+            <div class="section">
+                <p>Die "Galerie der Kanzler und ihrer Vertreterinnen und Vertreter" stellt die Inhaber dieses Amtes an der Universität zu Köln sowie ihre Vertreterinnen und Vertreter vom Jahr 1954 bis in die Gegenwart zusammen.</p>
+                <a href="#">Weitere Informationen</a>
+            </div>
         </div>
-
-        <div class="social-media">
-            <h3>Social Media</h3>
-            <p>Folgen Sie uns auf: 
-                <a href="#">Facebook</a>, 
-                <a href="#">YouTube</a>, 
-                <a href="#">LinkedIn</a>, 
-                <a href="#">Mastodon</a>, 
-                <a href="#">Bluesky</a>, 
-                <a href="#">Instagram</a>
-            </p>
-        </div>
-    </div>
+    </main>
 
     <footer>
-        <p>&copy; Universität zu Köln</p>
+        <nav>
+            <div>
+                <a href="index.html">Zurück zur Startseite</a>
+            </div>
+            <div>
+                <a href="#">Icon facebook</a>
+                <a href="#">Icon youtube</a>
+                <a href="#">Icon linkedin</a>
+                <a href="#">Icon mastodon</a>
+                <a href="#">Icon bluesky</a>
+                <a href="#">Icon instagram</a>
+            </div>
+        </nav>
     </footer>
 </body>
 

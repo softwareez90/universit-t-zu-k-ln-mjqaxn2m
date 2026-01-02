@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,141 +13,91 @@
             margin: 0;
             padding: 0;
         }
-
-        header {
+        header, footer {
             background-color: #1E3A5F;
-            color: #FFFFFF;
-            padding: 10px 20px;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: center;
+            background-color: #2563EB;
+            padding: 10px;
         }
-
-        header nav a {
-            color: #FFFFFF;
-            margin: 0 10px;
+        nav a {
+            color: white;
             text-decoration: none;
+            margin: 0 15px;
         }
-
-        header nav a:hover {
-            text-decoration: underline;
-        }
-
-        h1, h2, h3, h4 {
+        h1, h2, h3 {
             font-family: 'Playfair Display', serif;
         }
-
-        main {
+        .content {
             padding: 20px;
         }
-
-        footer {
-            background-color: #1E3A5F;
-            color: #FFFFFF;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-
-        .content-section {
-            margin-bottom: 40px;
-        }
-
         .contact-info {
-            margin: 20px 0;
+            margin-top: 20px;
         }
-
-        .contact-info p {
-            margin: 5px 0;
+        .contact-info div {
+            margin-bottom: 10px;
         }
     </style>
 </head>
-
 <body>
 
-    <header>
+<header>
+    <h1>Universität zu Köln</h1>
+    <p>Hochschulleitung</p>
+</header>
+
+<nav>
+    <a href="index.html">Startseite</a>
+    <a href="studienangebot-studienangebot.html">Studienangebot</a>
+    <a href="bewerbung-bewerbung.html">Bewerbung</a>
+    <a href="inklusion-inklusion.html">Inklusion</a>
+    <a href="termine-fristen-termine-fristen.html">Termine + Fristen</a>
+    <a href="oeffnungszeiten-adressen.html">Öffnungszeiten + Adressen</a>
+    <a href="klips-2-0-klips-2-0.html">KLIPS 2.0</a>
+    <a href="vorlesungsverzeichnis.html">Vorlesungsverzeichnis</a>
+    <a href="ilias-elearning-ilias-elearning.html">ILIAS eLearning</a>
+    <a href="jobportal-jobportal.html">Jobportal</a>
+</nav>
+
+<main class="content">
+    <section>
+        <h2>Hochschulleitung</h2>
+        <p>Das Rektorat leitet die Hochschule. Es besteht aus dem Rektor, dem Kanzler und sechs Prorektor*innen. Die Rektoratsmitglieder werden durch die Hochschulwahlversammlung gewählt. Für einzelne Themen und Aspekte haben Rektorat und Rektor Beauftragte. Das Rektorat wird in seiner Arbeit durch den Rektoratsstab unterstützt. Die organisatorische Vorbereitung der Rektoratssitzung erfolgt durch Abteilung 11.</p>
+    </section>
+
+    <section class="contact-info">
+        <h3>Kontaktinformationen</h3>
         <div>
-            <img src="logo-uni-koeln.png" alt="Logo Universität zu Köln" style="height:50px;">
+            <strong>E-Mail:</strong> rektor@uni-koeln.de
         </div>
-        <nav>
-            <a href="index.html">Startseite</a>
-            <a href="studienangebot-studienangebot.html">Studienangebot</a>
-            <a href="bewerbung-bewerbung.html">Bewerbung</a>
-            <a href="inklusion-inklusion.html">Inklusion</a>
-            <a href="termine-fristen-termine-fristen.html">Termine + Fristen</a>
-            <a href="oeffnungszeiten-adressen.html">Öffnungszeiten + Adressen</a>
-            <a href="klips-2-0-klips-2-0.html">KLIPS 2.0</a>
-            <a href="vorlesungsverzeichnis.html">Vorlesungsverzeichnis</a>
-            <a href="ilias-elearning-ilias-elearning.html">ILIAS eLearning</a>
-            <a href="jobportal-jobportal.html">Jobportal</a>
-        </nav>
-    </header>
-
-    <main>
-        <h1>Hochschulleitung der Universität zu Köln</h1>
-        
-        <div class="content-section">
-            <h2>Das Rektorat</h2>
-            <p>Das Rektorat leitet die Hochschule. Es besteht aus dem Rektor, dem Kanzler und sechs Prorektor*innen. Die Rektoratsmitglieder werden durch die Hochschulwahlversammlung gewählt. Für einzelne Themen und Aspekte haben Rektorat und Rektor Beauftragte. Das Rektorat wird in seiner Arbeit durch den Rektoratsstab unterstützt. Die organisatorische Vorbereitung der Rektoratssitzung erfolgt durch Abteilung 11.</p>
+        <div>
+            <strong>Büroleitung:</strong> Annelene Gäckle, Tel.: +49 221 470-2498
+            <br><strong>E-Mail:</strong> a.gaeckle@verw.uni-koeln.de
         </div>
-
-        <div class="content-section">
-            <h3>Kontakte</h3>
-
-            <div class="contact-info">
-                <h4>Büroleitung</h4>
-                <p>Annelene Gäckle</p>
-                <p>Tel.: +49 221 470-2498</p>
-                <p>E-Mail: <a href="mailto:a.gaeckle@verw.uni-koeln.de">a.gaeckle@verw.uni-koeln.de</a></p>
-            </div>
-
-            <div class="contact-info">
-                <h4>Persönlicher Referent</h4>
-                <p>Dr. Tobias Kunstein</p>
-                <p>Tel.: +49 221 470 1978</p>
-                <p>E-Mail: <a href="mailto:t.kunstein@verw.uni-koeln.de">t.kunstein@verw.uni-koeln.de</a></p>
-            </div>
-
-            <div class="contact-info">
-                <h4>Assistenz</h4>
-                <p>Heike Motyl</p>
-                <p>Tel.: +49 221 470-87000</p>
-                <p>E-Mail: <a href="mailto:h.motyl@verw.uni-koeln.de">h.motyl@verw.uni-koeln.de</a></p>
-            </div>
-
-            <div class="contact-info">
-                <h4>Assistenz Kanzlerbereich</h4>
-                <p>Irina Klester</p>
-                <p>Tel.: +49 221 470 7028</p>
-                <p>E-Mail: <a href="mailto:i.klester@verw.uni-koeln.de">i.klester@verw.uni-koeln.de</a></p>
-            </div>
+        <div>
+            <strong>Persönlicher Referent:</strong> Dr. Tobias Kunstein, Tel.: +49 221 470 1978
+            <br><strong>E-Mail:</strong> t.kunstein@verw.uni-koeln.de
         </div>
-
-        <div class="content-section">
-            <h3>Referentinnen und weitere Ansprechpartner</h3>
-
-            <div class="contact-info">
-                <h4>Referentin</h4>
-                <p>Dörthe Horstschäfer</p>
-                <p>Tel.: +49 221 470 76992</p>
-                <p>E-Mail: <a href="mailto:d.horstschaefer@verw.uni-koeln.de">d.horstschaefer@verw.uni-koeln.de</a></p>
-            </div>
-
-            <div class="contact-info">
-                <h4>Assistenz</h4>
-                <p>Dr. Jennifer Hülsberg</p>
-                <p>Tel.: +49 221 470 89220</p>
-                <p>E-Mail: <a href="mailto:jennifer.huelsberg@uni-koeln.de">jennifer.huelsberg@uni-koeln.de</a></p>
-            </div>
+        <div>
+            <strong>Assistenz:</strong> Heike Motyl, Tel.: +49 221 470-87000
+            <br><strong>E-Mail:</strong> h.motyl@verw.uni-koeln.de
         </div>
-    </main>
+        <div>
+            <strong>Vorzimmer:</strong> Beate Nenner, Tel.: +49 221 470 1257, 5600
+            <br><strong>E-Mail:</strong> b.nenner@verw.uni-koeln.de
+        </div>
+        <!-- Weitere Kontaktinformationen hier -->
+    </section>
+</main>
 
-    <footer>
-        <p>© Universität zu Köln</p>
-    </footer>
+<footer>
+    <p>&copy; Universität zu Köln</p>
+</footer>
 
 </body>
-
 </html>
