@@ -1,284 +1,581 @@
 <!DOCTYPE html>
-<html lang="de">
+Hier ist der vollständige HTML5-Code für die Unterseite "Überblick: Zahlen, Forschung, Studium" der Universität zu Köln.
 
+Der Code ist sauber strukturiert, responsive und verwendet das angegebene Farbschema und die Typografie. Die "chaotischen" Inhalte aus der Eingabe (Icon-Namen, Menüpunkte) wurden logisch in eine Navigationsstruktur, eine Sidebar (Quicklinks) und den Footer integriert.
+
+<!DOCTYPE html>
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universität zu Köln: Universität zu Köln Überblick: Zahlen Forschung, Studium,Logo Universität zu Köln</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
-        rel="stylesheet">
+    <title>Universität zu Köln | Überblick: Zahlen, Forschung, Studium</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
     <style>
-        /* Globale Stile */
-        body {
-            font-family: 'Lato', sans-serif;
+        /* 
+         * DESIGN SYSTEM & VARIABLES 
+         */
+        :root {
+            --primary: #1E3A5F;    /* Dunkelblau */
+            --secondary: #2563EB;  /* Helles Blau */
+            --accent: #D4AF37;     /* Gold */
+            --bg: #FFFFFF;         /* Weiß */
+            --bg-light: #F3F4F6;   /* Helles Grau für Sektionen */
+            --text: #1F2937;       /* Dunkelgrau */
+            --text-light: #6B7280; /* Mittelgrau */
+            --border: #E5E7EB;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #FFFFFF;
-            color: #1F2937;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text);
+            background-color: var(--bg);
             line-height: 1.6;
         }
 
-        a {
-            color: #2563EB;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Header */
-        header {
-            background-color: #1E3A5F;
-            color: #FFFFFF;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        header h1 {
+        h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
-            margin: 0;
-            font-size: 2rem;
-        }
-
-        /* Navigation */
-        nav {
-            background-color: #F3F4F6;
-            padding: 0.5rem;
-            border-bottom: 1px solid #D1D5DB;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        nav li {
-            margin: 0.5rem;
-        }
-
-        nav a {
-            color: #1E3A5F;
-            display: block;
-            padding: 0.5rem 1rem;
-            border-radius: 0.25rem;
-        }
-
-        nav a:hover {
-            background-color: #E5E7EB;
-            text-decoration: none;
-        }
-
-        /* Main Content */
-        main {
-            padding: 2rem;
-        }
-
-        main h2 {
-            font-family: 'Playfair Display', serif;
-            color: #1E3A5F;
-            border-bottom: 2px solid #D4AF37;
-            padding-bottom: 0.5rem;
+            color: var(--primary);
             margin-bottom: 1rem;
         }
 
-        main h3 {
-            font-family: 'Playfair Display', serif;
-            color: #1E3A5F;
-            margin-top: 1.5rem;
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: color 0.3s ease;
         }
 
-        /* Footer */
-        footer {
-            background-color: #1E3A5F;
-            color: #FFFFFF;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
+        a:hover {
+            color: var(--secondary);
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav li {
-                margin: 0.25rem;
-            }
-        }
-
-        /* Additional Styles for this page */
-        .overview-section {
-            margin-bottom: 2rem;
-        }
-
-        .overview-section h2 {
-            border-bottom: none;
-        }
-
-        .overview-section ul {
+        ul {
             list-style: none;
-            padding: 0;
         }
 
-        .overview-section li {
+        /* 
+         * HEADER SECTION 
+         */
+        .top-bar {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 2rem;
+            display: flex;
+            justify-content: flex-end;
+            font-size: 0.85rem;
+        }
+
+        .top-icons {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .top-icons span {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary); /* Simuliertes Siegel */
+            border-radius: 50%;
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .main-nav a {
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .main-nav a:hover, .main-nav a.active {
+            border-bottom-color: var(--accent);
+        }
+
+        /* Mobile Menu Icon (Visual only) */
+        .burger-menu {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* 
+         * HERO SECTION 
+         */
+        .hero-small {
+            background-color: var(--primary);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-small::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+
+        .hero-small h1 {
+            color: white;
+            font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
 
-        .overview-section a {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background-color: #F3F4F6;
-            border-radius: 0.25rem;
-            color: #1E3A5F;
+        .breadcrumb {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
         }
 
-        .overview-section a:hover {
-            background-color: #E5E7EB;
-            text-decoration: none;
+        /* 
+         * CONTENT LAYOUT 
+         */
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* Content 2/3, Sidebar 1/3 */
+            gap: 3rem;
         }
 
-        .quicklinks {
-            margin-top: 2rem;
+        /* Main Content Styling */
+        .content-section {
+            margin-bottom: 3rem;
         }
 
-        .quicklinks h3 {
-            border-bottom: 1px solid #D1D5DB;
+        .lead-text {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: var(--text);
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 1.5rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 4px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+        }
+
+        .stat-number {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-light);
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            background-color: var(--bg-light);
+            padding: 2rem;
+            border-radius: 4px;
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--border);
             padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
         }
 
-        .quicklinks ul {
-            list-style: none;
-            padding: 0;
+        .quick-links li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
         }
 
-        .quicklinks li {
-            margin-bottom: 0.25rem;
+        .quick-links a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .quick-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px; /* Slight movement effect */
+        }
+
+        .quick-links .icon {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* Button Style */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 2px;
+            font-weight: 700;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        /* 
+         * FOOTER 
+         */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col a {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-box {
+            width: 30px;
+            height: 30px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
+            font-size: 0.8rem;
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-nav { display: none; } /* Simplified for mobile */
+            .burger-menu { display: block; }
+            .page-wrapper { grid-template-columns: 1fr; }
+            .hero-small h1 { font-size: 2rem; }
         }
     </style>
 </head>
-
 <body>
 
+    <!-- UTILITY BAR -->
+    <div class="top-bar">
+        <div class="top-icons">
+            <span>&#128269; Suche</span> <!-- Lens Icon -->
+            <span>&#127760; English</span> <!-- Globe Icon -->
+            <span>&#128100; Intranet</span>
+        </div>
+    </div>
+
+    <!-- HEADER -->
     <header>
-        <h1>Universität zu Köln</h1>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                Universität zu Köln
+            </a>
+
+            <!-- Navigation -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="studienangebot-studienangebot.html">Studienangebot</a></li>
+                    <li><a href="bewerbung-bewerbung.html">Bewerbung</a></li>
+                    <li><a href="inklusion-inklusion.html">Inklusion</a></li>
+                    <li><a href="termine-fristen-termine-fristen.html">Termine + Fristen</a></li>
+                </ul>
+            </nav>
+
+            <div class="burger-menu">&#9776;</div> <!-- Burger Icon -->
+        </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Zur Startseite Universität zu Köln</a></li>
-            <li><a href="studienangebot-studienangebot.html">Studienangebot</a></li>
-            <li><a href="bewerbung-bewerbung.html">Bewerbung</a></li>
-            <li><a href="inklusion-inklusion.html">Inklusion</a></li>
-            <li><a href="termine-fristen-termine-fristen.html">Termine + Fristen</a></li>
-            <li><a href="oeffnungszeiten-adressen.html">Öffnungszeiten + Adressen</a></li>
-            <li><a href="klips-2-0-klips-2-0.html">KLIPS 2.0</a></li>
-            <li><a href="vorlesungsverzeichnis.html">Vorlesungsverzeichnis</a></li>
-            <li><a href="ilias-elearning-ilias-elearning.html">ILIAS eLearning</a></li>
-            <li><a href="jobportal-jobportal.html">Jobportal</a></li>
-        </ul>
-    </nav>
+    <!-- HERO SECTION -->
+    <section class="hero-small">
+        <div class="breadcrumb">Startseite > Universität > Profil</div>
+        <h1>Überblick: Zahlen, Forschung, Studium</h1>
+    </section>
 
-    <main>
-        <section class="overview-section">
-            <h2>Universität</h2>
-            <p>Die Universität zu Köln ist eine der ältesten Universitäten Europas. Sie wurde zweimal, 1388 und 1919, von den Bürgern der Stadt gegründet. Heute ist sie eine der führenden deutschen Forschungsuniversitäten.</p>
+    <!-- MAIN CONTENT -->
+    <div class="page-wrapper">
+        
+        <!-- LEFT COLUMN: CONTENT -->
+        <main>
+            <div class="content-section">
+                <p class="lead-text">
+                    Die Universität zu Köln ist eine der ältesten und größten Universitäten Deutschlands. Mit ihrer exzellenten Forschung und einem breiten Studienangebot zieht sie Studierende und Wissenschaftler aus der ganzen Welt an.
+                </p>
+                
+                <p>
+                    Seit ihrer Gründung im Jahr 1388 ist die Universität ein Zentrum der Wissenschaft und Lehre im Herzen Europas. Heute verbindet sie Tradition mit modernster Spitzenforschung. Als Volluniversität bietet sie mit ihren sechs Fakultäten ein einzigartiges Spektrum an Disziplinen.
+                </p>
+            </div>
 
-            <ul>
-                <li><a href="#">Überblick <i class="fas fa-arrow-right"></i></a></li>
-                <li><a href="#">Profil <i class="fas fa-arrow-right"></i></a></li>
-                <li><a href="#">Einrichtungen <i class="fas fa-arrow-right"></i></a></li>
-                <li><a href="#">Orientierung <i class="fas fa-arrow-right"></i></a></li>
-                <li><a href="#">Aktuell <i class="fas fa-arrow-right"></i></a></li>
-                <li><a href="#">Arbeiten an der Uni <i class="fas fa-arrow-right"></i></a></li>
-                <li><a href="#">Neu, modern, saniert: Die Universität baut <i class="fas fa-arrow-right"></i></a></li>
+            <div class="content-section">
+                <h2>Zahlen & Fakten</h2>
+                <p>Ein kurzer Blick auf die Dimensionen unserer Universität verdeutlicht ihre Bedeutung als Bildungs- und Forschungsstandort in der Region und darüber hinaus.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">50.000+</span>
+                        <span class="stat-label">Studierende</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">6</span>
+                        <span class="stat-label">Fakultäten</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">1388</span>
+                        <span class="stat-label">Gründungsjahr</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Studiengänge</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Exzellente Forschung</h2>
+                <p>
+                    Die Universität zu Köln hat sich in der Exzellenzstrategie des Bundes und der Länder erfolgreich behauptet. Unsere Forschungsschwerpunkte reichen von der Altersforschung über die Pflanzenwissenschaften bis hin zu Quantenmaterie und Märkten.
+                </p>
+                <ul style="margin: 1rem 0 1rem 2rem; list-style: disc;">
+                    <li>Interdisziplinäre Forschungszentren</li>
+                    <li>Internationale Kooperationen</li>
+                    <li>Förderung des wissenschaftlichen Nachwuchses</li>
+                </ul>
+                <a href="#" class="btn">Mehr zur Forschung &#8594;</a>
+            </div>
+
+            <div class="content-section">
+                <h2>Studium & Lehre</h2>
+                <p>
+                    Wir bieten ein inspirierendes Lernumfeld. Ob Bachelor, Master oder Staatsexamen – an der Universität zu Köln finden Sie das passende Angebot für Ihren akademischen Werdegang. Wir legen großen Wert auf Inklusion und Chancengleichheit für alle Studierenden.
+                </p>
+            </div>
+        </main>
+
+        <!-- RIGHT COLUMN: SIDEBAR / QUICKLINKS -->
+        <aside class="sidebar">
+            <h3>Direkteinstieg</h3>
+            <ul class="quick-links">
+                <li>
+                    <a href="#">
+                        <span class="icon">&#10003;</span> <!-- Check Icon -->
+                        KLIPS 2.0
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">&#10003;</span>
+                        ILIAS eLearning
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">&#10003;</span>
+                        Vorlesungsverzeichnis
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">&#10003;</span>
+                        Jobportal
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">&#10003;</span>
+                        Mensa Speisepläne
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">&#10003;</span>
+                        Öffnungszeiten + Adressen
+                    </a>
+                </li>
             </ul>
-        </section>
 
-        <section class="overview-section">
-            <h2>Studium & Lehre</h2>
-            <ul>
-                <li><a href="#">Warum Uni Köln? <i class="fas fa-arrow-right"></i></a></li>
-                <li><a href="#">Studieninteressierte <i class="fas fa-arrow-right"></i></a></li>
-                <li><a href="#">Studierende <i class="fas fa-arrow-right"></i></a></li>
-                <li><a href="#">International <i class="fas fa-arrow-right"></i></a></li>
-                <li><a href="#">Beratung & Service <i class="fas fa-arrow-right"></i></a></li>
-                <li><a href="#">Lehrende <i class="fas fa-arrow-right"></i></a></li>
-            </ul>
-        </section>
+            <div style="margin-top: 2rem;">
+                <h3>Campus & Lage</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem;">
+                    Finden Sie Ihren Weg über den Campus mit unseren interaktiven Plänen.
+                </p>
+                <a href="#" style="font-weight: 700; font-size: 0.9rem;">
+                    &#10140; Anreise, Lagepläne, Hörsaalpläne
+                </a>
+            </div>
+        </aside>
 
-        <section class="overview-section">
-            <h2>Forschung</h2>
-            <ul>
-                <li><a href="#">Überblick <i class="fas fa-arrow-right"></i></a></li>
-                <li><a href="#">Forschungsprofil <i class="fas fa-arrow-right"></i></a></li>
-                <li><a href="#">Service- und Förderangebote <i class="fas fa-arrow-right"></i></a></li>
-                <li><a href="#">International <i class="fas fa-arrow-right"></i></a></li>
-                <li><a href="#">Wissenschaftliche Karriere <i class="fas fa-arrow-right"></i></a></li>
-            </ul>
-        </section>
+    </div>
 
-        <section class="overview-section">
-            <h2>Transfer</h2>
-            <ul>
-                <li><a href="#">Überblick <i class="fas fa-arrow-right"></i></a></li>
-                <li><a href="#">Handlungsfelder <i class="fas fa-arrow-right"></i></a></li>
-            </ul>
-        </section>
-
-        <section class="quicklinks">
-            <h3>Quicklinks</h3>
-            <ul>
-                <li><a href="#">Überblick</a></li>
-                <li><a href="#">Profil</a></li>
-                <li><a href="#">Einrichtungen</a></li>
-                <li><a href="#">Orientierung</a></li>
-                <li><a href="#">Aktuell</a></li>
-                <li><a href="#">Arbeiten an der Uni</a></li>
-                <li><a href="#">Neu, modern, saniert: Die Universität baut</a></li>
-                <li><a href="#">Informationen für</a></li>
-                <li><a href="#">Fakultäten & Einrichtungen</a></li>
-                <li><a href="#">Schnellzugriff</a></li>
-                <li><a href="#">Universität zu Köln</a></li>
-            </ul>
-        </section>
-
-        <section class="social-media">
-            <h3>Social Media</h3>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-mastodon"></i></a>
-            <a href="#"><i class="fab fa-bluesky"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </section>
-
-        <section class="quality-labels">
-            <h3>Qualitätslabel der Universität zu Köln</h3>
-            <h4>Wir sind Mitglied</h4>
-            <h4>Vielfalt</h4>
-            <h4>International</h4>
-            <h4>Akkreditierung</h4>
-            <h4>Weitere</h4>
-        </section>
-
-    </main>
-
+    <!-- FOOTER -->
     <footer>
-        <p>© Universität zu Köln</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Kontakt</h4>
+                <p>Universität zu Köln</p>
+                <p>Albertus-Magnus-Platz</p>
+                <p>50923 Köln</p>
+                <br>
+                <a href="#">Pressekontakt &#8594;</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Informationen für</h4>
+                <ul>
+                    <li><a href="#">Studieninteressierte</a></li>
+                    <li><a href="#">Studierende</a></li>
+                    <li><a href="#">Wissenschaftler*innen</a></li>
+                    <li><a href="#">Beschäftigte</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Service</h4>
+                <ul>
+                    <li><a href="#">Barrierefreiheit</a></li>
+                    <li><a href="#">Datenschutz</a></li>
+                    <li><a href="#">Impressum</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Social Media</h4>
+                <p style="font-size: 0.9rem; opacity: 0.8;">Folgen Sie uns:</p>
+                <div class="social-icons">
+                    <!-- Text representations of icons since external images are forbidden -->
+                    <div class="social-box" title="Facebook">FB</div>
+                    <div class="social-box" title="Instagram">IG</div>
+                    <div class="social-box" title="LinkedIn">LI</div>
+                    <div class="social-box" title="YouTube">YT</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; 2023 Universität zu Köln. Alle Rechte vorbehalten.
+        </div>
     </footer>
 
 </body>
-
 </html>

@@ -1,284 +1,667 @@
 <!DOCTYPE html>
+Hier ist der vollständige HTML-Code für die Blog-Unterseite der Universität zu Köln. Das Design basiert auf dem vorgegebenen Farbschema und integriert die spezifischen Navigationspunkte und Icons, die im Prompt enthalten waren.
+
+<!DOCTYPE html>
 <html lang="de">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Universität zu Köln: Blog</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* Globale Stile */
-    body {
-      font-family: 'Lato', sans-serif;
-      color: #1F2937;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Universität zu Köln</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-    h1,
-    h2,
-    h3 {
-      font-family: 'Playfair Display', serif;
-      color: #1E3A5F;
-      margin-bottom: 0.5em;
-    }
+    <style>
+        /* 
+         * DESIGN SYSTEM & VARIABLES 
+         */
+        :root {
+            --primary: #1E3A5F;    /* Dunkelblau */
+            --secondary: #2563EB;  /* Hellblau */
+            --accent: #D4AF37;     /* Gold */
+            --bg: #FFFFFF;         /* Weiß */
+            --bg-light: #F3F4F6;   /* Hellgrau für Hintergründe */
+            --text: #1F2937;       /* Dunkelgrau */
+            --text-light: #6B7280; /* Mittelgrau */
+            --border: #E5E7EB;
+        }
 
-    a {
-      color: #2563EB;
-      text-decoration: none;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    a:hover {
-      text-decoration: underline;
-    }
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
 
-    /* Header */
-    .header {
-      background-color: #1E3A5F;
-      color: #FFFFFF;
-      padding: 1em;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-weight: 700;
+        }
 
-    .header a {
-      color: #FFFFFF;
-    }
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
 
-    .logo {
-      font-size: 1.5em;
-      font-weight: bold;
-    }
+        ul {
+            list-style: none;
+        }
 
-    .nav-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-    }
+        /* 
+         * HEADER SECTION 
+         */
+        .top-bar {
+            background-color: var(--bg);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .nav-list li {
-      margin-left: 1em;
-    }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-    /* Main Content */
-    .main-content {
-      padding: 2em;
-      max-width: 960px;
-      margin: 0 auto;
-    }
+        /* CSS-Only Logo Simulation */
+        .uni-seal {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--accent);
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            border: 2px solid var(--primary);
+        }
 
-    /* Blog Styles */
-    .blog-post {
-      margin-bottom: 2em;
-    }
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.2;
+        }
 
-    .blog-post img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 1em;
-    }
+        .logo-text span {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--text-light);
+        }
 
-    /* Footer */
-    .footer {
-      background-color: #F3F4F6;
-      padding: 2em;
-      text-align: center;
-      font-size: 0.8em;
-      color: #6B7280;
-    }
+        .header-icons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+        .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s;
+        }
 
-      .nav-list {
-        margin-top: 1em;
-        flex-direction: column;
-      }
+        .icon-btn:hover {
+            color: var(--secondary);
+        }
 
-      .nav-list li {
-        margin-left: 0;
-        margin-bottom: 0.5em;
-      }
+        .icon-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
 
-      .main-content {
-        padding: 1em;
-      }
-    }
+        /* MAIN NAVIGATION */
+        .main-nav {
+            background-color: var(--primary);
+            padding: 0 5%;
+        }
 
-    /* Zusätzliche Stile für die Navigation (wie in der Aufgabenstellung) */
-    .quicklinks {
-        margin-top: 20px;
-    }
+        .nav-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
 
-    .quicklinks ul {
-        list-style: none;
-        padding: 0;
-    }
+        .nav-list li {
+            position: relative;
+        }
 
-    .quicklinks li {
-        margin-bottom: 5px;
-    }
+        .nav-list a {
+            display: block;
+            color: white;
+            padding: 1rem 1.5rem;
+            font-weight: 500;
+            font-size: 1rem;
+            border-bottom: 4px solid transparent;
+        }
 
-    .quicklinks a {
-        display: block;
-        padding: 8px 12px;
-        background-color: #f0f0f0;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        text-decoration: none;
-        color: #333;
-    }
+        .nav-list a:hover, .nav-list a.active {
+            background-color: rgba(255,255,255,0.1);
+            border-bottom-color: var(--accent);
+        }
 
-    .quicklinks a:hover {
-        background-color: #e0e0e0;
-    }
+        /* 
+         * HERO SECTION (Small)
+         */
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #2c5282 100%);
+            padding: 3rem 5%;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
 
-    /* Style für Pfeil Icons (Platzhalter) */
-    .pfeil-icon::after {
-      content: "→"; /* Unicode für Pfeil nach rechts */
-      margin-left: 5px;
-    }
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background: var(--accent);
+            opacity: 0.1;
+            transform: skewX(-20deg) translateX(100px);
+        }
 
-    /* Style für Such- und Sprach Icons (Platzhalter) */
-    .icon-lens::before {
-      content: "🔍"; /* Unicode für Lupe */
-      margin-right: 5px;
-    }
+        .hero-content h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
 
-    .icon-globe::before {
-      content: "🌐"; /* Unicode für Globus */
-      margin-right: 5px;
-    }
-  </style>
+        .breadcrumbs {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .breadcrumbs span {
+            margin: 0 5px;
+        }
+
+        /* 
+         * CONTENT LAYOUT 
+         */
+        .container {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 4rem;
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Main Content Area */
+        .intro-text {
+            font-size: 1.15rem;
+            margin-bottom: 3rem;
+            color: var(--text);
+            border-left: 4px solid var(--accent);
+            padding-left: 1.5rem;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            height: 200px;
+            background-color: var(--bg-light);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+        }
+        
+        /* Simulating images with gradients */
+        .img-1 { background: linear-gradient(45deg, #1E3A5F, #4a6fa5); }
+        .img-2 { background: linear-gradient(45deg, #D4AF37, #f3d77a); }
+        .img-3 { background: linear-gradient(45deg, #2563EB, #60a5fa); }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--secondary);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .card-content p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: var(--bg-light);
+            padding: 2rem;
+            border-radius: 4px;
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .quick-links li {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 0.8rem;
+        }
+
+        .quick-links li:last-child {
+            border-bottom: none;
+        }
+
+        .quick-links a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .quick-links a:hover {
+            color: var(--secondary);
+        }
+
+        .quick-links .icon-arrow {
+            width: 16px;
+            height: 16px;
+            fill: var(--accent);
+        }
+
+        /* 
+         * FOOTER 
+         */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 4rem 5% 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            opacity: 0.8;
+        }
+
+        .footer-col ul li a:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .social-icon:hover {
+            background: var(--secondary);
+        }
+
+        .social-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        /* Utilities */
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            background: var(--bg-light);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 5px;
+            color: var(--text-light);
+        }
+
+    </style>
 </head>
-
 <body>
 
-  <header class="header">
-    <a href="index.html" class="logo">
-      Logo Universität zu Köln
-    </a>
-    <nav>
-      <ul class="nav-list">
-        <li><a href="#"><span class="icon-lens"></span>Website durchsuchen</a></li>
-        <li><a href="#"><span class="icon-globe"></span>Sprache wählen</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- HEADER -->
+    <header>
+        <div class="top-bar">
+            <a href="index.html" class="logo-container">
+                <div class="uni-seal">U</div>
+                <div class="logo-text">
+                    Universität<br>
+                    <span>zu Köln</span>
+                </div>
+            </a>
+            
+            <div class="header-icons">
+                <!-- Icon Lens (Search) -->
+                <button class="icon-btn" aria-label="Suche">
+                    <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                </button>
+                
+                <!-- Icon Globe (Language) -->
+                <button class="icon-btn" aria-label="Sprache wechseln">
+                    <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.91-4.33-3.56zm2.95-8H5.08c.96-1.65 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
+                </button>
+                
+                <!-- Icon Burger (Menu) -->
+                <button class="icon-btn" aria-label="Menü">
+                    <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+                </button>
+            </div>
+        </div>
 
-  <main class="main-content">
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="studienangebot-studienangebot.html">Studienangebot</a></li>
+                <li><a href="bewerbung-bewerbung.html">Bewerbung</a></li>
+                <li><a href="inklusion-inklusion.html">Inklusion</a></li>
+                <li><a href="termine-fristen-termine-fristen.html">Termine + Fristen</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section class="blog">
-      <h1>Blog</h1>
-      <article class="blog-post">
-        <img src="placeholder-image.jpg" alt="Jana Bauch Wir bewegen uns - das Projekt Webrelaunch 2025 an der Uni Köln ist gestartet!">
-        <p><em>Photo: Jana Bauch Wir bewegen uns - das Projekt Webrelaunch 2025 an der Uni Köln ist gestartet! Foto (Ausschnitt): Jana Bauch, Universität zu Köln</em></p>
-        <p>Willkommen! Zum Einstieg in den Projekt-Blog zum Webrelaunch 2025 werfen wir zunächst einen Blick zurück: Am 22.07.2022 wurden in der Strategiesitzung des Rektorats die Weichen für die Überarbeitung der Webpräsenz der Uni Köln gestellt. Aus dem folgenden Sitzungsauszug leiten sich wesentliche Projektziele ab: „Mit dem neuen Webrelaunch soll die Online-Kommunikation der Universität zu Köln neu aufgestellt werden. Sie soll sich konsequenter an den Informationsbedürfnissen und digitalen Nutzungsgewohnheiten ihrer Zielgruppen ausrichten. Die Webseiten sollen die strategische Ausrichtung der Universität, auch mit Blick auf die Exzellenzinitiative, konsequent unterstützen.“</p>
-        <p>Es folgten die Vorbereitung des Projekts einschließlich der Ausschreibung von Stellen im Projekt-Kernteam, die Einarbeitung und die Projekt-Anfangsphase mit vielen Gesprächen rund um das Thema Webpräsenz. Nun geht's ans Eingemachte! Dieser Blog informiert alle Interessierten über Neuigkeiten aus dem Projekt. Doch zunächst Informationen zu den wichtigsten Fragen. Viel Spaß bei der Lektüre wünscht das Projekt-Kernteam</p>
-        <h2>Was?</h2>
-        <p>Seit dem letzten Relaunch der Webpräsenz der Universität zu Köln hat sich in Sachen Webdesign, Nutzungsgewohnheiten und Anforderungen vonseiten der Studierenden, Mitarbeitenden und anderen Zielgruppen viel getan. Auch wenn Webadministration und -redaktion immer wieder Anpassungswünsche umsetzen, ist doch eine neuerliche Gesamt-Überarbeitung erforderlich geworden, die Aspekte wie User Experience, Barrierefreiheit und Nachhaltigkeit noch stärker als bisher berücksichtigt. Dies wurde in der Strategiesitzung des Rektorats im Juli 2022 festgehalten, aus der der Projektauftrag abgeleitet wurde.</p>
-        <h2>Wer?</h2>
-        <p>Ein universitätsinternes, interdisziplinäres Projekt-Kernteam unter Leitung von Dr. Elisabeth Hoffmann, Leiterin des Dezernats 8, Kommunikation & Marketing, koordiniert das komplexe Projekt und setzt es um. Zusätzlich sollen externe Dienstleister*innen beauftragt werden. Zum internen Kernteam gehören Projektmanagerin Suzan Buchholz, die Webredaktions-Ansprechpartnerinnen Anette Hartkopf und Lisa Rasche, die Webadministratoren Adem Boztaş, Soufiane El-Bali, Thomas Oliver Moll sowie Customer- und Web-Support-Abteilungsleiter Patrick Holz.</p>
-        <h2>Wie?</h2>
-        <p>Das Projekt soll agil unter Beteiligung universitätsinterner Steuer- und Anwender*innenkreise durchgeführt werden. In mehreren Projektkreisen sollen themenspezifisch Lösungsansätze erarbeitet und diskutiert werden. Je nach Thema können daraus kurzfristige Anpassungsbedarfe, Grundlagen für die Agenturarbeit oder Ideen für neue Projekte entstehen.</p>
-        <h2>Wann?</h2>
-        <p>Das universitätsinterne Projektteam hat im Sommer 2023 seine Arbeit aufgenommen und verfolgt einen Projektplan mit Go-Live im letzten Quartal 2025.</p>
-      </article>
+    <!-- HERO SECTION -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <div class="breadcrumbs">
+                <a href="index.html">Startseite</a> <span>/</span> Blog
+            </div>
+            <h1>Aktuelles aus der Universität</h1>
+        </div>
+    </section>
 
-      <article class="blog-post">
-        <p>Die neue "Bühne" in der Variante mit rundem Bildausschnitt und Call-to-Action-Button.</p>
-        <p>Die "simple" Bühne mit vollbreitem Bild in der Desktopansicht.</p>
-        <p>Das neue News-Slider-Element mit dynamischer unter interaktiver Slide-Funktion.</p>
-        <p>Previous Slide Icon arrow-Left Pause slider Icon Pause Resume slider Icon Play Next slide Pfeil nach rechts Icon</p>
-        <p>Seit rund zwei Monaten erscheint die zentrale Website der Uni Köln im neuen Webdesign. Mit dem Redesign sind neue Features unserer Inhaltselemente sowie gänzlich neue Inhaltselemente eingezogen. Dark Mode, Bühnen-Element und dynamischer News-Slider waren bereits seit dem Go-Live verfügbar – nun kommen zwei weitere wesentliche Neuerungen hinzu.</p>
-        <p>Der Bildausschnitt der "simplen" Bühne wechselt in der mobilen Ansicht entsprechend der Hochkant-Perspektive. Im Footer kann der Ansichtsmodus - Systemeinstellung, hell oder dunkel - ausgewählt werden.</p>
-        <p>Die mobile Ansicht der Bühne im hellen Modus. Umschalten auf den dunklen Ansichtsmodus. Die mobile Ansicht der Bühne im "Dark Mode".</p>
-        <h2>Mit Study Finder und Zielgruppen-Navi schneller ans Ziel</h2>
-        <p>Die auf der Startseite neu verfügbaren Elemente Studiengangsfinder („Study Finder“) sowie Zielgruppen-Navi unterstützen verschiedene Zielgruppen unserer Website, schneller an die von ihnen gesuchten Informationen zu gelangen:</p>
-        <p>Der neue Studyfinder in der Desktopansicht. Der Study Finder ermöglicht es Studieninteressierten, einen für sie relevanten Ausschnitt aus dem großen Studiengangs-Portfolio der Uni Köln anzeigen zu lassen. Dies gelingt dank der Filter für den gewünschten Studienabschluss und die bevorzugten Fachrichtungen, wie sie aus dem HRK-Hochschulkompass bekannt sind.</p>
-        <p>Im neuen Navigationselement stehen sechs verschiedene Zielgruppen zur Auswahl. Vorschau-Screenshot aus dem Prototyp. Das zweite neue Elemente, die Zielgruppen-Navi, ist in Kürze ebenfalls verfügbar und bietet eine Vorauswahl von bis zu vier zielgruppenspezifischen Schnellzugriffen auf relevante beziehungsweise beliebte Themen.</p>
-        <h2>Verbesserungen für anstehende Migrationen</h2>
-        <p>Seit dem Go-Live wird das neue Webdesign weiter optimiert, was direkt in die künftigen Migrationen mit einfließt. Aufgrund der andauernden Nachbesserungen sowie der Migrationsvorbereitungen werden die TYPO3-Instanzen voraussichtlich im ersten Quartal 2026 ins neue Design umziehen – und mit ihnen die jeweils angeschlossenen Webauftritte etwa von Instituten und Abteilungen. Auch die ZMS-Instanzen werden schrittweise migriert.</p>
-        <p>Wenn Sie Fragen zur Migration Ihres Webauftritts haben, wenden Sie sich bitte an den/die für Sie zuständige/n Administrator*in oder kontaktieren Sie das Projekt-Team. Wenn Sie derzeit eine UzK-Webpräsenz ohne UzK-Webdesign unterhalten, aber das neue Design nutzen möchten, sollte ein Umzug ins TYPO3-Template erwogen werden – hier gelangen Sie zu den verschiedenen TYPO3-Angeboten des ITCC.</p>
-        <p>Die Verfügbarkeit des Webdesigns UzK2025 ist abhängig vom Zeitpunkt der Instanzen-Migration; für die auf den TYPO3- und ZMS-Instanzen bestehenden Live-Inhalte gilt bei der Migration Bestandsschutz.</p>
-        <p>Einblick in das künftige Webdesign: Das Corporate Design kommt besonders auf der Startseite zur Geltung. Neue und neu gestaltete Funktionalitäten wie hier das aufklappbare Direktzugriff-Menü ("Quicklink-Navigator") machen die Site interaktiver.</p>
-        <p>Nach der Umstrukturierung im August erfolgt der zweite große Schritt des Relaunchs: In den nächsten Tagen wird der lang erwartete Go-Live unseres neues Webdesigns vollzogen. Pünktlich zum neuen Semester wird die zentrale Uni-Site somit in neuem Look erscheinen: Dieser mutet luftiger, aufgeräumter und moderner an, enthält mehr Corporate-Design-Elemente sowie neue Features, die nach und nach auf den Seiten eingebaut werden. Da die Uni Köln über mehrere Webauftritte, unter anderem der Fakultäten, verfügt, werden diese nacheinander in das neue Webdesign migriert, sodass einige Seiten über eine begrenzte Zeit noch im alten Webdesign zu sehen sein werden.</p>
-        <h2>Die Webseiten-Optimierung geht weiter</h2>
-        <p>Mit dem neuen Webdesign soll nicht lediglich „alter Wein in neuen Schläuchen“ präsentiert werden. Erfreulicherweise hat es schon sehr viele Überarbeitungen von Website-Content etwa in Form von Aktualisierungen und Zusammenfassungen seitens der Webredakteur*innen gegeben. Mit Blick auf die noch anstehenden Migrationen wird die zentrale Webredaktion zudem neue Aufbereitungstipps weitergeben können. Unabhängig vom Relaunch-Zeitpunkt können außerdem jederzeit die Webseiten besser erfahrbar für alle gemacht werden.</p>
-        <p>Ergänzend zu den von der Agentur in2code zur Verfügung gestellten Materialien haben wir deshalb weitere Dokumente zu wichtigen Webredaktions-Aufgabenbereichen erarbeitet:</p>
-        <p>Die erste Checkliste mit dem Schwerpunkt auf Suchmaschinen-Optimierung (SEO) ist ab sofort von der Seite der zentralen Webredaktion Uni-intern als PDF herunterladbar.</p>
-        <p>Zum Thema Barrierefreiheit im Web sind auf den Webseiten des ITCC bereits umfangreiche Informationen vorhanden. Ergänzend dazu wird in Kürze eine weitere Checkliste zur Verfügung gestellt.</p>
-        <h2>Schulungstermine für Universitäts-Beschäftigte und Dokumentation</h2>
-        <p>Webredakteur*innen der Universität zu Köln können sich bis 29. September per E-Mail an UzK-Webrelaunch@verw.uni-koeln.de für die ersten Schulungstermine zu diesen beiden Themen anmelden:</p>
-        <p>Di, 30.09.2025, 12.30-14.45 Uhr: Webseiten für Alle – Barrierefreiheit im WebMi, 01.10.2025, 10-12 Uhr: Suchmaschinen-Optimierung und Schreiben fürs Web</p>
-        <p>Darin werden die Inhalte der Checklisten vom Projektteam auch mit interaktiven Anteilen vermittelt. Weitere Termine in Q4/2025 und Aufzeichnungen folgen. Die Schulungsmaterialien sollen nach und nach online zur Verfügung gestellt werden, sodass Nutzer*innen sie unabhängig von Schulungsterminen jederzeit abrufen können.</p>
-        <p>Weitere Informationen zum Projekt-Status erhalten Sie im heute erschienenen expresso-Interview sowie mittels Anfrage über unser Kontaktformular.</p>
-        <p>Vorschau auf die neue Struktur im bisherigen Webdesign, Hauptrubrik "Universität": Die erste Site-Ebene wird von acht auf vier Punkte verschlankt, auf der zweiten und dritten Ebene finden sich jeweils bis zu sechs Unterpunkte.</p>
-        <p>Anfang August ist es soweit: Wir strukturieren die Seiten der zentralen Uni-Köln-Website unter uni-koeln.de um. Künftig werden alle zentralen Inhalte unterhalb der Startseite in vier Kategorien gebündelt. Dies bedeutet, dass sich die erste Ebene der Hauptnavigation auf die Rubriken „Universität“, „Studium & Lehre“, „Forschung“ sowie die neue Rubrik „Transfer“ verschlankt.</p>
-        <h2>Was hinter der neuen Struktur steckt</h2>
-        <p>Aufbauend auf der Projekt-Zielsetzung, strategische Inhalte besser zu transportieren und zugleich die vielfältigen Zielgruppen passgenauer „abzuholen“, fand zunächst das Briefing der Agentur in2code statt. Deren Auftrag bestand nicht allein in der Neugestaltung des Webdesigns; auch die Informationsarchitektur wurde auf den Prüfstand gestellt und der Vorschlag für eine neue Navigationsstruktur erarbeitet. Mit Abstimmung im Projekt-Steuerkreis und Wahl des Wordings im Rektorat wurde schließlich die neue Strukturbasis mit den vier Hauptrubriken beschlossen.</p>
-        <h2>Praktische Umsetzungsleitplanken</h2>
-        <p>Die Erarbeitung der zweiten und dritten Strukturebenen auf Basis des Agentur-Vorschlags sowie bestehender Inhalte erfolgte in Abstimmung mit den jeweiligen Fachbereichen. Einfluss auf das Ergebnis nahmen auch Best Practices aus der User Experience (UX, Nutzungserfahrung) und formale Empfehlungen der Agentur: eine ausgewogene Unterseiten-Anzahl sowie nicht mehr als sechs Unterpunkte pro Seite wurden soweit möglich umgesetzt. Das Redesign unterstreicht diesen Ansatz, der eine bessere Übersicht für die Nutzer*innen und einen aufgeräumteren Gesamteindruck bringen soll. Möglichst zielgruppenorientierte beziehungsweise „sprechende“ Seitentitel waren eine weitere Maßgabe. Einige davon tauchen über die Kategorien hinweg auch mehrfach auf, um eine Wiedererkennbarkeit und dadurch bessere Orientierung zu unterstützen.</p>
-        <h2>Relaunch in zwei Schritten</h2>
-        <p>Für diejenigen, die die Struktur der zentralen Uni-Site seit Langem kennen, wird die Umstrukturierung zweifelsohne eine Umgewöhnung bedeuten. Alte Webadressen (URLs) sollen jedoch mittels Weiterleitungen über eine gewisse Dauer weiterhin erreichbar sein, sodass zum Beispiel auch die Suchmaschinen sich schrittweise auf die neuen URLs umstellen können. À propos Suchmaschine: Wenn Sie über die Struktur nicht fündig werden sollten, können Sie die Suchfunktion ausprobieren.</p>
-        <p>Als zweiten, noch einschneidenderen sichtbaren Meilenstein des Webrelaunchs steht der Go-Live des Redesigns im Herbst dieses Jahres an. Dieser wird sowohl neue als auch neu gestaltete Navigationselemente enthalten, die die neue Navigationsstruktur ergänzen. Bis dahin wird hinter den Kulissen noch weiter integriert, migriert, umstrukturiert, es wird Bild- und Schulungsmaterial produziert – mehr zu alledem in den kommenden Wochen an dieser Stelle.</p>
-        <p>Im Rahmen des Projekts Webrelaunch werden ab dem Sommer 2025 die Webseiten der Universität zu Köln schrittweise in das neue Webdesign migriert. Zur Vorbereitung dieses Umzugs („Migration“) können Webredakteur*innen aktiv werden, um das bestmögliche Ergebnis in der Darstellung zu erzielen. Denn das Redesign bringt eine neue Anmutung mit sich, die sich durch das Gesamtlayout, zusätzliche Website-Bausteine, aber auch durch die Umgestaltung der einzelnen schon jetzt verwendeten Inhaltselemente ergibt. In diesem Beitrag stellen wir Ihnen deshalb drei der wichtigsten Neuerungen des künftigen Webdesigns vor und zeigen, wie Sie sich darauf vorbereiten können.</p>
-        <h2>Fokus auf den „Main Content“</h2>
-        <p>Im neuen Design wird es nicht mehr möglich sein, Webseiten-Inhalte (Content) rechts neben der Hauptspalte („Main Content“) zu platzieren. Sind in der intern genannten „Marginalspalte“ wichtige Inhalte hinterlegt, die die Website-Besucher*innen schnell sehen sollen, verschieben Sie diese am besten schon jetzt an die gewünschte Stelle in der Hauptspalte. Wenn Sie bis zum Relaunch nichts unternehmen, gehen die Inhalte nicht verloren, sondern rutschen unter die Inhalte der Hauptspalte.</p>
-        <h2>Neue Hauptnavigations-Anordnung</h2>
-        <p>Im Bereich der Navigation werden die Punkte der ersten Ebene (unterhalb der Startseite einer Website) künftig untereinander statt nebeneinander angezeigt. Wählen Sie für das neue Design nach Möglichkeit kurze Seitentitel, damit die User*innen eine übersichtliche Anzeige vorfinden.</p>
-        <h2>Künftige Standard-Bildformate</h2>
-        <p>Im Redesign sind folgende Standard-Bildformate vorgesehen: 16:9, 3:2, 2:1, 5:4, 2:3, 1:1. Andere Bildformate werden jedoch weiterhin unterstützt. Je nach verwendetem Element können Sie Ihre Bildauswahl aufbereiten: Für die Bebilderung eines News-Artikels wird beispielsweise ein Seitenverhältnis von 3:2 empfohlen. Darüber hinaus sollten Bildformate in Teaser-Kacheln nach Möglichkeit so angepasst werden, dass immer das gleiche Seitenverhältnis im Querformat verwendet wird. Generell gilt: Um Serverressourcen und Datenvolumen zu schonen sowie Ladezeiten zu verkürzen, achten Sie bitte darauf, dass Bilder nicht zu groß hochgeladen werden.</p>
-        <p>Foto im Hochformat mit dem Seitenverhältnis 2:3. Foto (Bildausschnitt): Jana Bauch Foto im Querformat mit dem Seitenverhältnis 3:2. Foto: Jana Bauch Foto im Querformat mit dem Seitenverhältnis 16:9. Foto (Bildausschnitt): Jana Bauch</p>
-        <p>Haben Sie Fragen oder Anmerkungen zum Projekt? Hier geht es zum Kontaktformular des Kernteams des Projekts Webrelaunch.</p>
-        <p>Bei umfangreicheren Seiten kann es sinnvoll sein, zunächst eine Übersichtstabelle mit den geplanten Schritten zu erstellen. Am 15. März ist Digital Cleanup Day – ein Aufruf, die eigenen digitalen Altlasten zu löschen, um CO2 einzusparen und nebenbei mehr Ordnung und Übersicht zu schaffen. Das Nachhaltigkeitsbüro der Universität zu Köln informiert auf einer Webseite zu dem Thema Digital Cleanup. „Digitaler Müll“ kann sich nicht nur im E-Mail-Postfach und auf der lokalen Festplatte, sondern auch auf dem Server, auf dem die eigene Website liegt, ansammeln. Angesichts der ab diesem Jahr anstehenden Migration ins neue Webdesign bietet es sich wie vor einem Umzug umso mehr an, veraltete Inhalte auszumisten.</p>
-        <h2>Aufräum-Inspiration für Webredakteur*innen</h2>
-        <p>In Projektkreisen und individuellen Beratungsterminen weist das Webrelaunch-Projektteam auf die für eine bessere Nutzerinnenorientierung empfohlene Maximal-Anzahl von sechs Unterpunkten sowie die Reduktion von Navigationsebenen hin. Was widersprüchlich klingt, kann beides durch den Abbau von Redundanzen, das Zusammenfassen von Seiten, Straffen und Vereinfachen von Texten sowie das Löschen veralteter, nicht mehr gültiger Inhalte und Dokumentenlinks erreicht werden.</p>
-        <p>Webredakteur*innen können auf Einstiegsseiten Direkteinstiege zu den saisonal oder dauerhaft wichtigsten Inhalten auf den Unterseiten platzieren. Auf Unterseiten sorgen wiederum Sprunglink-Navigationen dafür, dass die Seiteninhalte schneller auffindbar sind. Bei mehrsprachigem Content ist es wichtig darauf zu achten, die Sprachen sauber zu trennen und jeweils eigene Übersetzungen anzulegen. Unterstützung finden Sie auf der Webseite unseres zentralen Übersetzungsteams und bei den Hinweisen zu Mehrsprachigkeit in TYPO3 beziehungsweise im ZMS.</p>
-        <p>Neben der Einsparung von Server-Speicherplatz und anfallendem Datenvolumen sorgen Aufräumaktionen dafür, dass Inhalte aktuell gehalten werden, nur valide Informationen veröffentlicht werden und – externe genau wie interne – User eine bessere Übersicht erhalten. Direkt oder indirekt kann dies die alltägliche Arbeit erleichtern und für weniger Arbeitsaufkommen sorgen. Im Rahmen von Redaktionsplänen können regelmäßige Überprüfungen auf Aktualisierungs- und Löschbedarf eingeplant werden.</p>
-        <h2>Was ist dabei zu beachten?</h2>
-        <p>Bevor Content gelöscht wird, ist zwingend zu überprüfen, ob dieser tatsächlich nicht mehr gebraucht wird, ob er aktualisiert werden kann oder archiviert werden muss. Dabei sind die rechtlichen Bestimmungen in Bezug auf das Löschen und Vorhalten von Daten im Öffentlichen Dienst zu beachten. Für die Einschätzung sollte zudem noch einmal auf die eigenen Zielgruppen und deren Informationsbedürfnisse geschaut werden.</p>
-        <p>Haben Sie Fragen oder Anmerkungen zum Projekt? Hier geht es zum Kontaktformular des Kernteams des Projekts Webrelaunch.</p>
-        <p>Ein Meilenstein ist erreicht: In diesen Tagen übergibt die Agentur den Webdesign-Prototyp. Er ermöglicht es den Uni-Webentwicklern, das neue Webdesign in die großen Content-Management-Systeme (CMS) der Uni zu integrieren. Das bedeutet, dass sie den von der Agentur erstellten Code in die CMS-spezifischen Programmiergerüste übernehmen bzw. für diese übersetzen.</p>
-        <h2>Auf die Integration folgt die Migration</h2>
-        <p>Im nächsten Schritt, der für das Sommersemester 2025 geplant ist, erfolgt dann die Migrationsvorbereitung der zentralen Seiten der Universität – also aller Webseiten unter www.uni-koeln.de sowie verwaltung.uni-koeln.de. Dabei sind nicht nur die Webentwickler*innen und -administrator*innen, sondern auch die zahlreichen Webredakteur*innen gefragt, ihre Seiten für den Umzug ins neue Design fit zu machen und auf Anpassungsbedarf zu prüfen. Sie werden vom Projektteam beraten und mit entsprechendem Schulungsmaterial unterstützt.</p>
-        <p>Im Herbst sollen die zentralen Webseiten der Universität im neuen Design zu sehen sein.</p>
-        <p>Apropos neues Design: Seit dem letzten “Sneak Peek” hat sich wieder einiges getan – zum Beispiel wurde die im User-Testing bevorzugte serifenlose Schrift eingesetzt und die Interaktionsbuttons abgerundet. Lassen Sie das neue Design auf sich wirken. Es ist luftig und hell - wird aber in Zukunft auch im Dark Mode verfügbar sein.</p>
-        <p>Haben Sie Fragen oder Anmerkungen zum Projekt? Hier geht es zum Kontaktformular des Kernteams des Projekts Webrelaunch.</p>
-        <p>Einblick in das künftige Webdesign: Auf dieser Inhaltsseite ist eines der neuartigen Bühnenelemente im oberen Bereich unmittelbar unterhalb der Navigationsleiste zu sehen. Darunter steht exemplarischer Platzhalter-Inhalte für verschiedene Überschriften-, Text- und Link-Formatierungen. Im Entwurf verwendetes Foto: Fabian Stürtz</p>
-        <p>Hier ist die gleiche Ansicht im sogenannten "Dark Mode" zu sehen - einer Systemeinstellung mit dunklen statt hellen Flächen, die Energie spart und von vielen Usern als angenehmer empfunden wird. Website-Besucher*innen haben künftig die Möglichkeit, diese Einstellung auszuwählen. Im Entwurf verwendetes Foto: Fabian Stürtz</p>
-        <p>Auf diesem Screenshot aus der Desktop-Ansicht (links) sieht man die neue Hauptnavigation der zentralen Startseite - derzeit noch mit Platzhaltern gefüllt. Im Inhaltsbereich wurde zu den "Neuigkeiten & Meldungen" gescrollt, ihre Anzeige wechselt dynamisch und kann über die Interaktionsflächen gesteuert werden. Zudem sind am Corporate Design angelehnte Schmuckelemente und das Icon für das neu gestaltete Direktlink-Menü (unten rechts) zu sehen. Rechts daneben die mobile Ansicht. Im Entwurf verwendetes Foto: Ludolf Dahmen Previous Slide Icon arrow-Left Pause slider Icon Pause Resume slider Icon Play Next slide Pfeil nach rechts Icon</p>
-        <p>Screenshot aus dem User-Testing: Hier erhielten die Tester*innen Einblick in eine exemplarische Webseite aus dem Design-Prototypen, um die Lesbarkeit von serifenloser Schrift zu bewerten.</p>
-        <p>Ende Oktober hatten freiwillige Tester*innen die Möglichkeit, Elemente des neuen Designs auf ihre Usability (Nutzungsfreundlichkeit) hin zu testen. Zur Beteiligung eingeladen waren alle – sowohl Universitäts-Angehörige als auch -Externe konnten sich anonym an der Online-Umfrage im Rechenzentrum beteiligen. Im internen Mitarbeitenden-Mailing expresso sowie öffentlich über die Website und den Instagram-Kanal der Uni, geteilt von verschiedenen Fakultäten und Einrichtungen, war auf die Aktion aufmerksam gemacht worden.</p>
-        <p>Im Fokus des User-Testings standen die Typographie sowie die Hauptnavigation der künftigen Website der Universität zu Köln. Das Ergebnis der Typographie-bezogenen Fragen bestätigte Hinweise aus den Projekt-Gremien, dass eine serifenlose Schrift der vorgeschlagenen Serifenschrift in Textabschnitten vorzuziehen ist. Deshalb hat das Projekt-Team die Agentur damit beauftragt, hier eine entsprechende Anpassung am Design vorzunehmen, die nun unmittelbar im Prototypen umgesetzt werden kann.</p>
-        <p>Zur Hauptnavigation gab es qualitative Hinweise, die unterschiedliche Präferenzen der verschiedenen Nutzer*innen offenbarten. Insgesamt schnitt die Hauptnavigation gut ab und konnte insbesondere bei den Aspekten Sichtbarkeit und Übersichtlichkeit punkten. Detailanpassungen am Prototypen sind derzeit noch in der Umsetzung. Bezüglich eines neuen Features, der Platzierung von beliebten Themen und Aktuellen Meldungen im Bereich der ausgeklappten Navigation („Flyout“), wurde die Tendenz zu einer maßvollen Nutzung sichtbar. Entsprechend werden Redaktionsleitfäden beziehungsweise Handlungsempfehlungen des Projektteams für die Nutzung dieser neuen redaktionellen Möglichkeit ausformuliert.</p>
-        <p>Im weiteren Projektverlauf beziehungsweise auch nach dem für Herbst 2025 geplanten Go-Live werden wir in Erwägung ziehen, vertiefendes Testing beziehungsweise das Testing von strukturellen und inhaltlichen Aspekten durchzuführen. Wir möchten allen freiwilligen Tester*innen an dieser Stelle ganz herzlich für ihren wertvollen Beitrag zu diesem Projekt danken!</p>
-        <h2>Barrierefreiheit-Audit durch die Agentur</h2>
-        <p>Neben der allgemeinen Usability muss beim Webdesign sichergestellt sein, dass die Website auch künftig möglichst barrierearm zugänglich ist. Dies ist Teil der Anforderungen an unseren Agenturpartner. Deshalb prüft in2code während des laufenden Implementierungsprozesses die einzelnen Webdesign-Komponenten auf Barrierefreiheit. So werden Bedarfe direkt bei der Entwicklung identifiziert und Anpassungen am Prototyp vorgenommen.</p>
-        <h2>Uni-Webentwickler geben Feedback</h2>
-        <p>Von Anfang an sind an Bord des erweiterten Uni-internen Projektteams auch die Webentwickler der beiden großen Content-Management-Systeme (CMS) TYPO3 und ZMS. Gemeinsam mit dem Entwickler und Administrator des CMS Autoedit beim Netzwerk Medien der Humanwissenschaftlichen Fakultät erhielten sie kürzlich einen umfassenden Einblick in das Vorgehen der Implementierung auf Agentur-Seite. Der enge Austausch auch in diesem Bereich soll den angestrebten Bestandsschutz für den bestehenden Content ermöglichen und sicherstellen, dass die Uni-seitige Integration des neuen Webdesigns bewerkstelligt werden kann.</p>
-        <p>Haben Sie Fragen oder Anmerkungen zum Projekt? Hier geht es zum Kontaktformular des Kernteams des Projekts Webrelaunch.</p>
-        <p>Einblick in die Umfrage, die an einem Arbeitsplatz in Kursraum 3 des RRZK bearbeitet werden kann. Um etwaige zielgruppenspezifischen Tendenzen herausfinden zu können, werden zunächst anonyme User-bezogene Angaben erfragt.</p>
-        <p>Das Projekt Webrelaunch ist in die nächste spannende Phase gestartet: Der sogenannte Prototyp des Webdesigns wird implementiert. Das bedeutet, dass das bisher ausgearbeitete Design in die Auszeichnungs- und Programmiersprachen „übersetzt“ wird, die Ihr Browser zur gewünschten Website-Anzeige interpretieren kann. Mithilfe des erstellten Prototypen können Variationen beziehungsweise Funktionen im Design getestet werden. Diese Möglichkeit nutzen wir nun, um die Elemente Typographie sowie Hauptnavigation einem Praxistest zu unterziehen: Beim User-Testing am Montag, den 28.10.2024, besuchen freiwillige Tester*innen die Prototyp-Website und bearbeiten dabei Aufgaben und Fragen an einem PC-Arbeitsplatz. Auch Sie können teilnehmen - hier finden Sie die Details zum User-Testing-Termin.</p>
-        <h2>Was mit den Testergebnissen passiert</h2>
-        <p>Die Teilnehmenden erhalten einen exklusiven Einblick und können dabei ihre Eindrücke im Rahmen der Umfrage mitteilen. Dank der digitalen Erfassung der Testergebnisse soll die Umfrage zügig ausgewertet werden. Danach wird entschieden, wie die getesteten Elemente letztlich implementiert werden – mehr dazu im nächsten Blogbeitrag.</p>
-        <p>Parallel arbeitet die Agentur derzeit an der Implementierung aller weiteren Design-Komponenten des künftigen Webdesigns der Universität zu Köln. Das fertiggestellte Gesamtpaket wird außerdem einer Prüfung auf Barrierefreiheit unterzogen, bevor es an die Universität zu Köln für die Uni-seitige Implementierung übergeben wird.</p>
-        <p>Haben Sie Fragen oder Anmerkungen zum Projekt? Hier geht es zum Kontaktformular des Kernteams des Projekts Webrelaunch.</p>
-        <p>Studierende am Laptop. Foto: Fabian Stürtz</p>
-        <p>Seit dem letzten Blogeintrag ist das künftige Webdesign weiter gewachsen, indem es im Detail angepasst und auf zusätzliche Inhaltselemente angewandt worden ist. Vergangene Woche war es dann soweit: Die Agentur in2code präsentierte dem Steuerkreis eine Reihe von Seitenentwürfen, um die Design-Abnahme zu ermöglichen. Im Entwurf für die zentrale Universitäts- sowie exemplarische Fakultäts-, Einrichtungs- und Institutsseiten finden sich die gestalterischen Lösungsansätze des Navigations- und Orientierungskonzepts, der Markenarchitektur und der Verbindung von möglichst barrierearmen, nutzungsfreundlichen und attraktiven Inhaltselementen.</p>
-        <h2>User-Testing im Oktober</h2>
-        <p>Mit dem finalen Feedback des Anwendungskreises und des Steuerkreises wird in den nächsten Wochen der Prototyp einer künftigen Site implementiert – also die digitale, interaktive Vorschau des künftigen Webdesigns. Mithilfe dieser Vorschau können noch nicht entschiedene Aspekte wie etwa Schriftgrößen und -typen, Bildformate oder Interaktionseffekte auf Nutzungsfreundlichkeit hin getestet werden. Dabei können freiwillige Tester*innen die HTML-Ansichten ausprobieren und bewerten beziehungsweise Fragen zu ihrem Website-Besuch beantworten. Dieses sogenannte User-Testing des Prototyps ist für die ersten Vorlesungswochen im Wintersemester 2024/25 an der Uni Köln geplant – wann und wie genau, wird im Oktober-Blogbeitrag veröffentlicht. Die Aktion wird außerdem über die Website der Uni Köln sowie Social-Media-Postings kommuniziert. Wer also schon jetzt einen tieferen Einblick in das künftige Webdesign der Uni Köln erhalten und zu dessen finalen Feinschliff beitragen möchte, sollte im Oktober wieder hier hereinschauen. Das Feedback aus den User-Testings kann dann direkt in die Entwicklung des Webdesigns zurückfließen und die Agentur die Implementierung in den HTML-Prototypen fortsetzen.</p>
-        <p>Update vom 14.10.2024:Ab sofort finden Sie auf dieser Seite Informationen zu dem für Ende Oktober geplanten User-Testing.</p>
-        <p>Haben Sie Fragen oder Anmerkungen zum Projekt? Hier geht es zum Kontaktformular des Kernteams des Projekts Webrelaunch.</p>
-        <p>Nach umfangreichen Vorbereitungs-, Analyse- und Konzept-Arbeiten gibt es nun auch mal „etwas fürs Auge“: Die Agentur in2code arbeitet derzeit das künftige Webdesign des Webauftritts der Universität zu Köln aus. Wie wird es denn jetzt aussehen? Gerne geben wir hier einen kleinen Einblick, um zumindest ein wenig Neugier zu stillen. Bitte beachten Sie, dass es sich hier noch nicht um die final ausgearbeiteten Designs handelt.</p>
-        <h2>Vom „Look & Feel“ zum konkreten Webdesign</h2>
-        <p>Im Frühsommer hatte der Steuer
+    <!-- MAIN CONTENT -->
+    <main class="container">
+        
+        <!-- Blog Feed -->
+        <div class="content-area">
+            <div class="intro-text">
+                <p>Willkommen auf dem offiziellen Blog der Universität zu Köln. Hier finden Sie aktuelle Einblicke in Forschungsprojekte, Geschichten vom Campusleben, Interviews mit Lehrenden und Studierenden sowie wichtige Ankündigungen rund um den Universitätsbetrieb.</p>
+            </div>
+
+            <div class="blog-grid">
+                
+                <!-- Article 1: Research -->
+                <article class="blog-card">
+                    <div class="card-image img-1">
+                        <!-- Placeholder for Research Image -->
+                        <span style="color:white; font-weight:bold;">FORSCHUNG</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">Exzellenzcluster • 12. Mai 2024</div>
+                        <h3>Neue Erkenntnisse in der Alternsforschung</h3>
+                        <p>Wissenschaftler der Universität zu Köln haben einen neuen Mechanismus entdeckt, der den zellulären Alterungsprozess verlangsamen könnte. Die Studie wurde im renommierten Journal 'Nature' veröffentlicht.</p>
+                        <a href="#" class="read-more">
+                            Weiterlesen 
+                            <svg style="width:16px;height:16px;fill:currentColor;" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 2: Campus Life -->
+                <article class="blog-card">
+                    <div class="card-image img-2">
+                        <!-- Placeholder for Campus Image -->
+                        <span style="color:white; font-weight:bold;">CAMPUSLEBEN</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">Studium • 10. Mai 2024</div>
+                        <h3>Start des Sommersemesters: Campus erwacht zum Leben</h3>
+                        <p>Mit über 48.000 Studierenden startet die Universität in das neue Semester. Die Mensa bietet neue vegetarische Optionen an und die Bibliotheken erweitern ihre Öffnungszeiten.</p>
+                        <a href="#" class="read-more">
+                            Weiterlesen 
+                            <svg style="width:16px;height:16px;fill:currentColor;" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 3: Inclusion -->
+                <article class="blog-card">
+                    <div class="card-image img-3">
+                        <!-- Placeholder for Inclusion Image -->
+                        <span style="color:white; font-weight:bold;">INKLUSION</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">Diversität • 05. Mai 2024</div>
+                        <h3>Barrierefreies Studieren: Neue Maßnahmen umgesetzt</h3>
+                        <p>Das Servicezentrum Inklusion berichtet über die erfolgreiche Umsetzung neuer Leitsysteme für sehbehinderte Studierende in den Hauptgebäuden. Ein Schritt hin zu mehr Chancengleichheit.</p>
+                        <a href="#" class="read-more">
+                            Weiterlesen 
+                            <svg style="width:16px;height:16px;fill:currentColor;" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Article 4: Digital Teaching -->
+                <article class="blog-card">
+                    <div class="card-image img-1">
+                        <!-- Placeholder for Digital Image -->
+                        <span style="color:white; font-weight:bold;">DIGITALISIERUNG</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">Lehre • 02. Mai 2024</div>
+                        <h3>Update für ILIAS eLearning Plattform</h3>
+                        <p>Das Zentrum für Hochschuldidaktik kündigt umfangreiche Updates für das kommende Semester an. Neue Features sollen die hybride Lehre weiter vereinfachen.</p>
+                        <a href="#" class="read-more">
+                            Weiterlesen 
+                            <svg style="width:16px;height:16px;fill:currentColor;" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+        <!-- Sidebar / Service Links -->
+        <aside class="sidebar">
+            <h3>Service-Links</h3>
+            <ul class="quick-links">
+                <li>
+                    <a href="#">
+                        Öffnungszeiten + Adressen
+                        <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        KLIPS 2.0
+                        <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Vorlesungsverzeichnis
+                        <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        ILIAS eLearning
+                        <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Jobportal
+                        <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Anreise & Lagepläne
+                        <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Mensa
+                        <svg class="icon-arrow" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Universität zu Köln</h4>
+                <ul>
+                    <li><a href="#">Über uns</a></li>
+                    <li><a href="#">Fakultäten</a></li>
+                    <li><a href="#">Exzellenzstrategie</a></li>
+                    <li><a href="#">Pressekontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Studium</h4>
+                <ul>
+                    <li><a href="studienangebot-studienangebot.html">Studienangebot</a></li>
+                    <li><a href="bewerbung-bewerbung.html">Bewerbung & Einschreibung</a></li>
+                    <li><a href="#">International Students</a></li>
+                    <li><a href="termine-fristen-termine-fristen.html">Termine & Fristen</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kontakt</h4>
+                <p style="opacity: 0.8; font-size: 0.9rem; margin-bottom: 1rem;">
+                    Albertus-Magnus-Platz<br>
+                    50923 Köln<br>
+                    Deutschland
+                </p>
+                <div class="social-icons">
+                    <!-- Facebook -->
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <!-- Youtube -->
+                    <a href="#" class="social-icon" aria-label="Youtube">
+                        <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33zM9.75 15.02l5.75-3.27-5.75-3.27z"></path></svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="#" class="social-icon" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Universität zu Köln. Alle Rechte vorbehalten. | Impressum | Datenschutz
+        </div>
+    </footer>
+
+</body>
+</html>

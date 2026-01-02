@@ -1,197 +1,635 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Universität zu Köln: Blog Baumassnahmen</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
-    rel="stylesheet">
-  <style>
-    /* Globale Stile */
-    body {
-      font-family: 'Lato', sans-serif;
-      color: #1F2937;
-      margin: 0;
-      padding: 0;
-      background-color: #FFFFFF;
-      line-height: 1.6;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Baumaßnahmen | Universität zu Köln</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair%20Display:wght@400;600;700&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1E3A5F;
+            --secondary: #2563EB;
+            --accent: #D4AF37;
+            --bg: #FFFFFF;
+            --bg-light: #F3F4F6;
+            --text: #1F2937;
+            --text-light: #6B7280;
+            --white: #FFFFFF;
+            --border: #E5E7EB;
+        }
 
-    h1,
-    h2,
-    h3 {
-      font-family: 'Playfair Display', serif;
-      color: #1E3A5F;
-      margin-bottom: 0.5em;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    a {
-      color: #2563EB;
-      text-decoration: none;
-    }
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text);
+            background-color: var(--bg);
+            line-height: 1.6;
+        }
 
-    a:hover {
-      text-decoration: underline;
-    }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            line-height: 1.2;
+        }
 
-    img {
-      max-width: 100%;
-      height: auto;
-    }
+        a {
+            text-decoration: none;
+            color: var(--secondary);
+            transition: color 0.3s ease;
+        }
 
-    /* Header */
-    .header {
-      background-color: #1E3A5F;
-      color: #FFFFFF;
-      padding: 1em;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        a:hover {
+            color: var(--primary);
+        }
 
-    .header a {
-      color: #FFFFFF;
-    }
+        ul {
+            list-style: none;
+        }
 
-    .logo img {
-      max-height: 50px;
-    }
+        /* --- Header & Navigation --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    .navigation ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-    }
+        .top-bar {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 2rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 0.85rem;
+        }
 
-    .navigation li {
-      margin-left: 1em;
-    }
+        .top-bar-icons {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
 
-    /* Main Content */
-    .main-content {
-      padding: 2em;
-    }
+        .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.85rem;
+        }
 
-    /* Footer */
-    .footer {
-      background-color: #F3F4F6;
-      padding: 2em;
-      text-align: center;
-      font-size: 0.8em;
-    }
+        .icon-svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            border-bottom: 3px solid var(--accent);
+        }
 
-      .navigation ul {
-        flex-direction: column;
-      }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
 
-      .navigation li {
-        margin-left: 0;
-        margin-top: 0.5em;
-      }
-    }
+        .logo span {
+            display: block;
+            font-size: 0.9rem;
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            color: var(--text-light);
+            margin-top: -5px;
+        }
 
-    /* Spezifische Stile für diese Seite */
-    .blog-title {
-      color: #1E3A5F;
-      margin-bottom: 1em;
-    }
+        .nav-desktop {
+            display: none;
+        }
 
-    .blog-post {
-      margin-bottom: 2em;
-    }
+        @media(min-width: 992px) {
+            .nav-desktop {
+                display: flex;
+                gap: 2rem;
+            }
+        }
 
-    .blog-post h2 {
-      color: #1E3A5F;
-    }
+        .nav-link {
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            padding: 0.5rem 0;
+            position: relative;
+        }
 
-    .blog-post p {
-      margin-bottom: 1em;
-    }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
 
-    .icon {
-      display: inline-block;
-      width: 1em;
-      height: 1em;
-      vertical-align: middle;
-      margin-right: 0.25em;
-    }
+        .nav-link:hover::after {
+            width: 100%;
+        }
 
-    .quicklinks h3{
-      font-size: 1.2rem;
-    }
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+        }
 
-    .quicklinks ul{
-      list-style: none;
-      padding: 0;
-    }
+        @media(min-width: 992px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
 
-    .quicklinks li{
-      margin-bottom: 0.5rem;
-    }
-  </style>
+        /* --- Hero Section --- */
+        .page-hero {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05));
+            transform: skewX(-20deg);
+        }
+
+        .breadcrumbs {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumbs a {
+            color: var(--white);
+        }
+
+        .page-hero h1 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            max-width: 700px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* --- Main Content Layout --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        @media(min-width: 992px) {
+            .container {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        /* --- Blog Content --- */
+        .content-section h2 {
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .post-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--accent);
+        }
+
+        .post-meta {
+            background: var(--bg-light);
+            padding: 0.5rem 1.5rem;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            display: flex;
+            gap: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .post-body {
+            padding: 1.5rem;
+        }
+
+        .post-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .post-excerpt {
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .read-more svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        /* --- Sidebar --- */
+        .sidebar {
+            background: var(--bg-light);
+            padding: 2rem;
+            height: fit-content;
+            border-top: 4px solid var(--primary);
+        }
+
+        .sidebar-widget {
+            margin-bottom: 2.5rem;
+        }
+
+        .sidebar-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sidebar-links li {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding-bottom: 0.5rem;
+        }
+
+        .sidebar-links a {
+            color: var(--text);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sidebar-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .service-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .service-list a {
+            font-weight: 500;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 4rem 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media(min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .footer-col h3 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Lato', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .social-icon:hover {
+            background: var(--accent);
+        }
+
+        .social-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+        }
+    </style>
 </head>
-
 <body>
 
-  <header class="header">
-    <div class="logo">
-      <a href="index.html">
-        <img src="https://www.portal.uni-koeln.de/sites/portal/themes/custom/portaltheme/logo.svg" alt="Logo Universität zu Köln">
-      </a>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="top-bar-icons">
+                <button class="icon-btn" aria-label="Suche">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                    <span>Suche</span>
+                </button>
+                <button class="icon-btn" aria-label="Sprache wechseln">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.91-4.33-3.56zm2.95-8H5.08c.96-1.65 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
+                    <span>DE / EN</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="main-header">
+            <a href="index.html" class="logo">
+                Universität zu Köln
+                <span>Wissen schaffen.<br>Zukunft gestalten.</span>
+            </a>
+
+            <nav class="nav-desktop">
+                <a href="studienangebot-studienangebot.html" class="nav-link">Studienangebot</a>
+                <a href="bewerbung-bewerbung.html" class="nav-link">Bewerbung</a>
+                <a href="inklusion-inklusion.html" class="nav-link">Inklusion</a>
+                <a href="termine-fristen-termine-fristen.html" class="nav-link">Termine + Fristen</a>
+            </nav>
+
+            <button class="mobile-menu-btn" aria-label="Menü öffnen">
+                <svg class="icon-svg" style="width: 32px; height: 32px;" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="breadcrumbs">
+            <a href="index.html">Startseite</a> &gt; <a href="#">Universität</a> &gt; <span>Blog Baumaßnahmen</span>
+        </div>
+        <h1>Blog Baumaßnahmen</h1>
+        <p>Aktuelle Informationen zu Bauprojekten, Sanierungen und der Campusentwicklung an der Universität zu Köln. Wir halten Sie über Fortschritte und geplante Maßnahmen auf dem Laufenden.</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        
+        <!-- Left Column: Blog Posts -->
+        <main class="content-section">
+            <h2>Aktuelle Berichte & Statements</h2>
+
+            <!-- Featured Slider Controls (Static visual representation as requested) -->
+            <div style="display: flex; gap: 1rem; margin-bottom: 2rem; align-items: center; background: #f9f9f9; padding: 1rem; border-left: 4px solid var(--accent);">
+                <div style="font-weight: bold; color: var(--primary);">Highlight Projekt: Chemie-Neubau</div>
+                <div style="margin-left: auto; display: flex; gap: 0.5rem;">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="#1E3A5F"><path d="M14 7l-5 5 5 5V7z"/></svg> <!-- Arrow Left -->
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="#1E3A5F"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> <!-- Pause -->
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="#1E3A5F"><path d="M10 8.64L15.27 12 10 15.36V8.64M8 5v14l11-7L8 5z"/></svg> <!-- Play -->
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="#1E3A5F"><path d="M10 17l5-5-5-5v10z"/></svg> <!-- Arrow Right -->
+                </div>
+            </div>
+
+            <!-- Blog Post 1 -->
+            <article class="post-card">
+                <div class="post-meta">
+                    <span><svg style="width:12px; height:12px; margin-right:4px;" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg> 12. Oktober 2023</span>
+                    <span>Kategorie: Sanierung</span>
+                </div>
+                <div class="post-body">
+                    <h3 class="post-title">Sanierung des Hauptgebäudes: Abschluss des 2. Bauabschnitts</h3>
+                    <div class="post-excerpt">
+                        <p>Die umfangreichen Sanierungsarbeiten an der Fassade des Hauptgebäudes schreiten planmäßig voran. Der zweite Bauabschnitt, der die denkmalgerechte Erneuerung der Fensterfronten zur Albertus-Magnus-Platz umfasst, wurde in dieser Woche erfolgreich abgenommen. Im nächsten Schritt beginnen die Arbeiten an der Dachkonstruktion des Westflügels.</p>
+                    </div>
+                    <a href="#" class="read-more">
+                        Weiterlesen 
+                        <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="post-card">
+                <div class="post-meta">
+                    <span><svg style="width:12px; height:12px; margin-right:4px;" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg> 28. September 2023</span>
+                    <span>Kategorie: Campusentwicklung</span>
+                </div>
+                <div class="post-body">
+                    <h3 class="post-title">Spatenstich für das neue Laborgebäude der Biowissenschaften</h3>
+                    <div class="post-excerpt">
+                        <p>Mit einem feierlichen Spatenstich wurde heute der Startschuss für den Neubau des Forschungszentrums für Biowissenschaften gegeben. Das Gebäude wird modernste Laborflächen bieten und ist ein zentraler Baustein in der Strategie der Universität, die naturwissenschaftliche Infrastruktur nachhaltig zu stärken. Die Fertigstellung ist für 2026 geplant.</p>
+                    </div>
+                    <a href="#" class="read-more">
+                        Weiterlesen 
+                        <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="post-card">
+                <div class="post-meta">
+                    <span><svg style="width:12px; height:12px; margin-right:4px;" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg> 05. September 2023</span>
+                    <span>Kategorie: Infrastruktur</span>
+                </div>
+                <div class="post-body">
+                    <h3 class="post-title">Verkehrsführung Weyertal: Temporäre Einschränkungen</h3>
+                    <div class="post-excerpt">
+                        <p>Aufgrund von Fernwärmearbeiten im Bereich Weyertal kommt es in den kommenden drei Wochen zu geänderten Verkehrsführungen. Der Zugang zum Parkhaus des Philosophikums bleibt gewährleistet, jedoch ist mit Verzögerungen zu rechnen. Wir bitten alle Studierenden und Mitarbeitenden, dies bei der Anreise zu berücksichtigen.</p>
+                    </div>
+                    <a href="#" class="read-more">
+                        Weiterlesen 
+                        <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                    </a>
+                </div>
+            </article>
+
+        </main>
+
+        <!-- Right Column: Sidebar / Service -->
+        <aside class="sidebar">
+            
+            <div class="sidebar-widget">
+                <h3 class="sidebar-title">
+                    <svg style="width:20px; height:20px;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                    Service & Info
+                </h3>
+                <ul class="sidebar-links service-list">
+                    <li>
+                        <svg style="width:16px; height:16px; color:var(--secondary);" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                        <a href="#">Presseinformationen</a>
+                    </li>
+                    <li>
+                        <svg style="width:16px; height:16px; color:var(--secondary);" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                        <a href="#">Veranstaltungskalender</a>
+                    </li>
+                    <li>
+                        <svg style="width:16px; height:16px; color:var(--secondary);" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                        <a href="#">Personalia</a>
+                    </li>
+                    <li>
+                        <svg style="width:16px; height:16px; color:var(--secondary);" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                        <a href="#">Pressekontakt</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="sidebar-title">
+                    <svg style="width:20px; height:20px;" viewBox="0 0 24 24"><path d="M12 10.9c-.61 0-1.1.49-1.1 1.1s.49 1.1 1.1 1.1c.61 0 1.1-.49 1.1-1.1s-.49-1.1-1.1-1.1zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm2.19 12.19L6 18l3.81-8.19L18 6l-3.81 8.19z"/></svg>
+                    Schnellzugriff
+                </h3>
+                <ul class="sidebar-links">
+                    <li><a href="#">ILIAS eLearning-Plattform <svg style="width:14px;height:14px;" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg></a></li>
+                    <li><a href="#">KLIPS 2.0 <svg style="width:14px;height:14px;" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg></a></li>
+                    <li><a href="#">Programm UniSport <svg style="width:14px;height:14px;" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg></a></li>
+                    <li><a href="#">Collegium musicum <svg style="width:14px;height:14px;" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg></a></li>
+                    <li><a href="#">studiobühneköln <svg style="width:14px;height:14px;" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg></a></li>
+                    <li><a href="#">Multimediastories <svg style="width:14px;height:14px;" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="sidebar-title">Kategorien</h3>
+                <ul class="sidebar-links">
+                    <li><a href="#">Allgemein (12) <svg style="width:14px;height:14px;" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a></li>
+                    <li><a href="#">Sanierung (8) <svg style="width:14px;height:14px;" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a></li>
+                    <li><a href="#">Neubau (5) <svg style="width:14px;height:14px;" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a></li>
+                    <li><a href="#">Infrastruktur (3) <svg style="width:14px;height:14px;" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a></li>
+                </ul>
+            </div>
+
+        </aside>
     </div>
-    <nav class="navigation">
-      <ul>
-        <li><a href="studienangebot-studienangebot.html">Studienangebot</a></li>
-        <li><a href="bewerbung-bewerbung.html">Bewerbung</a></li>
-        <li><a href="inklusion-inklusion.html">Inklusion</a></li>
-        <li><a href="termine-fristen-termine-fristen.html">Termine + Fristen</a></li>
-        <li><a href="oeffnungszeiten-adressen.html">Öffnungszeiten + Adressen</a></li>
-        <li><a href="klips-2-0-klips-2-0.html">KLIPS 2.0</a></li>
-        <li><a href="vorlesungsverzeichnis.html">Vorlesungsverzeichnis</a></li>
-        <li><a href="ilias-elearning-ilias-elearning.html">ILIAS eLearning</a></li>
-        <li><a href="jobportal-jobportal.html">Jobportal</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main class="main-content">
-    <h1 class="blog-title">Blog Baumassnahmen</h1>
-
-    <nav>
-      <a href="index.html">Zur Startseite Universität zu Köln</a>
-    </nav>
-
-    <div class="blog-post">
-      <p>Die Universität zu Köln baut: Neue Gebäude werden für die Wissenschaft errichtet, der Baubestand wird saniert, neue und energiesparende Techniken werden installiert. Wir berichten über neue und laufende Projekte im BauBlog. Previous Slide Icon arrow-Left Pause slider Icon Pause Resume slider Icon Play Next slide Pfeil nach rechts Icon Der erste Teilabschnitt, das untere Niveau des Platzes, ist bald fertig und wieder zur Begehung freigegeben. Dafür verschiebt sich die Fläche der Baustelle. Der Bereich des Albertus-Magnus Platzes am westlichen Ende direkt am Philosophikum wird bis zum 13. Oktober mit Grauwacke gepflastert sein. Damit wird die Baustelle dort aufgehoben und der Platz in diesem Bereich kann wieder begangen werden. Auch die zugehörigen Türen im Philosophikum sind dann wieder nutzbar. Dafür wandert die Baustelle ein Stück Richtung Hauptgebäude. Ein Teil des Fahrradweges auf dem zum Hörsaalgebäude hin liegenden sogenannten „Uni-Boulevard“ (dort, wo der Pizza-Wagen „PiKa“ steht) wird abgesperrt und saniert. Der Zugang zum Pizza Wagen bleibt bestehen, der direkte Zugang vom Hauptgebäude zum Hörsaalgebäude und dem Uni-Boulevard wird abgesperrt. Der Weg vom Hauptgebäude zum Hörsaalgebäude führt dann am Philosophikum entlang über die Treppen rund um die Baustelle. Eine barrierefreie Begehung ist durch das Philosophikum möglich. Der Zugang zur Tiefgarage und den gastronomischen Einrichtungen im Pavillon bleiben erhalten. Die Absperrung wird voraussichtlich vier Wochen bestehen und wird dann wieder aufgehoben. Neuigkeiten gibt es auch bei den derzeitigen Bauarbeiten: Die Baufirmen legen die Hochbeete an und sind soweit, dass die geplanten Bäume bereits am 7. Oktober und die Stauden am 9. Oktober geliefert werden können. Damit wird die neue Gestaltung dieses Bauabschnitts sichtbar werden. Die Brückensanierung startet und die Baumaßnahme wandert auf das obere Niveau der Platzfläche. Um die unübersichtliche Parkplatzsituation auf universitätseigenen Flächen zu verbessern, hat das Parkraummanagement der Universität zu Köln einen Dauervertrag mit einem Abschleppunternehmen geschlossen. Ziel ist, mehr Platz für berechtigte Nutzerinnen und Nutzer zu schaffen: Falschparker werden künftig regelmäßig kostenpflichtig abgeschleppt. Ab dem 1. November dieses Jahres werden Fahrzeuge unverzüglich abgeschleppt, wenn sie ohne gültigen Parkschein oder Parkausweis auf ausgewiesenen Parkflächen der Universität abgestellt sind,Feuerwehrzufahrten blockieren,auf Sperrflächen parken oderaußerhalb markierter Stellplätze stehen. Davon können auch Fahrzeuge von Beschäftigten oder Studierenden betroffen sein, etwa wenn der Parkausweis nicht sichtbar im Fahrzeugfenster liegt oder Zufahrten für Feuerwehr und Rettungsdienst blockiert werden. Die Maßnahme dient der Sicherheit und Ordnung auf dem Campus. Wo wird abgeschleppt? Betroffen sind verschiedene Parkbereiche des Campus, unter anderem: Campus Nord (humanwissenschaftlicher Bereich, Gronewaldstraße, Frangenheimstraße, Herbert-Lewin-Straße),Klosterstraße,Zentralbereich (Gyrhofstraße / Ecke Universitätsstraße bzw. Ecke Gymnicher Straße / Kerpener Straße),Parkplatz Unisport und Sibille-Hartmann-Straße. Bitte beachten Sie die unterschiedlichen Kontrollzeiten je nach Bereich (Beispiel: Campus Nord: Mo–Fr 08:00–17:00 Uhr; Zentralbereich: Mo–Fr 07:00–21:00 Uhr, Sa 09:00–13:00 Uhr). Außerhalb dieser Zeiten ist das Parken in vielen Bereichen frei. Parkverbotszonen wie Feuerwehrzufahrten werden jedoch rund um die Uhr kontrolliert. Weitere Informationen Eine detaillierte Übersicht der Parkbereiche sowie Informationen zum Abschleppdienst, einschließlich der anfallenden Abschleppkosten, finden Sie auf der Webseite des Parkraummanagements (Dezernat 5, Gebäude- und Liegenschaftsmanagement): https://verwaltung.uni-koeln.de/parken Bei Fragen oder Hinweisen wenden Sie sich bitte an das Parkraummanagement. Fotos: Jana Bauch Bildhauer Martin Pfeifle Previous Slide Icon arrow-Left Pause slider Icon Pause Resume slider Icon Play Next slide Pfeil nach rechts Icon Die Skulptur „revisited“ des Bildhauers Martin Pfeifle wurde auf dem Albertus-Magnus-Platz aufgestellt. Die Montagearbeiter installierten die drei Elemente der Plastik neben dem Pavillon über der Fahrradgarage zwischen Hörsaalgebäude und Philosophikum. Am Nachmittag waren die Arbeiten abgeschlossen. Das neue Kunstwerk „revisited“ von Martin Pfeifle besteht aus optisch geschichteten Plattenelementen, die das noch in Teilen bestehende Bodenmosaik von Jürgen Hans Grümmer direkt vor dem Hauptgebäude erinnern sollen. Das Objekt wurde aus Bronze gegossen und verteilt sich auf drei getrennte Elemente. Die Plastik fordert als Objekt im öffentlichen Raum zur Interaktion mit dem Betrachter auf und lädt zum Verweilen ein. In diesem Sinne ist es auch eine „Sitzskulptur“. Die im Laufe der Zeit einsetzende Korrosion der Oberfläche mit Grünspan wird in Zukunft an den genutzten Stellen mit der Goldfarbe des Materials kontrastieren.Der Künstler Martin Pfeifle ist neben seinen Skulpturen im öffentlichen Raum auch für seine Installationen im Museumsbereich bekannt. Das Zusammenwirken von Betrachter und Kunstwerk ist Teil seiner bisherigen Arbeit, auch bei den Installationen, die er für Museen durchgeführt hat: „Der Körper des Betrachters ist immer auch Teil der Installation“, so Pfeifle. Im öffentlichen Raum kommt für den Künstler noch die spezielle Situation hinzu, dass die Betrachter*innen ihren verschiedensten Tätigkeiten nachgehen und sich nicht zwingend auf das Kunstobjekt fokussieren: „Der öffentliche Raum ist jedem ausgeliefert: Es ist nicht der geschützte museale Raum. Auch die Motivation der Betrachter ist eine andere: Man beschließt nicht, ins Museum zu gehen, um Kunst zu rezipieren, sondern man stolpert im Grunde drüber.“ Dabei soll sich für die zukünftigen Betrachter die Aufenthaltsqualität auf dem Kunstwerk mit der Wahrnehmung der Kunst durchaus verbinden. Das Werk des Düsseldorfer Künstlers nimmt die Formensprache des Mosaiks auf, das den Boden des Platzes bisher geschmückt hat. „Ich beziehe mich mit meiner Skulptur komplett auf die zweidimensionalen Mosaike von Jürgen Hans Grümmer“, so Pfeifle. „Meine Arbeit besteht aus einer Dreidimensionalisierung seines Kunstwerkes, deswegen habe ich auch das Plattenmaß 40 mal 40 übernommen.“ Nicht zuletzt die Konzeption als „Sitzskulptur“ bietet Anschlusspunkte zu Grümmer, so Martin Pfeifle: „Ich habe immer wieder Sitzskulpturen während meiner Arbeit entwickelt, Grümmer hat das auch getan, wie zum Beispiel hinter dem Hörsaalgebäude.“Als zentraler Punkt des Platzes soll die Plastik nach Wunsch des Künstlers nicht nur zu Interaktion mit den Betrachter*innen anregen, sondern auch raumgestalterisch mit den umliegenden Gebäuden, Bäumen und anderen Kunstwerken auf dem Platz wirken.Martin Pfeifle studierte von 1998 bis 2004 an der Kunstakademie Düsseldorf bei Tony Cragg und Hubert Kiecol. Anschließend war er Meisterschüler von Hubert Kiecol. Von 2009 bis 2010 hatte er eine Vertretungsprofessur an der Kunstakademie Karlsruhe inne. Seit Februar 2021 ist Martin Pfeifle Professor für das Lehrgebiet Körper-Raum-Struktur am Fachbereich Design der Hochschule Düsseldorf. Pfeifle hat seine Objekte in internationalen Ausstellungen gezeigt, seine Außenraumskulpturen stehen in vielen deutschen Städten, wie zum Beispiel Heidelberg, Nürnberg oder Düsseldorf. Die Universität zu Köln saniert von 2025 bis 2026 den Albertus-Magnus-Platz. Jetzt werden die ersten Vorbereitungen getroffen, das Pflaster aus Grauwacke herzustellen. Der Stein ist gegen mechanische Belastung, Wasser und Frost widerstandsfähig und wird seit geraumer Zeit in den Städten des Rheinlandes, so auch in Köln, verbaut. Als Material aus den Steinbrüchen des Rheinischen Schiefergebirges hat er eine bessere CO2-Bilanz als andere Oberflächenmaterialien und wird auch in Zukunft noch verfügbar sein. Das Sedimentgestein bietet ein Spektrum von Naturfarben, die sich in die gegebene Bebauung einpassen. Zurzeit wird der in den Steinbrüchen gebrochene Stein für den ersten Pflasterabschnitt am Philosophikum zurechtgeschnitten. Previous Slide Icon arrow-Left Pause slider Icon Pause Resume slider Icon Play Next slide Pfeil nach rechts Icon Mehr Selbstlernplätze für Studierende in der Physik, dem Philosophikum und dem IBW: Die Universität zu Köln stattet zwei Gebäude mit mehr Gelegenheiten zum Lernen aus, ein drittes folgt bis Ende des Jahres. Das Baudezernat der Universität hat seit August 2023 zwei weitere Gebäude mit zusätzlichen oder neuen Lernplätzen für Studierende ausgestattet. Über 90 Plätze sind so bis jetzt entstanden: 32 Lernplätze im IBW-Gebäude an der Herbert-Lewin-Straße und 60 neue Lernplätze im Philosophikum. Die Aufstockung der Lernplätze setzt eine Initiative der Universität fort, die bereits im Jahr 2022 im Biozentrum mit 30 Lernplätzen in der Bibliothek begonnen hat. Ungefähr 35 Lernplätze stehen nun auch seit April 2025 im Neuen Seminargebäude auf dem Hauptcampus zur Verfügung. Hintergrund der Maßnahmen ist, dass Studierendenvertreter im Sommer 2023 den Wunsch nach mehr Lernplätzen in den Gebäuden der Universität äußerten, der vom Kanzler an das Baudezernat weitergeleitet wurde. In einer Machbarkeitsstudie suchte das Baudezernat daraufhin zuerst nach möglichen Räumen und fand geeignete Standorte in den Foyers der Gebäude. Prüfungen auf Brandschutz und Denkmalschutz folgten. Das Baudezernat entschied sich für das Gebäude 211 (IBW), das Gebäude 103 (Philosophikum) und das Gebäude 321 (Physik). Die Möbel wurden dabei so ausgesucht, dass sie die Kriterien Brandschutz, Sicherheit, Bequemlichkeit und stilistische Anpassung an die Umgebung erfüllten: Die Bänke, Stühle und Tische sollten in die Architektur der Gebäude eingebettet sein. So passen sich z.B. die Lernplätze im Philosophikum in ihrer Materialauswahl den bereits vorhandenen Innenausbauten an. Die Möbel sind im Philosophikum im Erdgeschoss und im ersten bis dritten Obergeschoss aufgestellt. Im IBW findet man die neuen Möbel im ersten und zweiten Obergeschoss zwischen den Hörsälen. Im Foyer der Physik wird das Baudezernat insgesamt 50 Lernplätze neugestalten. Dabei wird es unterschiedliche Sitzmöglichkeiten geben, wie etwa Hochtische, eine gepolsterte lange Sitzbank mit Bistrotischen sowie zwei Meeting-Module für fokussiertes Arbeiten. Aus Gründen des Denkmalschutzes und des Brandschutzes konnten keine Stromanschlüsse im IBW installiert werden, was im Philosophikum zum Teil aber möglich war. Die neuen Selbstlernplätze in der Physik werden auch mit Steckdosen versehen sein. Die Universität zu Köln setzt ihre Nachhaltigkeitsstrategie weiter um: Der Labor-Neubau der Physik und das ehemalige COPT-Gebäude an der Luxemburger Straße erhalten eine Photovoltaik-Anlage (PV) auf dem Dach. Previous Slide Icon arrow-Left Pause slider Icon Pause Resume slider Icon Play Next slide Pfeil nach rechts Icon Die Sonne scheint nicht nur aufs Dach des Laborbaus der Physikalischen Institute, sondern sorgt auch dafür, dass dort nachhaltig Strom produziert wird. Denn die Firma Vopro GmbH hat gerade die letzten Module der Photovoltaikanlage installiert. Nun muss die Anlage nur noch an die Stromversorgung angeschlossen werden. Die 224 Module werden eine Leistung von 100 kWp (Kilowattpeak) erreichen und 90.000 kWh/a Strom pro Jahr erzeugen, etwa 20mal so viel wie eine vierköpfige Familie durchschnittlich im Jahr verbraucht. Die Anlage kostet rund 105.000 Euro und soll im Laufe des Sommers in Betrieb genommen werden. Eine zweite Anlage auf dem Dach des ehemaligen COPT-Gebäudes (Geb. 315) an der Luxemburger Straße kostet 80.000 Euro und wird bei einer Leistung von 76 Kilowattpeak rund 68.400 kWh/a Strom im Jahr erzeugen. Die Anlage mit 172 Modulen wird ebenfalls ihre Arbeit im Sommer aufnehmen. Mit dem schrittweisen Ersatz von fossilen Stromquellen erfüllt die Universität eines ihrer wichtigsten Nachhaltigkeitsziele: CO2 zu reduzieren und auf einen klimaneutralen Campusbetrieb umzustellen. Bei den neu geplanten Anlagen auf den Gebäuden der Mathematisch-Naturwissenschaftlichen Fakultät wird sich die Eigennutzung des Stroms durch die Universität im Vergleich zu der Anlage auf dem Philosophikum mit ihren noch einmal erhöhen: Dort existiert eine Mittelspannungsring, ein lokales Netz, in das der Reststrom gespeist wird. So können die anderen Gebäude der Fakultät direkt vom Solarstrom profitieren, der Autarkiegrad der Stromversorgung steigt. Auch die geplante Photovoltaik-Anlage des ehemaligen COPT-Gebäudes Ecke Eifelwall/Luxemburger Straße versorgt mit ihrem Strom zukünftig etwas Besonderes: Im Mai ging dort ein Stickstoffgenerator – auf Anregung der Wissenschaftler*innen – in Betrieb. Dieser dient zur dezentralen Gewinnung von Stickstoff, der für die Forschung benötigt wird. Damit wird zum ersten Mal die Forschung der Universität direkt von der nachhaltigen Stromgewinnung profitieren. Die neue Platzgestaltung wurde durch das Architektenbüro Studiogrüngrau entworfen. Die Sanierung des Albertus-Magnus-Platzes läuft auf Hochtouren. Was ist geplant und wann sollen die Bauarbeiten beendet sein? Der Albertus-Magnus-Platz wird seit etwa einem Monat saniert. Neu gestaltet wird der Bereich der Universität zwischen Philosophikum und Hauptgebäude, einschließlich des Bereichs direkt über der Universitätsstraße, der der Stadt Köln gehört. Die Universität möchte dem zentralen Campus der Universität wieder ein geschlossenes Bild geben und einen Platz schaffen, der nicht nur verkehrstechnisch allen Anforderungen der Stadt entspricht, sondern auch zum Verweilen einlädt. Mit den umfangreichen Sitzmöglichkeiten und einer zusätzlichen Begrünung in Hochbeeten wird der Platz der Universität ein offenes und modernes Gesicht verleihen. Als Zentralcampus der Universität ist der Albertus-Magnus-Platz nicht nur Knotenpunkt des inneruniversitären Verkehrs, sondern auch Begegnungsstätte mit dem Stadtteil sowie Ort des Gesprächs und des Lernens. Daher zielen die Bauarbeiten auch darauf ab, eine höhere Aufenthaltsqualität auf dem gesamten Gelände zu schaffen. Das Brückenbauwerk der Stadt Köln, auf dem sich ein Teil des Albertus-Magnus-Platzes befindet, wird im Zuge der Arbeiten ebenfalls ertüchtigt und abgedichtet. Nötig wurden die Arbeiten am Platz aufgrund des Baus der Fahrradgarage im Jahr 2021 und der angrenzenden Platzflächen. Beginn auf der Westseite Die Bauarbeiten haben letzte Woche mit der Absperrung einer Fläche im Westen des Platzes direkt vor dem Philosophikum begonnen. Bis zum 1. Quartal 2026 wird dann der Teil des Platzes zwischen Philosophikum und Hörsaalgebäude fertiggestellt sein. Im zweiten Bauabschnitt wird die „Brückenplatte“ über der Universitätsstraße bis zum Hauptgebäude erneuert. Der Platz wird insgesamt auf zwei Ebenen gebaut: einem tieferen am westlichen Ende vor dem Philosophikum und einem höheren auf dem übrigen Platz. Eine großzügige Rampentreppe überwindet den Höhenunterschied zwischen den beiden Platzniveaus. Ergänzend führt eine barrierefreie Rampe auf das untere Platzniveau vor dem südlichen Philosophikum sowie eine weitere Treppenanlage, die an das bodengebundene Leitsystem angebunden ist. Die neue Platzgestaltung wurde durch das Architektenbüro Studiogrüngrau entworfen. Die rund 9.500 Quadratmeter des zentralen Campusplatzes werden mit Grauwacke ausgelegt, einem harten Sandstein. Der Naturstein ist sehr gut geeignet für Plätze mit hoher Beanspruchung, ist frostbeständig, trittsicher, pflegeleicht und schmutzunempfindlich und wurde bereits an verschiedenen Orten in Köln verbaut. Ein Platz zum Verweilen In den Albertus-Magnus-Platz eingebunden ist die bereits fertiggestellte unterirdische Fahrradgarage, die nun überbaut wird. Ebenfalls Teil der Gestaltung wird der bestehende Pavillon an der Garageneinfahrt sein, für den die Universität zwei kleine Betriebe zur gastronomischen Versorgung der Hochschulmitglieder gewinnen konnten. Mit dem neuen Kunstwerk des Künstlers Martin Pfeifle und den beiden großzügigen Hochbeete werden gleichzeitig Sitzpodeste zum Verweilen einladen. Mehrstämmig gewählte Bäume sorgen mit ihrem breitem Blätterdach für einen ansprechenden grünen Kommunikationsraum, der im Sommer Schatten spendet. Die Baumscheiben werden mit Stauden und Gräsern und Zukunftsbaumarten bepflanzt.In Ergänzung zu den bereits neu hergerichteten Bauabschnitten des Universitätsboulevards wird auch die westliche Seite der Universitätsstraße gestaltet, die an die Platzkanten trifft. Ein Teilbereich der PKW-Umfahrt am nördlichen Ende des Platzes wird ebenfalls gestalterisch mit eingebunden und in einem Farbasphalt hergestellt, dessen Farbton sich an die Grauwacke anpasst. Die Radwege werden durch ein anderes Fugenbild über die gesamte Platzflächen optisch kenntlich gemacht. Was kommt an Änderung für die Nutzer*innen? Am nördlichen und südlichen Brückengeländer des Platzes sind Bankkonstruktionen mit hohen Rückenlehnen vorgesehen, die auch den Verkehrslärm abschirmen. Die Parkplätze in der nördlichen Kurve werden dadurch entfallen. Während der Bauarbeiten ist auf dem Platz mit der Einfahrt von Baulastwagen zu rechnen. Eine Ampel regelt dabei den Verkehr auch für die Fußgänger. Um das Lernen und Forschen in diesem Zeitraum möglichst wenig zu beeinträchtigen, werden jeweils nur Teile des Platzes abgesperrt. Fahrräder können deswegen nicht mehr an den Bauzaun gekettet werden. Die Bauaktivitäten werden außerdem Rücksicht auf die Prüfungsphasen nehmen. Alle Absperrungen und Behinderungen der Nutzer*innen des Platzes werden zeitig über Social Media und Expresso kommuniziert werden.</p>
-    </div>
-
-  </main>
-
-  <footer class="footer">
-    <div class="quicklinks">
-      <h3>Quicklinks</h3>
-      <ul>
-        <li><a href="#">Wo wird abgeschleppt?</a></li>
-        <li><a href="#">Weitere Informationen</a></li>
-        <li><a href="#">Beginn auf der Westseite</a></li>
-        <li><a href="#">Ein Platz zum Verweilen</a></li>
-        <li><a href="#">Was kommt an Änderung für die Nutzer*innen?</a></li>
-      </ul>
-    </div>
-    <p>&copy; Universität zu Köln</p>
-  </footer>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Universität zu Köln</h3>
+                <p>Albertus-Magnus-Platz<br>50923 Köln</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                    <a href="#" class="social-icon" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33zM9.75 15.02l5.75-3.27-5.75-3.27z"/></svg></a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 2a2 2 0 11-2 2 2 2 0 012-2z"/></svg></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85C2.38 3.86 3.9 2.31 7.15 2.23c1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07c-4.27.2-6.78 2.71-6.98 6.98C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.27 2.71 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.27-.2 6.78-2.71 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.27-2.71-6.78-6.98-6.98C15.67.01 15.26 0 12 0z"/><path d="M12 5.84c-3.4 0-6.16 2.76-6.16 6.16s2.76 6.16 6.16 6.16 6.16-2.76 6.16-6.16-2.76-6.16-6.16-6.16zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Intern</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Verwaltung</a></li>
+                    <li><a href="#">Fakultäten</a></li>
+                    <li><a href="#">Einrichtungen</a></li>
+                    <li><a href="#">Stellenangebote</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Service</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Datenschutz</a></li>
+                    <li><a href="#">Impressum</a></li>
+                    <li><a href="#">Barrierefreiheit</a></li>
+                    <li><a href="#">Lagepläne</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Universität zu Köln. Alle Rechte vorbehalten.
+        </div>
+    </footer>
 
 </body>
-
 </html>

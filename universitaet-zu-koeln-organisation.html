@@ -1,343 +1,464 @@
 <!DOCTYPE html>
+Hier ist der vollständige HTML5-Code für die Unterseite "Organisation & Struktur" der Universität zu Köln. Das Design ist modern, responsiv und strikt an das vorgegebene Design-System (Farben, Schriften) angepasst. Die Inhalte basieren auf den realen Strukturen der Universität.
+
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universität zu Köln: Organisation & Struktur</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <title>Organisation & Struktur | Universität zu Köln</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
     <style>
-        /* Globale Stile */
-        body {
-            font-family: 'Lato', sans-serif;
-            color: #1F2937;
+        /* 
+         * DESIGN SYSTEM & VARIABLES 
+         */
+        :root {
+            --primary: #1E3A5F;    /* Dunkelblau */
+            --secondary: #2563EB;  /* Helles Blau */
+            --accent: #D4AF37;     /* Gold */
+            --bg: #FFFFFF;         /* Weiß */
+            --bg-light: #F3F4F6;   /* Hellgrau Hintergrund */
+            --text: #1F2937;       /* Dunkelgrau Text */
+            --text-light: #6B7280; /* Mittelgrau Text */
+            --border: #E5E7EB;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text);
+            background-color: var(--bg);
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        h1, h2, h3 {
+        /* TYPOGRAPHY */
+        h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
-            color: #1E3A5F;
-            margin-bottom: 0.5em;
+            color: var(--primary);
+            margin-bottom: 1rem;
         }
 
-        a {
-            color: #2563EB;
-            text-decoration: none;
+        h1 { font-size: 2.5rem; font-weight: 700; }
+        h2 { font-size: 1.8rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 0.5rem; margin-top: 2rem; }
+        h3 { font-size: 1.3rem; font-weight: 600; }
+
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+        ul { list-style: none; }
+
+        /* HEADER & NAVIGATION */
+        .top-bar {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 2rem;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1.5rem;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .top-bar a:hover { color: var(--accent); }
+
+        header {
+            background: var(--bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        /* Header */
-        .header {
-            background-color: #FFFFFF;
-            padding: 20px;
-            border-bottom: 1px solid #E5E7EB;
-        }
-
-        .header-container {
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
-        .logo img {
-            height: 50px; /* Beispielhöhe, anpassen */
-        }
-
-        .header-icons {
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
             display: flex;
+            align-items: center;
             gap: 10px;
         }
 
-        /* Navigation */
-        .navigation {
-            background-color: #F9FAFB;
-            padding: 10px;
-            border-bottom: 1px solid #E5E7EB;
-        }
+        .logo span { color: var(--text); font-size: 0.9rem; font-family: 'Lato', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
 
-        .navigation-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .navigation ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .main-nav ul {
             display: flex;
-            gap: 20px;
+            gap: 2rem;
         }
 
-        .navigation li a {
-            display: block;
-            padding: 8px 12px;
-            border-radius: 5px;
+        .main-nav a {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            padding: 0.5rem 0;
+            position: relative;
         }
 
-        .navigation li a:hover {
-            background-color: #E5E7EB;
-            text-decoration: none;
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
         }
 
-        /* Hauptinhalt */
-        .main-content {
+        .main-nav a:hover::after { width: 100%; }
+
+        /* HERO SECTION */
+        .hero-small {
+            background-color: var(--primary);
+            background-image: linear-gradient(135deg, var(--primary) 0%, #162e4d 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-small h1 { color: white; margin: 0; }
+        .breadcrumb {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+        .breadcrumb a:hover { color: var(--accent); }
+
+        /* CONTENT LAYOUT */
+        .container {
             max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 3fr 1fr; /* Main Content vs Sidebar */
+            gap: 3rem;
         }
 
-        /* Seitenleiste */
+        /* MAIN CONTENT */
+        .content-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            color: #4B5563;
+        }
+
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .faculty-card {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 4px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid var(--accent);
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .faculty-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        /* SIDEBAR */
         .sidebar {
-            width: 250px;
-            padding: 20px;
-            background-color: #F9FAFB;
-            border-right: 1px solid #E5E7EB;
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            height: fit-content;
         }
 
         .sidebar h3 {
-            margin-top: 0;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
         }
 
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .quick-links li {
+            margin-bottom: 0.8rem;
         }
 
-        .sidebar li a {
-            display: block;
-            padding: 8px 12px;
-            border-bottom: 1px solid #E5E7EB;
-        }
-
-        .sidebar li a:hover {
-            background-color: #E5E7EB;
-            text-decoration: none;
-        }
-
-       /* Flex Container für Hauptinhalt und Sidebar */
-        .content-wrapper {
+        .quick-links a {
             display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--primary);
+            font-weight: 500;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid transparent;
+            transition: all 0.2s;
         }
 
-        /* Footer */
-        .footer {
-            background-color: #1E3A5F;
-            color: #FFFFFF;
-            padding: 20px;
-            text-align: center;
-            margin-top: 20px;
+        .quick-links a:hover {
+            border-color: var(--accent);
+            color: var(--secondary);
+            padding-left: 0.8rem;
         }
 
-        .footer a {
-            color: #D4AF37;
+        /* ICONS (CSS Shapes for performance/no external deps) */
+        .icon-arrow-right::after {
+            content: '→';
+            font-family: monospace;
+            margin-left: 5px;
         }
 
-        /* Responsive Design */
+        /* FOOTER */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            margin-top: auto;
+            padding: 3rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-family: 'Lato', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-col ul li { margin-bottom: 0.5rem; }
+        .footer-col a { color: #D1D5DB; font-size: 0.9rem; }
+        .footer-col a:hover { color: white; text-decoration: underline; }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-box {
+            width: 30px;
+            height: 30px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .header-container, .navigation-container, .main-content {
-                padding: 10px;
-            }
-
-            .header-container {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .navigation ul {
-                flex-direction: column;
-                gap: 5px;
-            }
-
-            .content-wrapper {
-                flex-direction: column;
-            }
-
-            .sidebar {
-                width: 100%;
-                border-right: none;
-                border-bottom: 1px solid #E5E7EB;
-            }
-
-            .footer {
-                padding: 10px;
-            }
-        }
-
-        /* Zusätzliche Stile für Icons und Pfeile */
-        .icon {
-            display: inline-block;
-            width: 1em;
-            height: 1em;
-            vertical-align: middle;
-            fill: currentColor; /* Erlaubt die Anpassung der Farbe über CSS */
-        }
-
-        .arrow-right::before {
-            content: "→";
-            margin-right: 5px;
+            .header-inner { flex-direction: column; gap: 1rem; }
+            .main-nav ul { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+            .container { grid-template-columns: 1fr; }
+            .top-bar { justify-content: center; }
+            h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <div class="header-container">
-            <div class="logo">
-                <a href="index.html"><img src="https://www.portal.uni-koeln.de/sites/portal/themes/custom/portal_theme/logo.svg" alt="Logo Universität zu Köln"></a>
-            </div>
-            <div class="header-icons">
-                <span>Icon lens</span>
-                <span>Icon globe</span>
-                <span>Icon cross</span>
-                <span>Icon burger</span>
-            </div>
+    <!-- TOP BAR (Utility Links) -->
+    <div class="top-bar">
+        <a href="#">Studierende</a>
+        <a href="#">Beschäftigte</a>
+        <a href="#">Internationale</a>
+        <a href="#">Presse</a>
+        <!-- Icon Globe representation -->
+        <a href="#" aria-label="Sprache wechseln">DE / EN</a>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <!-- Simple CSS Logo Representation -->
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100" height="100" rx="5" fill="#1E3A5F"/>
+                    <path d="M50 20L80 80H20L50 20Z" fill="#D4AF37"/>
+                </svg>
+                <div>
+                    Universität<br>
+                    <span>zu Köln</span>
+                </div>
+            </a>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="studienangebot-studienangebot.html">Studienangebot</a></li>
+                    <li><a href="bewerbung-bewerbung.html">Bewerbung</a></li>
+                    <li><a href="inklusion-inklusion.html">Inklusion</a></li>
+                    <li><a href="termine-fristen-termine-fristen.html">Termine + Fristen</a></li>
+                    <li>
+                        <!-- Search Icon Representation -->
+                        <a href="#" aria-label="Suche">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- Burger Menu Representation -->
+                        <a href="#" aria-label="Menü">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <nav class="navigation">
-        <div class="navigation-container">
-            <ul>
-                <li><a href="studienangebot-studienangebot.html">Studienangebot</a></li>
-                <li><a href="bewerbung-bewerbung.html">Bewerbung</a></li>
-                <li><a href="inklusion-inklusion.html">Inklusion</a></li>
-                <li><a href="termine-fristen-termine-fristen.html">Termine + Fristen</a></li>
-                <li><a href="oeffnungszeiten-adressen.html">Öffnungszeiten + Adressen</a></li>
-                <li><a href="klips-2-0-klips-2-0.html">KLIPS 2.0</a></li>
-                <li><a href="vorlesungsverzeichnis.html">Vorlesungsverzeichnis</a></li>
-                <li><a href="ilias-elearning-ilias-elearning.html">ILIAS eLearning</a></li>
-                <li><a href="jobportal-jobportal.html">Jobportal</a></li>
-            </ul>
+    <!-- HERO SECTION -->
+    <section class="hero-small">
+        <h1>Organisation & Struktur</h1>
+        <div class="breadcrumb">
+            <a href="index.html">Startseite</a> &gt; <span>Organisation</span>
         </div>
-    </nav>
+    </section>
 
-    <div class="content-wrapper">
+    <!-- MAIN CONTENT CONTAINER -->
+    <div class="container">
+        
+        <!-- CONTENT ARTICLE -->
+        <article class="content-text">
+            <p class="lead">
+                Die Universität zu Köln ist eine der ältesten und größten Universitäten Deutschlands. Ihre Struktur gewährleistet exzellente Forschung und Lehre durch eine klare Aufteilung in Fakultäten, zentrale Einrichtungen und Verwaltungsorgane.
+            </p>
+
+            <h2>Leitung & Gremien</h2>
+            <p>
+                Die Universität wird vom <strong>Rektorat</strong> geleitet, das die strategische Ausrichtung bestimmt und die Universität nach außen vertritt. Unterstützt und beaufsichtigt wird das Rektorat durch den <strong>Hochschulrat</strong> und den <strong>Senat</strong>. Diese Gremien stellen sicher, dass Entscheidungen transparent und im Sinne der gesamten Hochschulgemeinschaft getroffen werden. Die Selbstverwaltung ist ein zentrales Element unserer akademischen Freiheit.
+            </p>
+
+            <h2>Die sechs Fakultäten</h2>
+            <p>
+                Das akademische Herz der Universität bilden ihre sechs Fakultäten. Sie repräsentieren das breite Spektrum der Disziplinen und sind für die Organisation von Forschung und Lehre in ihren jeweiligen Fachbereichen verantwortlich.
+            </p>
+            
+            <div class="faculty-grid">
+                <div class="faculty-card">
+                    <h4>Wirtschafts- und Sozialwissenschaftliche Fakultät</h4>
+                    <a href="#" class="icon-arrow-right">Zur Fakultät</a>
+                </div>
+                <div class="faculty-card">
+                    <h4>Rechtswissenschaftliche Fakultät</h4>
+                    <a href="#" class="icon-arrow-right">Zur Fakultät</a>
+                </div>
+                <div class="faculty-card">
+                    <h4>Medizinische Fakultät</h4>
+                    <a href="#" class="icon-arrow-right">Zur Fakultät</a>
+                </div>
+                <div class="faculty-card">
+                    <h4>Philosophische Fakultät</h4>
+                    <a href="#" class="icon-arrow-right">Zur Fakultät</a>
+                </div>
+                <div class="faculty-card">
+                    <h4>Mathematisch-Naturwissenschaftliche Fakultät</h4>
+                    <a href="#" class="icon-arrow-right">Zur Fakultät</a>
+                </div>
+                <div class="faculty-card">
+                    <h4>Humanwissenschaftliche Fakultät</h4>
+                    <a href="#" class="icon-arrow-right">Zur Fakultät</a>
+                </div>
+            </div>
+
+            <h2>Verwaltung & Zentrale Einrichtungen</h2>
+            <p>
+                Eine moderne Universitätsverwaltung unterstützt Wissenschaftlerinnen, Wissenschaftler und Studierende. Von der Studierendenadministration über das Personalmanagement bis hin zum Gebäudemanagement sorgen zahlreiche Abteilungen für einen reibungslosen Ablauf des Universitätsbetriebs. Zentrale Einrichtungen wie die Universitäts- und Stadtbibliothek (USB) und das Rechenzentrum (RRZK) bieten essentielle Infrastruktur für alle Angehörigen der Universität.
+            </p>
+        </article>
+
+        <!-- SIDEBAR / QUICK ACCESS -->
         <aside class="sidebar">
-            <h3>Quicklinks</h3>
-            <ul>
-                <li><a href="#"><span class="arrow-right"></span>Hochschulleitung</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Senat</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Hochschulrat</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Hochschulkonferenz</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Wissenschaftlicher Beirat</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Kommissionen und sonstige Gremien</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Wirtschafts- und Sozialwissenschaftliche Fakultät</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Rechtswissenschaftliche Fakultät</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Medizinische Fakultät</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Philosophische Fakultät</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Mathematisch-Naturwissenschaftliche Fakultät</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Humanwissenschaftliche Fakultät</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Stabsstelle 01: InformationstechnologieStabsstelle</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Stabsstelle 02: Rechts-, Sicherheits- und Umweltangelegenheiten</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Stabsstelle 03: Berufungen</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Dezernat 1: Hochschul­entwicklung und akademische Angelegenheiten</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Dezernat 2: Studierenden­angelegenheiten</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Dezernat 4: Personal</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Dezernat 5: Gebäude- und Liegenschaftsmanagement</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Dezernat 6: Wirtschaft und Finanzen</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Dezernat 7: Forschungs­management</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Dezernat 8: Kommuni­kation und Marketing</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Dezernat 9: Internationales</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Gleichstellungsbeauftragte</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Gleichstellungskommission</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Beauftragte, Ombudspersonen und Vertrauensdozierende</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Meldestelle nach dem Hinweisgeberschutzgesetz (HinSchG)</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Personalräte</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Schwerbehindertenvertretung</a></li>
-                <li><a href="#"><span class="arrow-right"></span>AStA</a></li>
-                 <li><a href="#"><span class="arrow-right"></span>Hochschulrat</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Weitere Gremien</a></li>
-                <li><a href="#"><span class="arrow-right"></span>Vertrauensdozentur Diskriminierung</a></li>
+            <h3>Service & Direktzugriff</h3>
+            <ul class="quick-links">
+                <li><a href="#">KLIPS 2.0 <span class="icon-arrow-right"></span></a></li>
+                <li><a href="#">ILIAS eLearning <span class="icon-arrow-right"></span></a></li>
+                <li><a href="#">Vorlesungsverzeichnis <span class="icon-arrow-right"></span></a></li>
+                <li><a href="#">Jobportal <span class="icon-arrow-right"></span></a></li>
+                <li><a href="#">Mensa <span class="icon-arrow-right"></span></a></li>
+                <li><a href="#">Öffnungszeiten + Adressen <span class="icon-arrow-right"></span></a></li>
+                <li><a href="#">Anreise & Lagepläne <span class="icon-arrow-right"></span></a></li>
+                <li><a href="#">Hörsaalpläne <span class="icon-arrow-right"></span></a></li>
+                <li><a href="#">Pressekontakt <span class="icon-arrow-right"></span></a></li>
             </ul>
         </aside>
 
-        <main class="main-content">
-            <h1>Universität zu Köln: Organisation & Struktur</h1>
-            <p>Organisation und Struktur der Universität zu Köln ergeben sich aus den gesetzlichen Bestimmungen und der <a href="#">Grundordnung (PDF)</a> der Universität.</p>
-            <p>Die zentralen Leitungsgremien sind das Rektorat, der Hochschulrat und der Senat. Das Rektorat leitet die Universität. Es besteht derzeit aus dem Rektor, sechs Proektorinnen und Prorektoren und dem Kanzler.</p>
-            <p>Der Rektor sitzt dem Rektorat vor und vertritt die Universität nach außen. Der Hochschulrat berät das Rektorat und übt die Aufsicht über dessen Geschäftsführung aus. Der Senat ist zuständig für Angelegenheiten der Forschung, Kunst, Lehre und des Studiums, die die gesamte Universität oder zentrale Einrichtungen betreffen oder von grundlegender Bedeutung sind. Seine Mitglieder bilden zusammen mit den Mitgliedern des Hochschulrates die Hochschulwahlversammlung, die die Mitglieder des Rektorats wählt.</p>
-            <p>Die Arbeit von Rektorat, Hochschulrat und Senat wird durch weitere Ausschüsse und Gremien unterstützt, wie etwa den Wissenschaftlichen Beirat, der das Rektorat und die Fakultäten in allen wichtigen wissenschaftlichen Fragen berät.</p>
-
-            <h2>Hochschulleitung</h2>
-            <a href="#"><span class="arrow-right"></span>Hochschulleitung</a>
-            <h2>Senat</h2>
-            <a href="#"><span class="arrow-right"></span>Senat</a>
-            <h2>Hochschulrat</h2>
-            <a href="#"><span class="arrow-right"></span>Hochschulrat</a>
-             <h2>Hochschulkonferenz</h2>
-            <a href="#"><span class="arrow-right"></span>Hochschulkonferenz</a>
-             <h2>Wissenschaftlicher Beirat</h2>
-            <a href="#"><span class="arrow-right"></span>Wissenschaftlicher Beirat</a>
-             <h2>Kommissionen und sonstige Gremien</h2>
-            <a href="#"><span class="arrow-right"></span>Kommissionen und sonstige Gremien</a>
-             <h2>Wirtschafts- und Sozialwissenschaftliche Fakultät</h2>
-            <a href="#"><span class="arrow-right"></span>Wirtschafts- und Sozialwissenschaftliche Fakultät</a>
-             <h2>Rechtswissenschaftliche Fakultät</h2>
-            <a href="#"><span class="arrow-right"></span>Rechtswissenschaftliche Fakultät</a>
-             <h2>Medizinische Fakultät</h2>
-            <a href="#"><span class="arrow-right"></span>Medizinische Fakultät</a>
-             <h2>Philosophische Fakultät</h2>
-            <a href="#"><span class="arrow-right"></span>Philosophische Fakultät</a>
-             <h2>Mathematisch-Naturwissenschaftliche Fakultät</h2>
-            <a href="#"><span class="arrow-right"></span>Mathematisch-Naturwissenschaftliche Fakultät</a>
-             <h2>Humanwissenschaftliche Fakultät</h2>
-            <a href="#"><span class="arrow-right"></span>Humanwissenschaftliche Fakultät</a>
-             <h2>Stabsstelle 01: InformationstechnologieStabsstelle</h2>
-            <a href="#"><span class="arrow-right"></span>Stabsstelle 01: InformationstechnologieStabsstelle</a>
-             <h2>Stabsstelle 02: Rechts-, Sicherheits- und Umweltangelegenheiten</h2>
-            <a href="#"><span class="arrow-right"></span>Stabsstelle 02: Rechts-, Sicherheits- und Umweltangelegenheiten</a>
-             <h2>Stabsstelle 03: Berufungen</h2>
-            <a href="#"><span class="arrow-right"></span>Stabsstelle 03: Berufungen</a>
-             <h2>Dezernat 1: Hochschul­entwicklung und akademische Angelegenheiten</h2>
-            <a href="#"><span class="arrow-right"></span>Dezernat 1: Hochschul­entwicklung und akademische Angelegenheiten</a>
-             <h2>Dezernat 2: Studierenden­angelegenheiten</h2>
-            <a href="#"><span class="arrow-right"></span>Dezernat 2: Studierenden­angelegenheiten</a>
-             <h2>Dezernat 4: Personal</h2>
-            <a href="#"><span class="arrow-right"></span>Dezernat 4: Personal</a>
-             <h2>Dezernat 5: Gebäude- und Liegenschaftsmanagement</h2>
-            <a href="#"><span class="arrow-right"></span>Dezernat 5: Gebäude- und Liegenschaftsmanagement</a>
-             <h2>Dezernat 6: Wirtschaft und Finanzen</h2>
-            <a href="#"><span class="arrow-right"></span>Dezernat 6: Wirtschaft und Finanzen</a>
-             <h2>Dezernat 7: Forschungs­management</h2>
-            <a href="#"><span class="arrow-right"></span>Dezernat 7: Forschungs­management</a>
-             <h2>Dezernat 8: Kommuni­kation und Marketing</h2>
-            <a href="#"><span class="arrow-right"></span>Dezernat 8: Kommuni­kation und Marketing</a>
-             <h2>Dezernat 9: Internationales</h2>
-            <a href="#"><span class="arrow-right"></span>Dezernat 9: Internationales</a>
-             <h2>Gleichstellungsbeauftragte</h2>
-            <a href="#"><span class="arrow-right"></span>Gleichstellungsbeauftragte</a>
-             <h2>Gleichstellungskommission</h2>
-            <a href="#"><span class="arrow-right"></span>Gleichstellungskommission</a>
-             <h2>Beauftragte, Ombudspersonen und Vertrauensdozierende</h2>
-            <a href="#"><span class="arrow-right"></span>Beauftragte, Ombudspersonen und Vertrauensdozierende</a>
-             <h2>Meldestelle nach dem Hinweisgeberschutzgesetz (HinSchG)</h2>
-            <a href="#"><span class="arrow-right"></span>Meldestelle nach dem Hinweisgeberschutzgesetz (HinSchG)</a>
-             <h2>Personalräte</h2>
-            <a href="#"><span class="arrow-right"></span>Personalräte</a>
-             <h2>Schwerbehindertenvertretung</h2>
-            <a href="#"><span class="arrow-right"></span>Schwerbehindertenvertretung</a>
-             <h2>AStA</h2>
-            <a href="#"><span class="arrow-right"></span>AStA</a>
-            <h2>Hochschulrat</h2>
-            <a href="#"><span class="arrow-right"></span>Hochschulrat</a>
-            <h2>Weitere Gremien</h2>
-            <a href="#"><span class="arrow-right"></span>Weitere Gremien</a>
-            <h2>Vertrauensdozentur Diskriminierung</h2>
-            <a href="#"><span class="arrow-right"></span>Vertrauensdozentur Diskriminierung</a>
-
-        </main>
     </div>
 
-    <footer class="footer">
-        <p>© Universität zu Köln | <a href="index.html">Zurück zur Startseite</a></p>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Universität zu Köln</h4>
+                <p>Albertus-Magnus-Platz<br>50923 Köln</p>
+                <div class="social-icons">
+                    <!-- Placeholder Icons for Social Media -->
+                    <a href="#" class="social-box" title="Facebook">F</a>
+                    <a href="#" class="social-box" title="Instagram">I</a>
+                    <a href="#" class="social-box" title="LinkedIn">L</a>
+                    <a href="#" class="social-box" title="YouTube">Y</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Studium</h4>
+                <ul>
+                    <li><a href="studienangebot-studienangebot.html">Studienangebot</a></li>
+                    <li><a href="bewerbung-bewerbung.html">Bewerbung</a></li>
+                    <li><a href="termine-fristen-termine-fristen.html">Termine & Fristen</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Universität</h4>
+                <ul>
+                    <li><a href="#">Über uns</a></li>
+                    <li><a href="inklusion-inklusion.html">Inklusion</a></li>
+                    <li><a href="#">Karriere</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Service</h4>
+                <ul>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">Datenschutz</a></li>
+                    <li><a href="#">Impressum</a></li>
+                    <li><a href="#">Barrierefreiheit</a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
 
 </body>
