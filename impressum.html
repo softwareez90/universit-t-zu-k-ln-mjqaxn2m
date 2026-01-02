@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum | Universität zu Köln</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair%20Display:wght@400;600;700&family=Lato:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* DESIGN SYSTEM & VARIABLES */
+        :root {
+            --primary: #1E3A5F;
+            --secondary: #2563EB;
+            --accent: #D4AF37;
+            --bg: #FFFFFF;
+            --text: #1F2937;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        /* RESET & BASE STYLES (MANDATORY) */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* NAVIGATION (MANDATORY) */
+        nav { background: var(--bg); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.5rem; color: var(--primary); text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: var(--text); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+        .nav-links a:hover, .nav-links a[href="impressum.html"] { color: var(--secondary); }
+        
+        @media (max-width: 768px) { .nav-links { display: none; } }
+
+        /* PAGE HEADER */
+        .page-header {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        /* IMPRESSUM CONTENT STYLES */
+        .impressum-content {
+            padding-bottom: 4rem;
+            max-width: 800px; /* Lesbarkeit verbessern */
+            margin: 0 auto;
+        }
+
+        .legal-block {
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 2rem;
+        }
+
+        .legal-block:last-child {
+            border-bottom: none;
+        }
+
+        .legal-block h2 {
+            font-family: var(--font-heading);
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+        }
+
+        .info-row {
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .label {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.25rem;
+        }
+
+        .value {
+            font-size: 1.1rem;
+            color: var(--text);
+        }
+
+        .value a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        
+        .value a:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER (MANDATORY) */
+        footer { background: var(--text); color: var(--bg); padding: 2rem 0; text-align: center; margin-top: auto; }
+        footer a { color: var(--bg); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        footer p { margin-bottom: 0.5rem; }
+
+        /* Responsive adjustments for content */
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2.2rem; }
+            .legal-block h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Universität zu Köln</a>
+            <div class="nav-links">
+                <a href="index.html">Startseite</a>
+                <a href="ueber-uns.html">Über uns</a>
+                <a href="leistungen.html">Leistungen</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="impressum.html">Impressum</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Impressum</h1>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container impressum-content">
+        
+        <!-- Herausgeber / Anbieter -->
+        <section class="legal-block">
+            <h2>Herausgeber</h2>
+            <div class="info-row">
+                <span class="label">Name der Organisation:</span>
+                <span class="value">Universität zu Köln</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Rechtsform:</span>
+                <span class="value">Körperschaft des öffentlichen Rechts</span>
+            </div>
+        </section>
+
+        <!-- Kontaktinformationen -->
+        <section class="legal-block">
+            <h2>Kontakt</h2>
+            
+            <div class="info-row">
+                <span class="label">Telefon:</span>
+                <span class="value">0221 / 470-0</span>
+            </div>
+
+            <div class="info-row">
+                <span class="label">E-Mail:</span>
+                <span class="value"><a href="mailto:online-redaktion@uni-koeln.de">online-redaktion@uni-koeln.de</a></span>
+            </div>
+        </section>
+
+        <!-- Redaktionelle Verantwortung -->
+        <section class="legal-block">
+            <h2>Redaktion</h2>
+            <div class="info-row">
+                <span class="label">Verantwortlich für den Inhalt:</span>
+                <span class="value">Online-Redaktion der Universität zu Köln</span>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Universität zu Köln. Alle Rechte vorbehalten.</p>
+            <p><a href="index.html">Startseite</a> | <a href="kontakt.html">Kontakt</a> | <a href="impressum.html">Impressum</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
