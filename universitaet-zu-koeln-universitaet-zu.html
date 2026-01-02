@@ -1,100 +1,284 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universität zu Köln: Überblick</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <title>Universität zu Köln: Universität zu Köln Überblick: Zahlen Forschung, Studium,Logo Universität zu Köln</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
     <style>
+        /* Globale Stile */
         body {
             font-family: 'Lato', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #FFFFFF;
             color: #1F2937;
+            line-height: 1.6;
         }
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
+
+        a {
+            color: #2563EB;
+            text-decoration: none;
         }
-        header, footer {
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header {
             background-color: #1E3A5F;
             color: #FFFFFF;
             padding: 1rem;
+            text-align: center;
         }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #F3F4F6;
+            padding: 0.5rem;
+            border-bottom: 1px solid #D1D5DB;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0.5rem;
+        }
+
         nav a {
-            color: #FFFFFF;
-            margin-right: 15px;
+            color: #1E3A5F;
+            display: block;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+        }
+
+        nav a:hover {
+            background-color: #E5E7EB;
             text-decoration: none;
         }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
+
+        /* Main Content */
+        main {
             padding: 2rem;
         }
-        .section-header {
-            color: #2563EB;
+
+        main h2 {
+            font-family: 'Playfair Display', serif;
+            color: #1E3A5F;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        main h3 {
+            font-family: 'Playfair Display', serif;
+            color: #1E3A5F;
+            margin-top: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1E3A5F;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 1rem;
             margin-top: 2rem;
         }
-        .quicklinks a {
-            display: block;
-            margin: 5px 0;
-            text-decoration: none;
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav li {
+                margin: 0.25rem;
+            }
+        }
+
+        /* Additional Styles for this page */
+        .overview-section {
+            margin-bottom: 2rem;
+        }
+
+        .overview-section h2 {
+            border-bottom: none;
+        }
+
+        .overview-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .overview-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .overview-section a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #F3F4F6;
+            border-radius: 0.25rem;
             color: #1E3A5F;
         }
-        .quicklinks a:hover {
-            color: #2563EB;
+
+        .overview-section a:hover {
+            background-color: #E5E7EB;
+            text-decoration: none;
         }
-        footer {
-            text-align: center;
+
+        .quicklinks {
+            margin-top: 2rem;
+        }
+
+        .quicklinks h3 {
+            border-bottom: 1px solid #D1D5DB;
+            padding-bottom: 0.5rem;
+        }
+
+        .quicklinks ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .quicklinks li {
+            margin-bottom: 0.25rem;
         }
     </style>
 </head>
+
 <body>
+
     <header>
-        <nav>
-            <a href="index.html">Startseite</a>
-            <a href="studienangebot-studienangebot.html">Studienangebot</a>
-            <a href="bewerbung-bewerbung.html">Bewerbung</a>
-            <a href="inklusion-inklusion.html">Inklusion</a>
-            <a href="termine-fristen-termine-fristen.html">Termine + Fristen</a>
-            <a href="oeffnungszeiten-adressen.html">Öffnungszeiten + Adressen</a>
-            <a href="klips-2-0-klips-2-0.html">KLIPS 2.0</a>
-            <a href="vorlesungsverzeichnis.html">Vorlesungsverzeichnis</a>
-            <a href="ilias-elearning-ilias-elearning.html">ILIAS eLearning</a>
-            <a href="jobportal-jobportal.html">Jobportal</a>
-        </nav>
+        <h1>Universität zu Köln</h1>
     </header>
-    <div class="container">
-        <h1>Universität zu Köln: Überblick</h1>
-        <p>Die Universität zu Köln ist eine der ältesten Universitäten Europas. Sie wurde zweimal, 1388 und 1919, von den Bürgern der Stadt gegründet. Heute ist sie eine der führenden deutschen Forschungsuniversitäten.</p>
-        <h2 class="section-header">Überblick</h2>
+
+    <nav>
         <ul>
-            <li>Profil</li>
-            <li>Einrichtungen</li>
-            <li>Orientierung</li>
-            <li>Aktuell</li>
-            <li>Arbeiten an der Uni</li>
-            <li>Neu, modern, saniert: Die Universität baut</li>
+            <li><a href="index.html">Zur Startseite Universität zu Köln</a></li>
+            <li><a href="studienangebot-studienangebot.html">Studienangebot</a></li>
+            <li><a href="bewerbung-bewerbung.html">Bewerbung</a></li>
+            <li><a href="inklusion-inklusion.html">Inklusion</a></li>
+            <li><a href="termine-fristen-termine-fristen.html">Termine + Fristen</a></li>
+            <li><a href="oeffnungszeiten-adressen.html">Öffnungszeiten + Adressen</a></li>
+            <li><a href="klips-2-0-klips-2-0.html">KLIPS 2.0</a></li>
+            <li><a href="vorlesungsverzeichnis.html">Vorlesungsverzeichnis</a></li>
+            <li><a href="ilias-elearning-ilias-elearning.html">ILIAS eLearning</a></li>
+            <li><a href="jobportal-jobportal.html">Jobportal</a></li>
         </ul>
-        <h2 class="section-header">Quicklinks</h2>
-        <div class="quicklinks">
-            <a href="#">Überblick</a>
-            <a href="#">Profil</a>
-            <a href="#">Einrichtungen</a>
-            <a href="#">Orientierung</a>
-            <a href="#">Aktuell</a>
-            <a href="#">Arbeiten an der Uni</a>
-            <a href="#">Neu, modern, saniert: Die Universität baut</a>
-        </div>
-    </div>
+    </nav>
+
+    <main>
+        <section class="overview-section">
+            <h2>Universität</h2>
+            <p>Die Universität zu Köln ist eine der ältesten Universitäten Europas. Sie wurde zweimal, 1388 und 1919, von den Bürgern der Stadt gegründet. Heute ist sie eine der führenden deutschen Forschungsuniversitäten.</p>
+
+            <ul>
+                <li><a href="#">Überblick <i class="fas fa-arrow-right"></i></a></li>
+                <li><a href="#">Profil <i class="fas fa-arrow-right"></i></a></li>
+                <li><a href="#">Einrichtungen <i class="fas fa-arrow-right"></i></a></li>
+                <li><a href="#">Orientierung <i class="fas fa-arrow-right"></i></a></li>
+                <li><a href="#">Aktuell <i class="fas fa-arrow-right"></i></a></li>
+                <li><a href="#">Arbeiten an der Uni <i class="fas fa-arrow-right"></i></a></li>
+                <li><a href="#">Neu, modern, saniert: Die Universität baut <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+        </section>
+
+        <section class="overview-section">
+            <h2>Studium & Lehre</h2>
+            <ul>
+                <li><a href="#">Warum Uni Köln? <i class="fas fa-arrow-right"></i></a></li>
+                <li><a href="#">Studieninteressierte <i class="fas fa-arrow-right"></i></a></li>
+                <li><a href="#">Studierende <i class="fas fa-arrow-right"></i></a></li>
+                <li><a href="#">International <i class="fas fa-arrow-right"></i></a></li>
+                <li><a href="#">Beratung & Service <i class="fas fa-arrow-right"></i></a></li>
+                <li><a href="#">Lehrende <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+        </section>
+
+        <section class="overview-section">
+            <h2>Forschung</h2>
+            <ul>
+                <li><a href="#">Überblick <i class="fas fa-arrow-right"></i></a></li>
+                <li><a href="#">Forschungsprofil <i class="fas fa-arrow-right"></i></a></li>
+                <li><a href="#">Service- und Förderangebote <i class="fas fa-arrow-right"></i></a></li>
+                <li><a href="#">International <i class="fas fa-arrow-right"></i></a></li>
+                <li><a href="#">Wissenschaftliche Karriere <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+        </section>
+
+        <section class="overview-section">
+            <h2>Transfer</h2>
+            <ul>
+                <li><a href="#">Überblick <i class="fas fa-arrow-right"></i></a></li>
+                <li><a href="#">Handlungsfelder <i class="fas fa-arrow-right"></i></a></li>
+            </ul>
+        </section>
+
+        <section class="quicklinks">
+            <h3>Quicklinks</h3>
+            <ul>
+                <li><a href="#">Überblick</a></li>
+                <li><a href="#">Profil</a></li>
+                <li><a href="#">Einrichtungen</a></li>
+                <li><a href="#">Orientierung</a></li>
+                <li><a href="#">Aktuell</a></li>
+                <li><a href="#">Arbeiten an der Uni</a></li>
+                <li><a href="#">Neu, modern, saniert: Die Universität baut</a></li>
+                <li><a href="#">Informationen für</a></li>
+                <li><a href="#">Fakultäten & Einrichtungen</a></li>
+                <li><a href="#">Schnellzugriff</a></li>
+                <li><a href="#">Universität zu Köln</a></li>
+            </ul>
+        </section>
+
+        <section class="social-media">
+            <h3>Social Media</h3>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-mastodon"></i></a>
+            <a href="#"><i class="fab fa-bluesky"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </section>
+
+        <section class="quality-labels">
+            <h3>Qualitätslabel der Universität zu Köln</h3>
+            <h4>Wir sind Mitglied</h4>
+            <h4>Vielfalt</h4>
+            <h4>International</h4>
+            <h4>Akkreditierung</h4>
+            <h4>Weitere</h4>
+        </section>
+
+    </main>
+
     <footer>
         <p>© Universität zu Köln</p>
-        <nav>
-            <a href="#">Impressum</a>
-            <a href="#">Datenschutz</a>
-            <a href="#">Kontakt</a>
-        </nav>
     </footer>
+
 </body>
+
 </html>

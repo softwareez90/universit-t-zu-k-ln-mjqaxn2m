@@ -5,132 +5,292 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universität zu Köln: Geschichte & Archiv</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Globale Stile */
         body {
             font-family: 'Lato', sans-serif;
-            background-color: #FFFFFF;
-            color: #1F2937;
             margin: 0;
             padding: 0;
+            color: #1F2937;
+            background-color: #FFFFFF;
+            line-height: 1.6;
         }
-        
-        header, footer {
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: #1E3A5F;
+            margin-bottom: 0.5em;
+        }
+
+        a {
+            color: #2563EB;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        .header {
             background-color: #1E3A5F;
             color: #FFFFFF;
-            padding: 10px 20px;
+            padding: 1em 0;
+            text-align: center;
         }
-        
-        header a, footer a {
+
+        .header a {
             color: #FFFFFF;
             text-decoration: none;
-            margin: 0 10px;
         }
-        
-        nav {
+
+        .header a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navigation */
+        .navigation {
+            background-color: #F3F4F6;
+            padding: 1em 0;
+        }
+
+        .navigation ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+            justify-content: space-around;
         }
-        
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
+
+        .navigation li a {
+            display: block;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
-        
-        h1 {
-            color: #2563EB;
-        }
-        
-        main {
-            padding: 20px;
-        }
-        
-        .content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .section {
-            margin-bottom: 20px;
-        }
-        
-        .section a {
-            color: #2563EB;
+
+        .navigation li a:hover {
+            background-color: #E5E7EB;
             text-decoration: none;
         }
-        
-        .section a:hover {
+
+        /* Main Content */
+        .main-content {
+            padding: 2em;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1E3A5F;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 1em 0;
+            font-size: 0.8em;
+        }
+
+        .footer a {
+            color: #FFFFFF;
+        }
+
+        .footer a:hover {
             text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navigation ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navigation li {
+                margin-bottom: 0.5em;
+            }
+        }
+
+        /* Spezifische Stile für diese Seite */
+        .subsection {
+            margin-bottom: 1.5em;
+        }
+
+        .subsection h3 {
+            color: #2563EB;
+        }
+
+        .icon {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            vertical-align: middle;
+            margin-right: 0.25em;
+            /* Hier könnten Sie SVG Icons oder Font Awesome Icons einbinden */
+        }
+
+        /* Beispiel für Pfeil-Icon (kann durch echtes Icon ersetzt werden) */
+        .arrow-icon::before {
+            content: "→";
+        }
+
+        /* Beispiel für Website-Icon (kann durch echtes Icon ersetzt werden) */
+        .website-icon::before {
+            content: "🌐";
+        }
+
+        /* Beispiel für Plus-Icon (kann durch echtes Icon ersetzt werden) */
+        .plus-icon::before {
+            content: "+";
+        }
+
+        /* Beispiel für Linsen-Icon (kann durch echtes Icon ersetzt werden) */
+        .lens-icon::before {
+            content: "🔍";
+        }
+
+        /* Beispiel für Globus-Icon (kann durch echtes Icon ersetzt werden) */
+        .globe-icon::before {
+            content: "🌍";
+        }
+
+        /* Beispiel für Kreuz-Icon (kann durch echtes Icon ersetzt werden) */
+        .cross-icon::before {
+            content: "✚";
+        }
+
+        /* Beispiel für Burger-Icon (kann durch echtes Icon ersetzt werden) */
+        .burger-icon::before {
+            content: "☰";
+        }
+
+        /* Beispiel für Check-Icon (kann durch echtes Icon ersetzt werden) */
+        .check-icon::before {
+            content: "✓";
+        }
+
+        /* Beispiel für Compass-Icon (kann durch echtes Icon ersetzt werden) */
+        .compass-icon::before {
+            content: "🧭";
+        }
+
+        /* Beispiel für Chevron-right-Icon (kann durch echtes Icon ersetzt werden) */
+        .chevron-right-icon::before {
+            content: "›";
+        }
+
+        /* Beispiel für arrow-Left-Icon (kann durch echtes Icon ersetzt werden) */
+        .arrow-Left-icon::before {
+            content: "‹";
+        }
+        /* Beispiel für facebook-Icon (kann durch echtes Icon ersetzt werden) */
+        .facebookIcon::before {
+            content: "f";
+        }
+
+        /* Beispiel für youtube-Icon (kann durch echtes Icon ersetzt werden) */
+        .youtubeIcon::before {
+            content: "▶";
+        }
+
+        /* Beispiel für linkedin-Icon (kann durch echtes Icon ersetzt werden) */
+        .linkedinIcon::before {
+            content: "in";
+        }
+
+        /* Beispiel für mastodon-Icon (kann durch echtes Icon ersetzt werden) */
+        .mastodonIcon::before {
+            content: "🐘";
+        }
+
+        /* Beispiel für bluesky-Icon (kann durch echtes Icon ersetzt werden) */
+        .blueskyIcon::before {
+            content: "sky";
+        }
+
+        /* Beispiel für instagram-Icon (kann durch echtes Icon ersetzt werden) */
+        .instagramIcon::before {
+            content: "📷";
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div>
-                <a href="index.html">Logo Universität zu Köln</a>
-            </div>
-            <div>
-                <a href="studienangebot-studienangebot.html">Studienangebot</a>
-                <a href="bewerbung-bewerbung.html">Bewerbung</a>
-                <a href="inklusion-inklusion.html">Inklusion</a>
-                <a href="termine-fristen-termine-fristen.html">Termine + Fristen</a>
-                <a href="oeffnungszeiten-adressen.html">Öffnungszeiten + Adressen</a>
-                <a href="klips-2-0-klips-2-0.html">KLIPS 2.0</a>
-                <a href="vorlesungsverzeichnis.html">Vorlesungsverzeichnis</a>
-                <a href="ilias-elearning-ilias-elearning.html">ILIAS eLearning</a>
-                <a href="jobportal-jobportal.html">Jobportal</a>
-            </div>
-        </nav>
+    <header class="header">
+        <a href="index.html">
+            <h1>Universität zu Köln</h1>
+        </a>
     </header>
 
-    <main>
-        <div class="content">
-            <h1>Geschichte & Archiv</h1>
+    <nav class="navigation">
+        <ul>
+            <li><a href="studienangebot-studienangebot.html">Studienangebot</a></li>
+            <li><a href="bewerbung-bewerbung.html">Bewerbung</a></li>
+            <li><a href="inklusion-inklusion.html">Inklusion</a></li>
+            <li><a href="termine-fristen-termine-fristen.html">Termine + Fristen</a></li>
+            <li><a href="oeffnungszeiten-adressen.html">Öffnungszeiten + Adressen</a></li>
+            <li><a href="klips-2-0-klips-2-0.html">KLIPS 2.0</a></li>
+            <li><a href="vorlesungsverzeichnis.html">Vorlesungsverzeichnis</a></li>
+            <li><a href="ilias-elearning-ilias-elearning.html">ILIAS eLearning</a></li>
+            <li><a href="jobportal-jobportal.html">Jobportal</a></li>
+        </ul>
+    </nav>
 
-            <div class="section">
-                <p>Das Gedächtnis der Universität an ihre Vergangenheit sichert, erschließt und verwahrt alle historisch relevanten Dokumente. Mehr als ein Jahrhundert, nachdem die französische Regierung die alte Universitas coloniensis 1798 geschlossen hatte, wurde ein lang gehegter Wunsch der Kölnerinnen und Kölner wahr: Im Jahr 1919 entstand eine neue Universität. 2019 beging die Universität das 100jährige Jubiläum.</p>
-                <a href="#">Weitere Informationen</a>
-            </div>
+    <main class="main-content">
+        <h2>Geschichte & Archiv</h2>
 
-            <div class="section">
-                <p>In dieser Liste sind alle Rektoren der Universität seit Gründung der "Neuen Universität" im Jahr 1919 aufgeführt, von Prof. Dr. Dr. Christian Eckert bis Prof. Dr. Joybrato Mukherjee.</p>
-                <a href="#">Weitere Informationen</a>
-            </div>
+        <section class="subsection">
+            <h3>Universitätsarchiv</h3>
+            <p>Das Gedächtnis der Universität an ihre Vergangenheit sichert, erschließt und verwahrt alle historisch relevanten Dokumente</p>
+            <a href="#"><span class="icon arrow-icon"></span>Weitere Informationen</a>
+        </section>
 
-            <div class="section">
-                <p>Persönlichkeiten, die sich um die Universität in besonderer Weise verdient gemacht, oder als Angehörige*r der Universität außerordentliche Leistungen erbracht haben, die weit über die Erfüllung der Dienstpflichten hinausgehen.</p>
-                <a href="#">Weitere Informationen</a>
-            </div>
+        <section class="subsection">
+            <h3>Rektoren der Universität</h3>
+            <p>Mehr als ein Jahrhundert, nachdem die französische Regierung die alte Universitas coloniensis 1798 geschlossen hatte, wurde ein lang gehegter Wunsch der Kölnerinnen und Kölner wahr: Im Jahr 1919 entstand eine neue Universität. 2019 beging die Universität das 100jährige Jubiläum.</p>
+            <a href="#"><span class="icon arrow-icon"></span>Weitere Informationen</a>
+        </section>
 
-            <div class="section">
-                <p>Die "Galerie der Professorinnen und Professoren" der Universität zu Köln versammelt biographische Daten zu allen Habilitierten sowie den Honorarprofessorinnen und -professoren der "Neuen Universität" von 1919 bis 2021.</p>
-                <a href="#">Weitere Informationen</a>
-            </div>
+        <section class="subsection">
+            <h3>Ehrensenator*innen und Träger*innen der Univeritätsmedaille</h3>
+            <p>In dieser Liste sind alle Rektoren der Universität seit Gründung der "Neuen Universität" im Jahr 1919 aufgeführt, von Prof. Dr. Dr. Christian Eckert bis Prof. Dr. Joybrato Mukherjee.</p>
+            <a href="#"><span class="icon arrow-icon"></span>Weitere Informationen</a>
+        </section>
 
-            <div class="section">
-                <p>Die "Galerie der Kanzler und ihrer Vertreterinnen und Vertreter" stellt die Inhaber dieses Amtes an der Universität zu Köln sowie ihre Vertreterinnen und Vertreter vom Jahr 1954 bis in die Gegenwart zusammen.</p>
-                <a href="#">Weitere Informationen</a>
-            </div>
-        </div>
+        <section class="subsection">
+            <h3>Persönlichkeiten</h3>
+            <p>Persönlichkeiten, die sich um die Universität in besonderer Weise verdient gemacht, oder als Angehörige*r der Universität außerordentliche Leistungen erbracht haben, die weit über die Erfüllung der Dienstpflichten hinausgehen.</p>
+            <a href="#"><span class="icon arrow-icon"></span>Weitere Informationen</a>
+        </section>
+
+        <section class="subsection">
+            <h3>Galerie der Professorinnen und Professoren</h3>
+            <p>Die "Galerie der Professorinnen und Professoren" der Universität zu Köln versammelt biographische Daten zu allen Habilitierten sowie den Honorarprofessorinnen und -professoren der "Neuen Universität" von 1919 bis 2021.</p>
+            <a href="#"><span class="icon arrow-icon"></span>Weitere Informationen</a>
+        </section>
+
+        <section class="subsection">
+            <h3>Galerie der Kanzler und ihrer Vertreterinnen und Vertreter</h3>
+            <p>Die "Galerie der Kanzler und ihrer Vertreterinnen und Vertreter" stellt die Inhaber dieses Amtes an der Universität zu Köln sowie ihre Vertreterinnen und Vertreter vom Jahr 1954 bis in die Gegenwart zusammen.</p>
+            <a href="#"><span class="icon arrow-icon"></span>Weitere Informationen</a>
+        </section>
+
+        <a href="index.html"><span class="icon arrow-Left-icon"></span>Zurück zur Startseite</a>
     </main>
 
-    <footer>
-        <nav>
-            <div>
-                <a href="index.html">Zurück zur Startseite</a>
-            </div>
-            <div>
-                <a href="#">Icon facebook</a>
-                <a href="#">Icon youtube</a>
-                <a href="#">Icon linkedin</a>
-                <a href="#">Icon mastodon</a>
-                <a href="#">Icon bluesky</a>
-                <a href="#">Icon instagram</a>
-            </div>
-        </nav>
+    <footer class="footer">
+        &copy; Universität zu Köln
+        <br>
+        <a href="#"><span class="icon facebookIcon"></span></a>
+        <a href="#"><span class="icon youtubeIcon"></span></a>
+        <a href="#"><span class="icon linkedinIcon"></span></a>
+        <a href="#"><span class="icon mastodonIcon"></span></a>
+        <a href="#"><span class="icon blueskyIcon"></span></a>
+        <a href="#"><span class="icon instagramIcon"></span></a>
     </footer>
 </body>
 

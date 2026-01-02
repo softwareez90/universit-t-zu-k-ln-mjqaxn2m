@@ -1,120 +1,273 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universität zu Köln: Uni Köln auf einen Blick - Wissenschaft und Lehre</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /*  Globale Stile  */
         body {
             font-family: 'Lato', sans-serif;
-            background-color: #FFFFFF;
-            color: #1F2937;
             margin: 0;
             padding: 0;
+            background-color: #FFFFFF;
+            color: #1F2937;
+            line-height: 1.6;
         }
-        header, footer {
-            background-color: #1E3A5F;
-            color: #FFFFFF;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            background-color: #2563EB;
-            overflow: hidden;
-        }
-        nav a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
+
+        a {
+            color: #2563EB;
             text-decoration: none;
         }
-        nav a:hover {
-            background-color: #D4AF37;
-            color: black;
+
+        a:hover {
+            text-decoration: underline;
         }
-        .container {
-            padding: 20px;
-        }
-        h1, h2, h3 {
+
+        h1,
+        h2,
+        h3 {
             font-family: 'Playfair Display', serif;
             color: #1E3A5F;
+            margin-bottom: 0.5em;
+        }
+
+        /*  Header  */
+        header {
+            background-color: #FFFFFF;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #E5E7EB; /* Leichte graue Linie unter dem Header */
+        }
+
+        header img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        /*  Navigation  */
+        nav {
+            background-color: #F9FAFB; /* Sehr heller grauer Hintergrund für die Navigation */
+            padding: 10px;
+            border-bottom: 1px solid #E5E7EB; /* Leichte graue Linie unter der Navigation */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            display: block;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #E5E7EB; /* Etwas dunklerer Hintergrund beim Hover */
+            text-decoration: none;
+        }
+
+        /*  Hauptinhalt  */
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        /*  Tabellen-Layout für die Übersicht  */
+        .uebersicht-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .uebersicht-box {
+            border: 1px solid #E5E7EB;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .uebersicht-box h3 {
+            margin-top: 0;
+        }
+
+        .uebersicht-box a {
+            display: block;
+            margin-top: 10px;
+        }
+
+        /*  Listen mit Pfeilen  */
+        .arrow-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .arrow-list li {
+            padding-left: 1.5em;
+            text-indent: -1.5em;
+        }
+
+        .arrow-list li::before {
+            content: "\2192"; /* Unicode für Pfeil nach rechts */
+            color: #2563EB;
+            margin-right: 0.5em;
+        }
+
+        /*  Footer  */
+        footer {
+            background-color: #1E3A5F;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #D4AF37;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /*  Responsive Design  */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .uebersicht-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
+    <header>
+        <img src="https://www.portal.uni-koeln.de/fileadmin/templates/portal/img/logo.svg" alt="Logo Universität zu Köln">
+    </header>
 
-<header>
-    <h1>Universität zu Köln</h1>
-    <p>Uni Köln auf einen Blick - Wissenschaft und Lehre</p>
-</header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Zur Startseite Universität zu Köln</a></li>
+            <li><a href="studienangebot-studienangebot.html">Studienangebot</a></li>
+            <li><a href="bewerbung-bewerbung.html">Bewerbung</a></li>
+            <li><a href="inklusion-inklusion.html">Inklusion</a></li>
+            <li><a href="termine-fristen-termine-fristen.html">Termine + Fristen</a></li>
+            <li><a href="oeffnungszeiten-adressen.html">Öffnungszeiten + Adressen</a></li>
+            <li><a href="klips-2-0-klips-2-0.html">KLIPS 2.0</a></li>
+            <li><a href="vorlesungsverzeichnis.html">Vorlesungsverzeichnis</a></li>
+            <li><a href="ilias-elearning-ilias-elearning.html">ILIAS eLearning</a></li>
+            <li><a href="jobportal-jobportal.html">Jobportal</a></li>
+        </ul>
+    </nav>
 
-<nav>
-    <a href="index.html">Startseite</a>
-    <a href="studienangebot-studienangebot.html">Studienangebot</a>
-    <a href="bewerbung-bewerbung.html">Bewerbung</a>
-    <a href="inklusion-inklusion.html">Inklusion</a>
-    <a href="termine-fristen-termine-fristen.html">Termine + Fristen</a>
-    <a href="oeffnungszeiten-adressen.html">Öffnungszeiten + Adressen</a>
-    <a href="klips-2-0-klips-2-0.html">KLIPS 2.0</a>
-    <a href="vorlesungsverzeichnis.html">Vorlesungsverzeichnis</a>
-    <a href="ilias-elearning-ilias-elearning.html">ILIAS eLearning</a>
-    <a href="jobportal-jobportal.html">Jobportal</a>
-</nav>
+    <main>
+        <section>
+            <h1>Universität zu Köln: Uni Köln auf einen Blick</h1>
+            <p>Die Universität zu Köln ist eine der ältesten und größten Universitäten Europas. Aufgrund ihrer herausragenden wissenschaftlichen Leistungen und der hohen Qualität und Vielfalt ihrer Studiengänge genießt sie international einen ausgezeichneten Ruf. Ein zentrales Anliegen ist es, Wissen zu schaffen, zu bewahren und zu vermitteln, den Studierenden und Nachwuchswissenschaftler*innen eine hervorragende akademische Ausbildung zu bieten, sie für akademische und berufliche Karrieren zu qualifizieren, Spitzenforschung zu fördern und Innovationen voranzutreiben, wobei der Fokus auf den sich ständig verändernden Bedürfnissen und Herausforderungen der heutigen Gesellschaft liegt.</p>
 
-<div class="container">
-    <h2>Überblick</h2>
-    <p>Die Universität zu Köln ist eine der ältesten und größten Universitäten Europas. Aufgrund ihrer herausragenden wissenschaftlichen Leistungen und der hohen Qualität und Vielfalt ihrer Studiengänge genießt sie international einen ausgezeichneten Ruf.</p>
+            <p>Fakultäten: 6<br>
+            Exzellenzcluster: 5<br>
+            Graduierteneinrichtungen: 48<br>
+            Sonderforschungsbereiche / Transregios: 18<br>
+            ERC-Grants: 23<br>
+            Leibniz-Preisträger*innen: 11<br>
+            Alexander von Humboldt Professuren: 7<br>
+            An-Institute: 15<br>
+            Drittmitteleinnahmen: 239,2 Mio. € (davon Med. Fakultät 103,9 Mio. €) (2023)<br>
+            Gesamtfinanzierung: 920 Mio. € (davon Med. Fakultät 263,7 Mio. €) (2023)<br>
+            Wissenschaftliches Personal: 4.768 (inkl. Professor*innen / inkl. Klinikum) (2023)<br>
+            Personal Technik und Verwaltung: 4.041 (inkl. Med. Fakultät + Klinikum ohne Pflegepersonal) (2023)<br>
+            Professor*innen: 616 (2023)<br>
+            Studienanfänger*innen im 1. HS: 5.994 (2023)<br>
+            Studierende: 43.594 (2024)<br>
+            Absolvent*innen: 6.941 (2023)<br>
+            Promotionen: 747 (2023)</p>
+        </section>
 
-    <h3>Fakultäten und Einrichtungen</h3>
-    <ul>
-        <li>Fakultäten: 6</li>
-        <li>Exzellenzcluster: 5</li>
-        <li>Graduierteneinrichtungen: 48</li>
-        <li>Sonderforschungsbereiche / Transregios: 18</li>
-        <li>ERC-Grants: 23</li>
-        <li>Leibniz-Preisträger*innen: 11</li>
-        <li>Alexander von Humboldt Professuren: 7</li>
-        <li>An-Institute: 15</li>
-    </ul>
+        <section>
+            <h2>Kontakt</h2>
+            <p>Universität zu Köln<br>
+            Rektor Prof. Dr. Joybrato Mukherjee<br>
+            Tel.: +49 221 470-2201<br>
+            E-Mail: <a href="mailto:rektor@uni-koeln.de">rektor@uni-koeln.de</a></p>
+        </section>
 
-    <h3>Finanzen</h3>
-    <ul>
-        <li>Drittmitteleinnahmen: 239,2 Mio. € (davon Med. Fakultät 103,9 Mio. €) (2023)</li>
-        <li>Gesamtfinanzierung: 920 Mio. € (davon Med. Fakultät 263,7 Mio. €) (2023)</li>
-    </ul>
+        <section>
+            <h2>Überblick</h2>
+            <div class="uebersicht-container">
+                <div class="uebersicht-box">
+                    <h3>Universität</h3>
+                    <ul class="arrow-list">
+                        <li><a href="#">Überblick</a></li>
+                        <li><a href="#">Profil</a></li>
+                        <li><a href="#">Einrichtungen</a></li>
+                        <li><a href="#">Orientierung</a></li>
+                        <li><a href="#">Aktuell</a></li>
+                        <li><a href="#">Arbeiten an der Uni</a></li>
+                    </ul>
+                </div>
+                <div class="uebersicht-box">
+                    <h3>Studium & Lehre</h3>
+                    <ul class="arrow-list">
+                        <li><a href="#">Warum Uni Köln?</a></li>
+                        <li><a href="#">Studieninteressierte</a></li>
+                        <li><a href="#">Studierende</a></li>
+                        <li><a href="#">International</a></li>
+                        <li><a href="#">Beratung & Service</a></li>
+                        <li><a href="#">Lehrende</a></li>
+                    </ul>
+                </div>
+                <div class="uebersicht-box">
+                    <h3>Forschung</h3>
+                    <ul class="arrow-list">
+                        <li><a href="#">Überblick</a></li>
+                        <li><a href="#">Forschungsprofil</a></li>
+                        <li><a href="#">Service- und Förderangebote</a></li>
+                        <li><a href="#">International</a></li>
+                        <li><a href="#">Wissenschaftliche Karriere</a></li>
+                    </ul>
+                </div>
+                <div class="uebersicht-box">
+                    <h3>Transfer</h3>
+                    <ul class="arrow-list">
+                        <li><a href="#">Überblick</a></li>
+                        <li><a href="#">Handlungsfelder</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <h3>Personal und Studierende</h3>
-    <ul>
-        <li>Wissenschaftliches Personal: 4.768 (inkl. Professor*innen / inkl. Klinikum) (2023)</li>
-        <li>Personal Technik und Verwaltung: 4.041 (inkl. Med. Fakultät + Klinikum ohne Pflegepersonal) (2023)</li>
-        <li>Professor*innen: 616 (2023)</li>
-        <li>Studienanfänger*innen im 1. HS: 5.994 (2023)</li>
-        <li>Studierende: 43.594 (2024)</li>
-        <li>Absolvent*innen: 6.941 (2023)</li>
-        <li>Promotionen: 747 (2023)</li>
-    </ul>
+        <section>
+            <h2>Weitere Informationen</h2>
+            <ul class="arrow-list">
+                <li><a href="#">Hochschulleitung</a></li>
+                <li><a href="#">Organisation & Struktur</a></li>
+                <li><a href="#">Geschichte & Archiv</a></li>
+                <li><a href="#">Spenden und Fördern</a></li>
+                <li><a href="#">Alumni</a></li>
+                <li><a href="#">Campus, Kultur & Sport</a></li>
+            </ul>
+        </section>
+    </main>
 
-    <h3>Kontakt</h3>
-    <p>Universität zu Köln<br>
-    Rektor Prof. Dr. Joybrato Mukherjee<br>
-    Tel.: +49 221 470-2201<br>
-    E-Mail: <a href="mailto:rektor@uni-koeln.de">rektor@uni-koeln.de</a></p>
-</div>
-
-<footer>
-    <p>© Universität zu Köln</p>
-    <div>
-        <a href="#" style="color: #FFFFFF;">Facebook</a> |
-        <a href="#" style="color: #FFFFFF;">YouTube</a> |
-        <a href="#" style="color: #FFFFFF;">LinkedIn</a> |
-        <a href="#" style="color: #FFFFFF;">Mastodon</a> |
-        <a href="#" style="color: #FFFFFF;">Bluesky</a> |
-        <a href="#" style="color: #FFFFFF;">Instagram</a>
-    </div>
-</footer>
-
+    <footer>
+        <p>© Universität zu Köln</p>
+    </footer>
 </body>
+
 </html>

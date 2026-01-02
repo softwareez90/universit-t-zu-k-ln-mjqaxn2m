@@ -1,103 +1,309 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universität zu Köln: Hochschulleitung</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Basic Styling - Replace with your actual CSS file -->
     <style>
         body {
             font-family: 'Lato', sans-serif;
             color: #1F2937;
-            background-color: #FFFFFF;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
-        header, footer {
-            background-color: #1E3A5F;
-            color: white;
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: #1E3A5F;
+        }
+
+        a {
+            color: #2563EB;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header Styling (Example) */
+        header {
+            background-color: #f0f0f0;
             padding: 20px;
             text-align: center;
         }
+
+        /* Navigation Styling (Example) */
         nav {
-            display: flex;
-            justify-content: center;
-            background-color: #2563EB;
+            background-color: #1E3A5F;
+            color: white;
             padding: 10px;
         }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
         }
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
+
+        nav a:hover {
+            text-decoration: underline;
         }
+
+        /* Footer Styling (Example) */
+        footer {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* Content Styling */
         .content {
             padding: 20px;
+            max-width: 960px;
+            margin: 0 auto;
         }
-        .contact-info {
+
+        .content h2 {
+            margin-top: 30px;
+        }
+
+        /* Responsive Design (Example) */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav li {
+                margin: 5px 0;
+            }
+        }
+
+        .quicklinks {
             margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
         }
-        .contact-info div {
-            margin-bottom: 10px;
+
+        .quicklinks h3 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .quicklinks ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .quicklinks li {
+            margin-bottom: 5px;
+        }
+
+        .quicklinks a {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .quicklinks a:hover {
+            background-color: #ddd;
+        }
+
+        /* Icon Styling (Placeholder - Replace with actual icons) */
+        .icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #ccc;
+            /* Placeholder */
+            margin-right: 5px;
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Universität zu Köln</h1>
-    <p>Hochschulleitung</p>
-</header>
+    <header>
+        <a href="index.html">
+            <img src="logo.png" alt="Logo Universität zu Köln" style="max-width: 200px;">
+        </a>
+    </header>
 
-<nav>
-    <a href="index.html">Startseite</a>
-    <a href="studienangebot-studienangebot.html">Studienangebot</a>
-    <a href="bewerbung-bewerbung.html">Bewerbung</a>
-    <a href="inklusion-inklusion.html">Inklusion</a>
-    <a href="termine-fristen-termine-fristen.html">Termine + Fristen</a>
-    <a href="oeffnungszeiten-adressen.html">Öffnungszeiten + Adressen</a>
-    <a href="klips-2-0-klips-2-0.html">KLIPS 2.0</a>
-    <a href="vorlesungsverzeichnis.html">Vorlesungsverzeichnis</a>
-    <a href="ilias-elearning-ilias-elearning.html">ILIAS eLearning</a>
-    <a href="jobportal-jobportal.html">Jobportal</a>
-</nav>
+    <nav>
+        <ul>
+            <li><a href="#">
+                    <span class="icon"></span> Linsen Icon
+                </a></li>
+            <li><a href="#">
+                    <span class="icon"></span> Globus Icon
+                </a></li>
+            <li><a href="#">
+                    <span class="icon"></span> Kreuz Icon
+                </a></li>
+            <li><a href="#">
+                    <span class="icon"></span> Burger Icon
+                </a></li>
+        </ul>
+    </nav>
 
-<main class="content">
-    <section>
-        <h2>Hochschulleitung</h2>
-        <p>Das Rektorat leitet die Hochschule. Es besteht aus dem Rektor, dem Kanzler und sechs Prorektor*innen. Die Rektoratsmitglieder werden durch die Hochschulwahlversammlung gewählt. Für einzelne Themen und Aspekte haben Rektorat und Rektor Beauftragte. Das Rektorat wird in seiner Arbeit durch den Rektoratsstab unterstützt. Die organisatorische Vorbereitung der Rektoratssitzung erfolgt durch Abteilung 11.</p>
-    </section>
+    <div class="content">
+        <h1>Hochschulleitung</h1>
 
-    <section class="contact-info">
-        <h3>Kontaktinformationen</h3>
-        <div>
-            <strong>E-Mail:</strong> rektor@uni-koeln.de
-        </div>
-        <div>
-            <strong>Büroleitung:</strong> Annelene Gäckle, Tel.: +49 221 470-2498
-            <br><strong>E-Mail:</strong> a.gaeckle@verw.uni-koeln.de
-        </div>
-        <div>
-            <strong>Persönlicher Referent:</strong> Dr. Tobias Kunstein, Tel.: +49 221 470 1978
-            <br><strong>E-Mail:</strong> t.kunstein@verw.uni-koeln.de
-        </div>
-        <div>
-            <strong>Assistenz:</strong> Heike Motyl, Tel.: +49 221 470-87000
-            <br><strong>E-Mail:</strong> h.motyl@verw.uni-koeln.de
-        </div>
-        <div>
-            <strong>Vorzimmer:</strong> Beate Nenner, Tel.: +49 221 470 1257, 5600
-            <br><strong>E-Mail:</strong> b.nenner@verw.uni-koeln.de
-        </div>
-        <!-- Weitere Kontaktinformationen hier -->
-    </section>
-</main>
+        <p>Das Rektorat leitet die Hochschule. Es besteht aus dem Rektor, dem Kanzler, sechs Prorektor*innen. Die
+            Rektoratsmitglieder werden durch die Hochschulwahlversammlung gewählt.</p>
+        <p>Für einzelne Themen und Aspekte haben Rektorat und Rektor Beauftragte.</p>
+        <p>Das Rektorat wird in seiner Arbeit durch den Rektoratsstab unterstützt. Die organisatorische Vorbereitung
+            der Rektoratssitzung erfolgt durch Abteilung 11</p>
+        <p>E-Mail: rektor@uni-koeln.de</p>
 
-<footer>
-    <p>&copy; Universität zu Köln</p>
-</footer>
+        <h2>Büroleitung:</h2>
+        <p>Annelene Gäckle, Tel.: +49 221 470-2498</p>
+        <p>E-Mail: a.gaeckle@verw.uni-koeln.de</p>
+
+        <h2>Persönlicher Referent:</h2>
+        <p>Dr. Tobias Kunstein, Tel.: +49 221 470 1978</p>
+        <p>E-Mail: t.kunstein@verw.uni-koeln.de</p>
+
+        <h2>Assistenz:</h2>
+        <p>Heike Motyl, Tel.: +49 221 470-87000</p>
+        <p>E-Mail: h.motyl@verw.uni-koeln.de</p>
+        <p>Ricarda Rehbach, Tel: +49 221 470-5600</p>
+        <p>E-Mail: r.rehbach@verw.uni-koeln.de</p>
+
+        <h2>Vorzimmer:</h2>
+        <p>Beate Nenner, Tel.: +49 221 470 1257, 5600</p>
+        <p>E-Mail: b.nenner@verw.uni-koeln.de</p>
+        <p><a href="#">mehr</a></p>
+
+        <p>E-Mail: kanzler@verw.uni-koeln.de</p>
+
+        <h2>Referentinnen:</h2>
+        <p>Dörthe Horstschäfer, Tel.: +49 221 470 76992</p>
+        <p>E-Mail: d.horstschaefer@verw.uni-koeln.de</p>
+        <p>Dr. Frauke Kersten, Tel.: +49 221 470 76993</p>
+        <p>E-Mail: f.kersten@verw.uni-koeln.de</p>
+
+        <h2>Vorzimmer:</h2>
+        <p>Ute Heinemann, Tel. +49 221 470 2688; Fax: +49 221 470 5134</p>
+        <p>E-Mail: u.heinemann@verw.uni-koeln.de</p>
+
+        <h2>Assistenz Kanzlerbereich:</h2>
+        <p>Irina Klester, Tel.: +49 221 470 7028</p>
+        <p>E-Mail: i.klester@verw.uni-koeln.de</p>
+        <p><a href="#">mehr</a></p>
+
+        <h2>Persönlicher Referent:</h2>
+        <p>Dr. Nicolas Bickmann, Tel.: +49 221 470 1799</p>
+        <p>E-Mail: n.bickmann@verw.uni-koeln.de</p>
+
+        <h2>Assistenz:</h2>
+        <p>Heike von Möller, Tel.: +49 221 470 1514</p>
+        <p>E-Mail: h.vonmoeller@verw.uni-koeln.de</p>
+        <p><a href="#">mehr</a></p>
+
+        <h2>Leiterin des Referats Chancengerechtigkeit</h2>
+        <p>Frau Dr. Britt Dahmen, Tel.: +49 221 470 5907</p>
+        <p>E-Mail: prorektorat-chancengerechtigkeit@verw.uni-koeln.de</p>
+        <p>Websites: Referat Chancengerechtigkeit,www.vielfalt.uni-koeln.de</p>
+        <p><a href="#">mehr</a></p>
+
+        <h2>Persönliche Referentin:</h2>
+        <p>Dr. Franziska Eickhoff, Tel.: +49 221 470-1075</p>
+        <p>E-Mail: franziska.eickhoff@uni-koeln.de</p>
+
+        <h2>Koordinatorin Finanzen und Personal:</h2>
+        <p>Julia Rosenbauer, Tel.: +49 221 470- 90714</p>
+        <p>E-Mail: j.rosenbauer@verw.uni-koeln.de</p>
+
+        <h2>Geschäftsstelle der Kommission für Lehre, Studium und die Belange der Studierenden:</h2>
+        <p>E-Mail: LSK@verw.uni-koeln.de</p>
+        <p><a href="#">mehr</a></p>
+
+        <h2>Persönliche Referentinnen:</h2>
+        <p>Dr. Anabel Kuntz, Tel.: +49 221 470 1967</p>
+        <p>E-Mail: a.kuntz@verw.uni-koeln.de</p>
+        <p>Anna Keller, Tel.: +49 221 470 2817</p>
+        <p>E-Mail: a.keller@verw.uni-koeln.de</p>
+        <p><a href="#">mehr</a></p>
+
+        <h2>Persönlicher Referent:</h2>
+        <p>Benjamin Dreier, Tel.: +49 221 470 6507</p>
+        <p>E-Mail: b.dreier@verw.uni-koeln.de</p>
+        <p><a href="#">mehr</a></p>
+
+        <h2>Persönlicher Referent:</h2>
+        <p>Lukas Plenk, Tel.: +49 221 470 89223</p>
+        <p>E-Mail: lukas.plenk@uni-koeln.de</p>
+
+        <h2>Assistenz:</h2>
+        <p>Dr. Jennifer Hülsberg, Tel.: +49 221 470 89220</p>
+        <p>E-Mail: jennifer.huelsberg@uni-koeln.de</p>
+        <p><a href="#">mehr</a></p>
+
+        <a href="#">Compliance <span class="icon">Pfeil nach rechts Icon</span></a>
+        <a href="#">Rechenschaftsbericht 2024 (PDF) <span class="icon">Pfeil nach rechts Icon</span></a>
+
+        <div class="quicklinks">
+            <h3>Quicklinks</h3>
+            <ul>
+                <li><a href="#">Compliance</a></li>
+                <li><a href="#">Rechenschaftsbericht 2024 (PDF)</a></li>
+                <li><a href="#">Rektor</a></li>
+                <li><a href="#">Rektoratsstab</a></li>
+                <li><a href="#">Kanzler</a></li>
+                <li><a href="#">Prorektorin Forschung</a></li>
+                <li><a href="#">Prorektorin Antidiskriminierung und Chancengerechtigkeit</a></li>
+                <li><a href="#">Prorektorin Lehre und Studium</a></li>
+                <li><a href="#">Prorektorin Akademische Karriere und Personalentwicklung</a></li>
+                <li><a href="#">Prorektor für Transfer in die Gesellschaft</a></li>
+                <li><a href="#">Prorektor Nachhaltigkeit</a></li>
+            </ul>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Zurück zur Startseite</a></li>
+                <li><a href="studienangebot-studienangebot.html">Studienangebot</a></li>
+                <li><a href="bewerbung-bewerbung.html">Bewerbung</a></li>
+                <li><a href="inklusion-inklusion.html">Inklusion</a></li>
+                <li><a href="termine-fristen-termine-fristen.html">Termine + Fristen</a></li>
+                <li><a href="oeffnungszeiten-adressen.html">Öffnungszeiten + Adressen</a></li>
+                <li><a href="klips-2-0-klips-2-0.html">KLIPS 2.0</a></li>
+                <li><a href="vorlesungsverzeichnis.html">Vorlesungsverzeichnis</a></li>
+                <li><a href="ilias-elearning-ilias-elearning.html">ILIAS eLearning</a></li>
+                <li><a href="jobportal-jobportal.html">Jobportal</a></li>
+            </ul>
+        </nav>
+
+
+    </div>
+
+    <footer>
+        <p>© Universität zu Köln</p>
+    </footer>
 
 </body>
+
 </html>

@@ -1,108 +1,197 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universität zu Köln: Blog Baumaßnahmen</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: #FFFFFF;
-            color: #1F2937;
-            margin: 0;
-            padding: 0;
-        }
-        header, footer {
-            background-color: #1E3A5F;
-            color: #FFFFFF;
-            padding: 10px 20px;
-        }
-        nav a {
-            color: #FFFFFF;
-            text-decoration: none;
-            margin-right: 15px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-        }
-        h1 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        h2 {
-            font-size: 1.5em;
-            margin-top: 20px;
-        }
-        h3 {
-            font-size: 1.2em;
-            margin-top: 15px;
-        }
-        .content {
-            padding: 20px;
-        }
-        .section {
-            margin-bottom: 40px;
-        }
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .footer-links a {
-            margin-right: 15px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universität zu Köln: Blog Baumassnahmen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    /* Globale Stile */
+    body {
+      font-family: 'Lato', sans-serif;
+      color: #1F2937;
+      margin: 0;
+      padding: 0;
+      background-color: #FFFFFF;
+      line-height: 1.6;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Playfair Display', serif;
+      color: #1E3A5F;
+      margin-bottom: 0.5em;
+    }
+
+    a {
+      color: #2563EB;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Header */
+    .header {
+      background-color: #1E3A5F;
+      color: #FFFFFF;
+      padding: 1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header a {
+      color: #FFFFFF;
+    }
+
+    .logo img {
+      max-height: 50px;
+    }
+
+    .navigation ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    .navigation li {
+      margin-left: 1em;
+    }
+
+    /* Main Content */
+    .main-content {
+      padding: 2em;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #F3F4F6;
+      padding: 2em;
+      text-align: center;
+      font-size: 0.8em;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navigation ul {
+        flex-direction: column;
+      }
+
+      .navigation li {
+        margin-left: 0;
+        margin-top: 0.5em;
+      }
+    }
+
+    /* Spezifische Stile für diese Seite */
+    .blog-title {
+      color: #1E3A5F;
+      margin-bottom: 1em;
+    }
+
+    .blog-post {
+      margin-bottom: 2em;
+    }
+
+    .blog-post h2 {
+      color: #1E3A5F;
+    }
+
+    .blog-post p {
+      margin-bottom: 1em;
+    }
+
+    .icon {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      vertical-align: middle;
+      margin-right: 0.25em;
+    }
+
+    .quicklinks h3{
+      font-size: 1.2rem;
+    }
+
+    .quicklinks ul{
+      list-style: none;
+      padding: 0;
+    }
+
+    .quicklinks li{
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>Universität zu Köln: Blog Baumaßnahmen</h1>
-        <nav>
-            <a href="index.html">Startseite</a>
-            <a href="studienangebot-studienangebot.html">Studienangebot</a>
-            <a href="bewerbung-bewerbung.html">Bewerbung</a>
-            <a href="inklusion-inklusion.html">Inklusion</a>
-            <a href="termine-fristen-termine-fristen.html">Termine + Fristen</a>
-            <a href="oeffnungszeiten-adressen.html">Öffnungszeiten + Adressen</a>
-            <a href="klips-2-0-klips-2-0.html">KLIPS 2.0</a>
-            <a href="vorlesungsverzeichnis.html">Vorlesungsverzeichnis</a>
-            <a href="ilias-elearning-ilias-elearning.html">ILIAS eLearning</a>
-            <a href="jobportal-jobportal.html">Jobportal</a>
-        </nav>
-    </header>
 
-    <main class="content">
-        <div class="section">
-            <h2>Die Universität zu Köln baut</h2>
-            <p>Neue Gebäude werden für die Wissenschaft errichtet, der Baubestand wird saniert, neue und energiesparende Techniken werden installiert. Wir berichten über neue und laufende Projekte im BauBlog.</p>
-            <p>Der erste Teilabschnitt, das untere Niveau des Platzes, ist bald fertig und wieder zur Begehung freigegeben. Dafür verschiebt sich die Fläche der Baustelle...</p>
-        </div>
-        <div class="section">
-            <h2>Wo wird abgeschleppt?</h2>
-            <p>Um die unübersichtliche Parkplatzsituation auf universitätseigenen Flächen zu verbessern, hat das Parkraummanagement der Universität zu Köln einen Dauervertrag mit einem Abschleppunternehmen geschlossen...</p>
-        </div>
-        <div class="section">
-            <h2>Mehr Selbstlernplätze für Studierende</h2>
-            <p>Die Universität zu Köln stattet zwei Gebäude mit mehr Gelegenheiten zum Lernen aus, ein drittes folgt bis Ende des Jahres...</p>
-        </div>
-        <div class="section">
-            <h2>Die Universität zu Köln setzt ihre Nachhaltigkeitsstrategie weiter um</h2>
-            <p>Der Labor-Neubau der Physik und das ehemalige COPT-Gebäude an der Luxemburger Straße erhalten eine Photovoltaik-Anlage (PV) auf dem Dach...</p>
-        </div>
-        <div class="section">
-            <h2>Ein Platz zum Verweilen</h2>
-            <p>In den Albertus-Magnus-Platz eingebunden ist die bereits fertiggestellte unterirdische Fahrradgarage, die nun überbaut wird...</p>
-        </div>
-    </main>
+  <header class="header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="https://www.portal.uni-koeln.de/sites/portal/themes/custom/portaltheme/logo.svg" alt="Logo Universität zu Köln">
+      </a>
+    </div>
+    <nav class="navigation">
+      <ul>
+        <li><a href="studienangebot-studienangebot.html">Studienangebot</a></li>
+        <li><a href="bewerbung-bewerbung.html">Bewerbung</a></li>
+        <li><a href="inklusion-inklusion.html">Inklusion</a></li>
+        <li><a href="termine-fristen-termine-fristen.html">Termine + Fristen</a></li>
+        <li><a href="oeffnungszeiten-adressen.html">Öffnungszeiten + Adressen</a></li>
+        <li><a href="klips-2-0-klips-2-0.html">KLIPS 2.0</a></li>
+        <li><a href="vorlesungsverzeichnis.html">Vorlesungsverzeichnis</a></li>
+        <li><a href="ilias-elearning-ilias-elearning.html">ILIAS eLearning</a></li>
+        <li><a href="jobportal-jobportal.html">Jobportal</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <footer>
-        <div class="footer-links">
-            <a href="index.html">Zurück zur Startseite</a>
-            <a href="https://verwaltung.uni-koeln.de/parken">Weitere Informationen zum Parken</a>
-        </div>
-        <p>© Universität zu Köln</p>
-    </footer>
+  <main class="main-content">
+    <h1 class="blog-title">Blog Baumassnahmen</h1>
+
+    <nav>
+      <a href="index.html">Zur Startseite Universität zu Köln</a>
+    </nav>
+
+    <div class="blog-post">
+      <p>Die Universität zu Köln baut: Neue Gebäude werden für die Wissenschaft errichtet, der Baubestand wird saniert, neue und energiesparende Techniken werden installiert. Wir berichten über neue und laufende Projekte im BauBlog. Previous Slide Icon arrow-Left Pause slider Icon Pause Resume slider Icon Play Next slide Pfeil nach rechts Icon Der erste Teilabschnitt, das untere Niveau des Platzes, ist bald fertig und wieder zur Begehung freigegeben. Dafür verschiebt sich die Fläche der Baustelle. Der Bereich des Albertus-Magnus Platzes am westlichen Ende direkt am Philosophikum wird bis zum 13. Oktober mit Grauwacke gepflastert sein. Damit wird die Baustelle dort aufgehoben und der Platz in diesem Bereich kann wieder begangen werden. Auch die zugehörigen Türen im Philosophikum sind dann wieder nutzbar. Dafür wandert die Baustelle ein Stück Richtung Hauptgebäude. Ein Teil des Fahrradweges auf dem zum Hörsaalgebäude hin liegenden sogenannten „Uni-Boulevard“ (dort, wo der Pizza-Wagen „PiKa“ steht) wird abgesperrt und saniert. Der Zugang zum Pizza Wagen bleibt bestehen, der direkte Zugang vom Hauptgebäude zum Hörsaalgebäude und dem Uni-Boulevard wird abgesperrt. Der Weg vom Hauptgebäude zum Hörsaalgebäude führt dann am Philosophikum entlang über die Treppen rund um die Baustelle. Eine barrierefreie Begehung ist durch das Philosophikum möglich. Der Zugang zur Tiefgarage und den gastronomischen Einrichtungen im Pavillon bleiben erhalten. Die Absperrung wird voraussichtlich vier Wochen bestehen und wird dann wieder aufgehoben. Neuigkeiten gibt es auch bei den derzeitigen Bauarbeiten: Die Baufirmen legen die Hochbeete an und sind soweit, dass die geplanten Bäume bereits am 7. Oktober und die Stauden am 9. Oktober geliefert werden können. Damit wird die neue Gestaltung dieses Bauabschnitts sichtbar werden. Die Brückensanierung startet und die Baumaßnahme wandert auf das obere Niveau der Platzfläche. Um die unübersichtliche Parkplatzsituation auf universitätseigenen Flächen zu verbessern, hat das Parkraummanagement der Universität zu Köln einen Dauervertrag mit einem Abschleppunternehmen geschlossen. Ziel ist, mehr Platz für berechtigte Nutzerinnen und Nutzer zu schaffen: Falschparker werden künftig regelmäßig kostenpflichtig abgeschleppt. Ab dem 1. November dieses Jahres werden Fahrzeuge unverzüglich abgeschleppt, wenn sie ohne gültigen Parkschein oder Parkausweis auf ausgewiesenen Parkflächen der Universität abgestellt sind,Feuerwehrzufahrten blockieren,auf Sperrflächen parken oderaußerhalb markierter Stellplätze stehen. Davon können auch Fahrzeuge von Beschäftigten oder Studierenden betroffen sein, etwa wenn der Parkausweis nicht sichtbar im Fahrzeugfenster liegt oder Zufahrten für Feuerwehr und Rettungsdienst blockiert werden. Die Maßnahme dient der Sicherheit und Ordnung auf dem Campus. Wo wird abgeschleppt? Betroffen sind verschiedene Parkbereiche des Campus, unter anderem: Campus Nord (humanwissenschaftlicher Bereich, Gronewaldstraße, Frangenheimstraße, Herbert-Lewin-Straße),Klosterstraße,Zentralbereich (Gyrhofstraße / Ecke Universitätsstraße bzw. Ecke Gymnicher Straße / Kerpener Straße),Parkplatz Unisport und Sibille-Hartmann-Straße. Bitte beachten Sie die unterschiedlichen Kontrollzeiten je nach Bereich (Beispiel: Campus Nord: Mo–Fr 08:00–17:00 Uhr; Zentralbereich: Mo–Fr 07:00–21:00 Uhr, Sa 09:00–13:00 Uhr). Außerhalb dieser Zeiten ist das Parken in vielen Bereichen frei. Parkverbotszonen wie Feuerwehrzufahrten werden jedoch rund um die Uhr kontrolliert. Weitere Informationen Eine detaillierte Übersicht der Parkbereiche sowie Informationen zum Abschleppdienst, einschließlich der anfallenden Abschleppkosten, finden Sie auf der Webseite des Parkraummanagements (Dezernat 5, Gebäude- und Liegenschaftsmanagement): https://verwaltung.uni-koeln.de/parken Bei Fragen oder Hinweisen wenden Sie sich bitte an das Parkraummanagement. Fotos: Jana Bauch Bildhauer Martin Pfeifle Previous Slide Icon arrow-Left Pause slider Icon Pause Resume slider Icon Play Next slide Pfeil nach rechts Icon Die Skulptur „revisited“ des Bildhauers Martin Pfeifle wurde auf dem Albertus-Magnus-Platz aufgestellt. Die Montagearbeiter installierten die drei Elemente der Plastik neben dem Pavillon über der Fahrradgarage zwischen Hörsaalgebäude und Philosophikum. Am Nachmittag waren die Arbeiten abgeschlossen. Das neue Kunstwerk „revisited“ von Martin Pfeifle besteht aus optisch geschichteten Plattenelementen, die das noch in Teilen bestehende Bodenmosaik von Jürgen Hans Grümmer direkt vor dem Hauptgebäude erinnern sollen. Das Objekt wurde aus Bronze gegossen und verteilt sich auf drei getrennte Elemente. Die Plastik fordert als Objekt im öffentlichen Raum zur Interaktion mit dem Betrachter auf und lädt zum Verweilen ein. In diesem Sinne ist es auch eine „Sitzskulptur“. Die im Laufe der Zeit einsetzende Korrosion der Oberfläche mit Grünspan wird in Zukunft an den genutzten Stellen mit der Goldfarbe des Materials kontrastieren.Der Künstler Martin Pfeifle ist neben seinen Skulpturen im öffentlichen Raum auch für seine Installationen im Museumsbereich bekannt. Das Zusammenwirken von Betrachter und Kunstwerk ist Teil seiner bisherigen Arbeit, auch bei den Installationen, die er für Museen durchgeführt hat: „Der Körper des Betrachters ist immer auch Teil der Installation“, so Pfeifle. Im öffentlichen Raum kommt für den Künstler noch die spezielle Situation hinzu, dass die Betrachter*innen ihren verschiedensten Tätigkeiten nachgehen und sich nicht zwingend auf das Kunstobjekt fokussieren: „Der öffentliche Raum ist jedem ausgeliefert: Es ist nicht der geschützte museale Raum. Auch die Motivation der Betrachter ist eine andere: Man beschließt nicht, ins Museum zu gehen, um Kunst zu rezipieren, sondern man stolpert im Grunde drüber.“ Dabei soll sich für die zukünftigen Betrachter die Aufenthaltsqualität auf dem Kunstwerk mit der Wahrnehmung der Kunst durchaus verbinden. Das Werk des Düsseldorfer Künstlers nimmt die Formensprache des Mosaiks auf, das den Boden des Platzes bisher geschmückt hat. „Ich beziehe mich mit meiner Skulptur komplett auf die zweidimensionalen Mosaike von Jürgen Hans Grümmer“, so Pfeifle. „Meine Arbeit besteht aus einer Dreidimensionalisierung seines Kunstwerkes, deswegen habe ich auch das Plattenmaß 40 mal 40 übernommen.“ Nicht zuletzt die Konzeption als „Sitzskulptur“ bietet Anschlusspunkte zu Grümmer, so Martin Pfeifle: „Ich habe immer wieder Sitzskulpturen während meiner Arbeit entwickelt, Grümmer hat das auch getan, wie zum Beispiel hinter dem Hörsaalgebäude.“Als zentraler Punkt des Platzes soll die Plastik nach Wunsch des Künstlers nicht nur zu Interaktion mit den Betrachter*innen anregen, sondern auch raumgestalterisch mit den umliegenden Gebäuden, Bäumen und anderen Kunstwerken auf dem Platz wirken.Martin Pfeifle studierte von 1998 bis 2004 an der Kunstakademie Düsseldorf bei Tony Cragg und Hubert Kiecol. Anschließend war er Meisterschüler von Hubert Kiecol. Von 2009 bis 2010 hatte er eine Vertretungsprofessur an der Kunstakademie Karlsruhe inne. Seit Februar 2021 ist Martin Pfeifle Professor für das Lehrgebiet Körper-Raum-Struktur am Fachbereich Design der Hochschule Düsseldorf. Pfeifle hat seine Objekte in internationalen Ausstellungen gezeigt, seine Außenraumskulpturen stehen in vielen deutschen Städten, wie zum Beispiel Heidelberg, Nürnberg oder Düsseldorf. Die Universität zu Köln saniert von 2025 bis 2026 den Albertus-Magnus-Platz. Jetzt werden die ersten Vorbereitungen getroffen, das Pflaster aus Grauwacke herzustellen. Der Stein ist gegen mechanische Belastung, Wasser und Frost widerstandsfähig und wird seit geraumer Zeit in den Städten des Rheinlandes, so auch in Köln, verbaut. Als Material aus den Steinbrüchen des Rheinischen Schiefergebirges hat er eine bessere CO2-Bilanz als andere Oberflächenmaterialien und wird auch in Zukunft noch verfügbar sein. Das Sedimentgestein bietet ein Spektrum von Naturfarben, die sich in die gegebene Bebauung einpassen. Zurzeit wird der in den Steinbrüchen gebrochene Stein für den ersten Pflasterabschnitt am Philosophikum zurechtgeschnitten. Previous Slide Icon arrow-Left Pause slider Icon Pause Resume slider Icon Play Next slide Pfeil nach rechts Icon Mehr Selbstlernplätze für Studierende in der Physik, dem Philosophikum und dem IBW: Die Universität zu Köln stattet zwei Gebäude mit mehr Gelegenheiten zum Lernen aus, ein drittes folgt bis Ende des Jahres. Das Baudezernat der Universität hat seit August 2023 zwei weitere Gebäude mit zusätzlichen oder neuen Lernplätzen für Studierende ausgestattet. Über 90 Plätze sind so bis jetzt entstanden: 32 Lernplätze im IBW-Gebäude an der Herbert-Lewin-Straße und 60 neue Lernplätze im Philosophikum. Die Aufstockung der Lernplätze setzt eine Initiative der Universität fort, die bereits im Jahr 2022 im Biozentrum mit 30 Lernplätzen in der Bibliothek begonnen hat. Ungefähr 35 Lernplätze stehen nun auch seit April 2025 im Neuen Seminargebäude auf dem Hauptcampus zur Verfügung. Hintergrund der Maßnahmen ist, dass Studierendenvertreter im Sommer 2023 den Wunsch nach mehr Lernplätzen in den Gebäuden der Universität äußerten, der vom Kanzler an das Baudezernat weitergeleitet wurde. In einer Machbarkeitsstudie suchte das Baudezernat daraufhin zuerst nach möglichen Räumen und fand geeignete Standorte in den Foyers der Gebäude. Prüfungen auf Brandschutz und Denkmalschutz folgten. Das Baudezernat entschied sich für das Gebäude 211 (IBW), das Gebäude 103 (Philosophikum) und das Gebäude 321 (Physik). Die Möbel wurden dabei so ausgesucht, dass sie die Kriterien Brandschutz, Sicherheit, Bequemlichkeit und stilistische Anpassung an die Umgebung erfüllten: Die Bänke, Stühle und Tische sollten in die Architektur der Gebäude eingebettet sein. So passen sich z.B. die Lernplätze im Philosophikum in ihrer Materialauswahl den bereits vorhandenen Innenausbauten an. Die Möbel sind im Philosophikum im Erdgeschoss und im ersten bis dritten Obergeschoss aufgestellt. Im IBW findet man die neuen Möbel im ersten und zweiten Obergeschoss zwischen den Hörsälen. Im Foyer der Physik wird das Baudezernat insgesamt 50 Lernplätze neugestalten. Dabei wird es unterschiedliche Sitzmöglichkeiten geben, wie etwa Hochtische, eine gepolsterte lange Sitzbank mit Bistrotischen sowie zwei Meeting-Module für fokussiertes Arbeiten. Aus Gründen des Denkmalschutzes und des Brandschutzes konnten keine Stromanschlüsse im IBW installiert werden, was im Philosophikum zum Teil aber möglich war. Die neuen Selbstlernplätze in der Physik werden auch mit Steckdosen versehen sein. Die Universität zu Köln setzt ihre Nachhaltigkeitsstrategie weiter um: Der Labor-Neubau der Physik und das ehemalige COPT-Gebäude an der Luxemburger Straße erhalten eine Photovoltaik-Anlage (PV) auf dem Dach. Previous Slide Icon arrow-Left Pause slider Icon Pause Resume slider Icon Play Next slide Pfeil nach rechts Icon Die Sonne scheint nicht nur aufs Dach des Laborbaus der Physikalischen Institute, sondern sorgt auch dafür, dass dort nachhaltig Strom produziert wird. Denn die Firma Vopro GmbH hat gerade die letzten Module der Photovoltaikanlage installiert. Nun muss die Anlage nur noch an die Stromversorgung angeschlossen werden. Die 224 Module werden eine Leistung von 100 kWp (Kilowattpeak) erreichen und 90.000 kWh/a Strom pro Jahr erzeugen, etwa 20mal so viel wie eine vierköpfige Familie durchschnittlich im Jahr verbraucht. Die Anlage kostet rund 105.000 Euro und soll im Laufe des Sommers in Betrieb genommen werden. Eine zweite Anlage auf dem Dach des ehemaligen COPT-Gebäudes (Geb. 315) an der Luxemburger Straße kostet 80.000 Euro und wird bei einer Leistung von 76 Kilowattpeak rund 68.400 kWh/a Strom im Jahr erzeugen. Die Anlage mit 172 Modulen wird ebenfalls ihre Arbeit im Sommer aufnehmen. Mit dem schrittweisen Ersatz von fossilen Stromquellen erfüllt die Universität eines ihrer wichtigsten Nachhaltigkeitsziele: CO2 zu reduzieren und auf einen klimaneutralen Campusbetrieb umzustellen. Bei den neu geplanten Anlagen auf den Gebäuden der Mathematisch-Naturwissenschaftlichen Fakultät wird sich die Eigennutzung des Stroms durch die Universität im Vergleich zu der Anlage auf dem Philosophikum mit ihren noch einmal erhöhen: Dort existiert eine Mittelspannungsring, ein lokales Netz, in das der Reststrom gespeist wird. So können die anderen Gebäude der Fakultät direkt vom Solarstrom profitieren, der Autarkiegrad der Stromversorgung steigt. Auch die geplante Photovoltaik-Anlage des ehemaligen COPT-Gebäudes Ecke Eifelwall/Luxemburger Straße versorgt mit ihrem Strom zukünftig etwas Besonderes: Im Mai ging dort ein Stickstoffgenerator – auf Anregung der Wissenschaftler*innen – in Betrieb. Dieser dient zur dezentralen Gewinnung von Stickstoff, der für die Forschung benötigt wird. Damit wird zum ersten Mal die Forschung der Universität direkt von der nachhaltigen Stromgewinnung profitieren. Die neue Platzgestaltung wurde durch das Architektenbüro Studiogrüngrau entworfen. Die Sanierung des Albertus-Magnus-Platzes läuft auf Hochtouren. Was ist geplant und wann sollen die Bauarbeiten beendet sein? Der Albertus-Magnus-Platz wird seit etwa einem Monat saniert. Neu gestaltet wird der Bereich der Universität zwischen Philosophikum und Hauptgebäude, einschließlich des Bereichs direkt über der Universitätsstraße, der der Stadt Köln gehört. Die Universität möchte dem zentralen Campus der Universität wieder ein geschlossenes Bild geben und einen Platz schaffen, der nicht nur verkehrstechnisch allen Anforderungen der Stadt entspricht, sondern auch zum Verweilen einlädt. Mit den umfangreichen Sitzmöglichkeiten und einer zusätzlichen Begrünung in Hochbeeten wird der Platz der Universität ein offenes und modernes Gesicht verleihen. Als Zentralcampus der Universität ist der Albertus-Magnus-Platz nicht nur Knotenpunkt des inneruniversitären Verkehrs, sondern auch Begegnungsstätte mit dem Stadtteil sowie Ort des Gesprächs und des Lernens. Daher zielen die Bauarbeiten auch darauf ab, eine höhere Aufenthaltsqualität auf dem gesamten Gelände zu schaffen. Das Brückenbauwerk der Stadt Köln, auf dem sich ein Teil des Albertus-Magnus-Platzes befindet, wird im Zuge der Arbeiten ebenfalls ertüchtigt und abgedichtet. Nötig wurden die Arbeiten am Platz aufgrund des Baus der Fahrradgarage im Jahr 2021 und der angrenzenden Platzflächen. Beginn auf der Westseite Die Bauarbeiten haben letzte Woche mit der Absperrung einer Fläche im Westen des Platzes direkt vor dem Philosophikum begonnen. Bis zum 1. Quartal 2026 wird dann der Teil des Platzes zwischen Philosophikum und Hörsaalgebäude fertiggestellt sein. Im zweiten Bauabschnitt wird die „Brückenplatte“ über der Universitätsstraße bis zum Hauptgebäude erneuert. Der Platz wird insgesamt auf zwei Ebenen gebaut: einem tieferen am westlichen Ende vor dem Philosophikum und einem höheren auf dem übrigen Platz. Eine großzügige Rampentreppe überwindet den Höhenunterschied zwischen den beiden Platzniveaus. Ergänzend führt eine barrierefreie Rampe auf das untere Platzniveau vor dem südlichen Philosophikum sowie eine weitere Treppenanlage, die an das bodengebundene Leitsystem angebunden ist. Die neue Platzgestaltung wurde durch das Architektenbüro Studiogrüngrau entworfen. Die rund 9.500 Quadratmeter des zentralen Campusplatzes werden mit Grauwacke ausgelegt, einem harten Sandstein. Der Naturstein ist sehr gut geeignet für Plätze mit hoher Beanspruchung, ist frostbeständig, trittsicher, pflegeleicht und schmutzunempfindlich und wurde bereits an verschiedenen Orten in Köln verbaut. Ein Platz zum Verweilen In den Albertus-Magnus-Platz eingebunden ist die bereits fertiggestellte unterirdische Fahrradgarage, die nun überbaut wird. Ebenfalls Teil der Gestaltung wird der bestehende Pavillon an der Garageneinfahrt sein, für den die Universität zwei kleine Betriebe zur gastronomischen Versorgung der Hochschulmitglieder gewinnen konnten. Mit dem neuen Kunstwerk des Künstlers Martin Pfeifle und den beiden großzügigen Hochbeete werden gleichzeitig Sitzpodeste zum Verweilen einladen. Mehrstämmig gewählte Bäume sorgen mit ihrem breitem Blätterdach für einen ansprechenden grünen Kommunikationsraum, der im Sommer Schatten spendet. Die Baumscheiben werden mit Stauden und Gräsern und Zukunftsbaumarten bepflanzt.In Ergänzung zu den bereits neu hergerichteten Bauabschnitten des Universitätsboulevards wird auch die westliche Seite der Universitätsstraße gestaltet, die an die Platzkanten trifft. Ein Teilbereich der PKW-Umfahrt am nördlichen Ende des Platzes wird ebenfalls gestalterisch mit eingebunden und in einem Farbasphalt hergestellt, dessen Farbton sich an die Grauwacke anpasst. Die Radwege werden durch ein anderes Fugenbild über die gesamte Platzflächen optisch kenntlich gemacht. Was kommt an Änderung für die Nutzer*innen? Am nördlichen und südlichen Brückengeländer des Platzes sind Bankkonstruktionen mit hohen Rückenlehnen vorgesehen, die auch den Verkehrslärm abschirmen. Die Parkplätze in der nördlichen Kurve werden dadurch entfallen. Während der Bauarbeiten ist auf dem Platz mit der Einfahrt von Baulastwagen zu rechnen. Eine Ampel regelt dabei den Verkehr auch für die Fußgänger. Um das Lernen und Forschen in diesem Zeitraum möglichst wenig zu beeinträchtigen, werden jeweils nur Teile des Platzes abgesperrt. Fahrräder können deswegen nicht mehr an den Bauzaun gekettet werden. Die Bauaktivitäten werden außerdem Rücksicht auf die Prüfungsphasen nehmen. Alle Absperrungen und Behinderungen der Nutzer*innen des Platzes werden zeitig über Social Media und Expresso kommuniziert werden.</p>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="quicklinks">
+      <h3>Quicklinks</h3>
+      <ul>
+        <li><a href="#">Wo wird abgeschleppt?</a></li>
+        <li><a href="#">Weitere Informationen</a></li>
+        <li><a href="#">Beginn auf der Westseite</a></li>
+        <li><a href="#">Ein Platz zum Verweilen</a></li>
+        <li><a href="#">Was kommt an Änderung für die Nutzer*innen?</a></li>
+      </ul>
+    </div>
+    <p>&copy; Universität zu Köln</p>
+  </footer>
+
 </body>
+
 </html>
