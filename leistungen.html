@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+Hier ist der vollständige HTML5-Code für die Seite "Leistungen" (leistungen.html), basierend auf deinen Vorgaben und dem Design-System.
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leistungen - Universität zu Köln</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1E3A5F;
+            --secondary: #2563EB;
+            --accent: #D4AF37;
+            --bg: #FFFFFF;
+            --text: #1F2937;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; }
+        
+        /* Container */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Navigation Styles (Base requirements) */
+        nav { background: var(--bg); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: var(--text); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+        .nav-links a:hover, .nav-links a[href="leistungen.html"] { color: var(--secondary); }
+        
+        /* Logo Handling due to long text content */
+        a.logo { 
+            color: var(--primary); 
+            text-decoration: none; 
+            font-family: var(--font-heading); 
+            font-weight: 700; 
+            font-size: 1.2rem;
+            display: block;
+            max-width: 300px; /* Limit width for layout sanity */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Page Header */
+        .page-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .page-header h1 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 4rem 0;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .service-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: var(--accent);
+        }
+        .card-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .service-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .service-card p {
+            color: #4b5563;
+            flex-grow: 1;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: #f3f4f6;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-family: var(--font-heading);
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            margin-top: 1rem;
+        }
+        .btn:hover {
+            background-color: var(--primary);
+        }
+
+        /* Footer Styles */
+        footer { background: var(--text); color: var(--bg); padding: 3rem 0; text-align: center; }
+        footer a { color: var(--bg); text-decoration: none; opacity: 0.8; transition: opacity 0.3s; }
+        footer a:hover { opacity: 1; }
+        footer p { margin-bottom: 1rem; line-height: 1.5; }
+
+        /* Responsive */
+        @media (max-width: 768px) { 
+            .nav-links { display: none; } 
+            .page-header h1 { font-size: 2rem; }
+            .services-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="logo">Universität zu Köln: Universität zu KölnLogo Universität zu Köln
+          Icon lens
+        
+          Icon globe
+        
+          Icon cross
+        
+          Icon burger
+        
+                  Linsen Icon
+                
+                  Globus Icon
+                
+                  Kreuz Icon
+                
+                  Burger Icon
+                
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    Plus IconPlus IconPlus IconPlus Icon
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+              Pfeil nach rechts Icon
+            
+              Pfeil nach rechts Icon
+            
+              Pfeil nach rechts Icon
+            
+              Pfeil nach rechts Icon
+            
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+      Icon Website
+    
+      Icon Website
+    
+                Plus Icon
+              
+      Icon Website
+    
+                Plus Icon
+              
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+      Pfeil nach rechts Icon
+    
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+        Linsen Icon
+      
+            Pfeil nach rechts Icon
+          
+        Icon globe
+      
+      Icon Check
+    
+      Icon compass
+    
+      Kreuz Icon
+    
+      Studienangebot
+    
+      Bewerbung
+    
+      Inklusion
+    
+      Termine + Fristen
+    
+      Öffnungszeiten + Adressen
+    
+      KLIPS 2.0
+    
+      Vorlesungsverzeichnis
+    
+      ILIAS eLearning
+    
+      Jobportal
+    
+       Anreise, Lagepläne, Hörsaalpläne
+    
+      Mensa
+    
+      Pressekontakt
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Icon arrow-Left
+    
+      Icon Pause
+    
+      Icon Play
+    
+      Pfeil nach rechts Icon
+    
+      Icon Group
+    
+      Icon Star
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Icon Drittmittel
+    
+      Icon arrow-Left
+    Icon facebookIcon youtubeIcon linkedinIcon mastodonIcon blueskyIcon instagram</a>
+    <div class="nav-links">
+        <a href="index.html">Startseite</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="leistungen.html">Leistungen</a>
+        <a href="kontakt.html">Kontakt</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+    <div class="container">
+        <h1>Unsere Leistungen & Angebote</h1>
+        <p>Exzellenz in Forschung und Lehre im Herzen Europas</p>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+    <section class="services-section">
+        <div class="container">
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <article class="service-card">
+                    <div class="card-icon">🎓</div>
+                    <h3>Studium & Lehre</h3>
+                    <p>Als Volluniversität bieten wir ein klassisches Fächerspektrum mit exzellenten Studienbedingungen. Wir bereiten unsere Studierenden durch innovative Lehrmethoden optimal auf die akademischen und beruflichen Herausforderungen der Zukunft vor.</p>
+                </article>
+
+                <!-- Service 2 -->
+                <article class="service-card">
+                    <div class="card-icon">🔬</div>
+                    <h3>Spitzenforschung</h3>
+                    <p>Wir arbeiten international auf höchstem Niveau und gehören zu den forschungsstärksten Hochschulen Europas. Unsere Wissenschaftlerinnen und Wissenschaftler entwickeln interdisziplinäre Lösungen für komplexe gesellschaftliche Fragen.</p>
+                </article>
+
+                <!-- Service 3 -->
+                <article class="service-card">
+                    <div class="card-icon">🌍</div>
+                    <h3>Internationalisierung</h3>
+                    <p>Durch weltweite Kooperationen fördern wir den Austausch von Studierenden und Forschenden. Wir sind stolz auf unsere globale Vernetzung und pflegen eine Kultur der interkulturellen Offenheit und Vielfalt.</p>
+                </article>
+
+                <!-- Service 4 -->
+                <article class="service-card">
+                    <div class="card-icon">🤝</div>
+                    <h3>Transfer & Gesellschaft</h3>
+                    <p>Wir tragen wissenschaftliche Erkenntnisse aktiv in die Gesellschaft und Wirtschaft. Der Dialog mit der Öffentlichkeit und die Anwendung von Wissen sind zentrale Bestandteile unseres Selbstverständnisses.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Haben Sie Fragen zu unseren Angeboten?</h2>
+            <p>Unser Team steht Ihnen für weitere Informationen gerne zur Verfügung.</p>
+            <a href="kontakt.html" class="btn">Kontaktieren Sie uns</a>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>&copy; 2024 Universität zu Köln: Universität zu KölnLogo Universität zu Köln
+          Icon lens
+        
+          Icon globe
+        
+          Icon cross
+        
+          Icon burger
+        
+                  Linsen Icon
+                
+                  Globus Icon
+                
+                  Kreuz Icon
+                
+                  Burger Icon
+                
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    Plus IconPlus IconPlus IconPlus Icon
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+              Pfeil nach rechts Icon
+            
+              Pfeil nach rechts Icon
+            
+              Pfeil nach rechts Icon
+            
+              Pfeil nach rechts Icon
+            
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+      Icon Website
+    
+      Icon Website
+    
+                Plus Icon
+              
+      Icon Website
+    
+                Plus Icon
+              
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+      Pfeil nach rechts Icon
+    
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+        Linsen Icon
+      
+            Pfeil nach rechts Icon
+          
+        Icon globe
+      
+      Icon Check
+    
+      Icon compass
+    
+      Kreuz Icon
+    
+      Studienangebot
+    
+      Bewerbung
+    
+      Inklusion
+    
+      Termine + Fristen
+    
+      Öffnungszeiten + Adressen
+    
+      KLIPS 2.0
+    
+      Vorlesungsverzeichnis
+    
+      ILIAS eLearning
+    
+      Jobportal
+    
+       Anreise, Lagepläne, Hörsaalpläne
+    
+      Mensa
+    
+      Pressekontakt
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Icon arrow-Left
+    
+      Icon Pause
+    
+      Icon Play
+    
+      Pfeil nach rechts Icon
+    
+      Icon Group
+    
+      Icon Star
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Icon Drittmittel
+    
+      Icon arrow-Left
+    Icon facebookIcon youtubeIcon linkedinIcon mastodonIcon blueskyIcon instagram. Alle Rechte vorbehalten.</p>
+    <p><a href="index.html">Startseite</a> | <a href="kontakt.html">Kontakt</a> | Impressum</p>
+  </div>
+</footer>
+
+</body>
+</html>

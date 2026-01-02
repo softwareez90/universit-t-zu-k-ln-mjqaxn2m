@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über uns - Universität zu Köln</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1E3A5F;
+            --secondary: #2563EB;
+            --accent: #D4AF37;
+            --bg: #FFFFFF;
+            --text: #1F2937;
+            --light-gray: #f3f4f6;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; }
+        
+        /* Layout Utilities */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Navigation Styles */
+        nav { background: var(--bg); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        
+        /* Logo Handling to prevent layout break from long prompt text */
+        .logo { 
+            font-family: var(--font-heading); 
+            font-weight: 700; 
+            font-size: 1.2rem; 
+            color: var(--primary); 
+            text-decoration: none;
+            display: block;
+            max-width: 300px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: var(--text); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+        .nav-links a:hover, .nav-links a[href="ueber-uns.html"] { color: var(--primary); border-bottom: 2px solid var(--accent); }
+        
+        @media (max-width: 768px) { 
+            .nav-links { display: none; } 
+        }
+
+        /* Page Header */
+        .page-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 4rem 0;
+        }
+
+        .content-block {
+            margin-bottom: 3rem;
+        }
+
+        .content-block h2 {
+            font-family: var(--font-heading);
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .content-block h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .content-block p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #4b5563;
+            text-align: justify;
+        }
+
+        /* Values Section */
+        .values-section {
+            background-color: var(--light-gray);
+            padding: 4rem 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .cta-section h2 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--primary);
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background 0.3s ease, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Footer Styles */
+        footer { background: var(--text); color: var(--bg); padding: 3rem 0; text-align: center; font-size: 0.9rem; }
+        footer p { margin-bottom: 1rem; opacity: 0.8; }
+        footer a { color: var(--bg); text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: var(--accent); }
+        
+        /* Footer text truncation for the long logo string provided */
+        footer p:first-of-type {
+            max-width: 800px;
+            margin: 0 auto 1rem auto;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="logo">Universität zu Köln: Universität zu KölnLogo Universität zu Köln
+          Icon lens
+        
+          Icon globe
+        
+          Icon cross
+        
+          Icon burger
+        
+                  Linsen Icon
+                
+                  Globus Icon
+                
+                  Kreuz Icon
+                
+                  Burger Icon
+                
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    Plus IconPlus IconPlus IconPlus Icon
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+              Pfeil nach rechts Icon
+            
+              Pfeil nach rechts Icon
+            
+              Pfeil nach rechts Icon
+            
+              Pfeil nach rechts Icon
+            
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+      Icon Website
+    
+      Icon Website
+    
+                Plus Icon
+              
+      Icon Website
+    
+                Plus Icon
+              
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+      Pfeil nach rechts Icon
+    
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+        Linsen Icon
+      
+            Pfeil nach rechts Icon
+          
+        Icon globe
+      
+      Icon Check
+    
+      Icon compass
+    
+      Kreuz Icon
+    
+      Studienangebot
+    
+      Bewerbung
+    
+      Inklusion
+    
+      Termine + Fristen
+    
+      Öffnungszeiten + Adressen
+    
+      KLIPS 2.0
+    
+      Vorlesungsverzeichnis
+    
+      ILIAS eLearning
+    
+      Jobportal
+    
+       Anreise, Lagepläne, Hörsaalpläne
+    
+      Mensa
+    
+      Pressekontakt
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Icon arrow-Left
+    
+      Icon Pause
+    
+      Icon Play
+    
+      Pfeil nach rechts Icon
+    
+      Icon Group
+    
+      Icon Star
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Icon Drittmittel
+    
+      Icon arrow-Left
+    Icon facebookIcon youtubeIcon linkedinIcon mastodonIcon blueskyIcon instagram</a>
+    <div class="nav-links">
+        <a href="index.html">Startseite</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="leistungen.html">Leistungen</a>
+        <a href="kontakt.html">Kontakt</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+    <div class="container">
+        <h1>Über uns</h1>
+        <p>Exzellenz in Forschung und Lehre seit 1388</p>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+    <!-- History / Background -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-block">
+                <h2>Unsere Geschichte & Hintergrund</h2>
+                <p>
+                    Die Universität zu Köln ist eine Hochschule mit dem klassischen Fächerspektrum einer Volluniversität und zählt zu den ältesten und renommiertesten akademischen Einrichtungen Europas. Ursprünglich im Jahr 1388 gegründet, blickt die Universität auf eine über sechshundertjährige Tradition zurück. Nach ihrer Neugründung im Jahr 1919 hat sie sich stetig weiterentwickelt und ist heute tief in der Metropolregion Rheinland verwurzelt, während sie gleichzeitig ein globales Netzwerk akademischer Partnerschaften pflegt.
+                </p>
+                <p>
+                    Mit ihren sechs Fakultäten bietet die Universität zu Köln ein breites Spektrum an Studienmöglichkeiten und Forschungsfeldern. Als eine der größten Präsenzuniversitäten Deutschlands verstehen wir uns als Ort des lebenslangen Lernens und der intellektuellen Begegnung. Unsere historische Verantwortung verbinden wir mit modernster Infrastruktur, um Antworten auf die drängenden Fragen unserer Zeit zu finden – von den Geisteswissenschaften bis hin zur Spitzenforschung in den Naturwissenschaften.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission / Vision -->
+    <section class="values-section">
+        <div class="container">
+            <div class="content-block">
+                <h2>Mission & Vision</h2>
+                <p>
+                    Unsere Mission ist es, Wissen zu schaffen, zu bewahren und weiterzugeben. Als Exzellenzuniversität arbeiten wir in Forschung und Lehre auf höchstem internationalem Niveau. Wir fördern die Neugier und das kritische Denken unserer Studierenden und Forschenden, um innovative Lösungen für gesellschaftliche Herausforderungen zu entwickeln. Unsere Vision ist eine Universität, die durch interdisziplinäre Zusammenarbeit Grenzen überschreitet und als Motor für sozialen, kulturellen und technologischen Fortschritt wirkt.
+                </p>
+            </div>
+            
+            <!-- Team / Values -->
+            <div class="content-block">
+                <h2>Unsere Werte</h2>
+                <p>
+                    Vielfalt, Chancengerechtigkeit und Inklusion sind die Grundpfeiler unserer Universitätskultur. Wir glauben daran, dass exzellente Wissenschaft nur in einem Umfeld gedeihen kann, das unterschiedliche Perspektiven wertschätzt und fördert. Wir engagieren uns für Nachhaltigkeit in all unseren Prozessen und verstehen uns als offene Gemeinschaft, in der Respekt und Verantwortung im Miteinander gelebt werden.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Werden Sie Teil unserer Gemeinschaft</h2>
+            <p style="margin-bottom: 2rem; color: rgba(255,255,255,0.9);">Haben Sie Fragen zu unserem Studienangebot oder unserer Forschung?</p>
+            <a href="kontakt.html" class="btn">Kontakt aufnehmen</a>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>&copy; 2024 Universität zu Köln: Universität zu KölnLogo Universität zu Köln
+          Icon lens
+        
+          Icon globe
+        
+          Icon cross
+        
+          Icon burger
+        
+                  Linsen Icon
+                
+                  Globus Icon
+                
+                  Kreuz Icon
+                
+                  Burger Icon
+                
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    Plus IconPlus IconPlus IconPlus Icon
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+              Pfeil nach rechts Icon
+            
+              Pfeil nach rechts Icon
+            
+              Pfeil nach rechts Icon
+            
+              Pfeil nach rechts Icon
+            
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+      Icon Website
+    
+      Icon Website
+    
+                Plus Icon
+              
+      Icon Website
+    
+                Plus Icon
+              
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+      Pfeil nach rechts Icon
+    
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+        Linsen Icon
+      
+            Pfeil nach rechts Icon
+          
+        Icon globe
+      
+      Icon Check
+    
+      Icon compass
+    
+      Kreuz Icon
+    
+      Studienangebot
+    
+      Bewerbung
+    
+      Inklusion
+    
+      Termine + Fristen
+    
+      Öffnungszeiten + Adressen
+    
+      KLIPS 2.0
+    
+      Vorlesungsverzeichnis
+    
+      ILIAS eLearning
+    
+      Jobportal
+    
+       Anreise, Lagepläne, Hörsaalpläne
+    
+      Mensa
+    
+      Pressekontakt
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Icon arrow-Left
+    
+      Icon Pause
+    
+      Icon Play
+    
+      Pfeil nach rechts Icon
+    
+      Icon Group
+    
+      Icon Star
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Icon Drittmittel
+    
+      Icon arrow-Left
+    Icon facebookIcon youtubeIcon linkedinIcon mastodonIcon blueskyIcon instagram. Alle Rechte vorbehalten.</p>
+    <p><a href="index.html">Startseite</a> | <a href="kontakt.html">Kontakt</a> | Impressum</p>
+  </div>
+</footer>
+
+</body>
+</html>

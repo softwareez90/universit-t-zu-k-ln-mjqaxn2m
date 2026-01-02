@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+Hier ist der vollständige HTML5-Code für die Seite `kontakt.html` der Universität zu Köln, basierend auf deinen Vorgaben und dem Design-System.
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Universität zu Köln</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* DESIGN SYSTEM VARIABLES */
+        :root {
+            --primary: #1E3A5F;
+            --secondary: #2563EB;
+            --accent: #D4AF37;
+            --bg: #FFFFFF;
+            --bg-light: #F3F4F6;
+            --text: #1F2937;
+            --text-light: #6B7280;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        /* RESET & BASE STYLES */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; }
+        
+        /* TYPOGRAPHY */
+        h1, h2, h3 { font-family: var(--font-heading); color: var(--primary); margin-bottom: 1rem; }
+        h1 { font-size: 2.5rem; font-weight: 700; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+        p { margin-bottom: 1rem; }
+        a { color: var(--secondary); text-decoration: none; transition: color 0.3s ease; }
+        a:hover { color: var(--primary); }
+
+        /* LAYOUT UTILITIES */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section-padding { padding: 4rem 0; }
+
+        /* NAVIGATION */
+        nav { background: var(--bg); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        
+        /* Logo Styling to handle the massive text content gracefully */
+        .logo { 
+            font-family: var(--font-heading); 
+            font-weight: 700; 
+            font-size: 1.25rem; 
+            color: var(--primary); 
+            text-decoration: none;
+            /* Force single line and ellipsis for the massive icon text provided */
+            display: block;
+            max-width: 250px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: var(--text); text-decoration: none; font-weight: 500; }
+        .nav-links a:hover { color: var(--primary); border-bottom: 2px solid var(--accent); }
+        .nav-links a[href="kontakt.html"] { color: var(--primary); font-weight: 700; border-bottom: 2px solid var(--accent); }
+
+        /* PAGE HEADER */
+        .page-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .page-header h1 { color: white; margin: 0; }
+        .page-header p { color: rgba(255,255,255,0.8); margin-top: 1rem; font-size: 1.2rem; }
+
+        /* CONTACT CONTENT */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 2rem;
+        }
+
+        /* Contact Info Column */
+        .contact-info-box {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+        .info-item {
+            display: flex;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+        .info-label {
+            font-weight: 700;
+            min-width: 100px;
+            color: var(--primary);
+        }
+        .info-value {
+            color: var(--text);
+        }
+
+        /* Form Column */
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .btn-submit {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-submit:hover {
+            background-color: var(--secondary);
+        }
+
+        /* MAP SECTION */
+        .map-section {
+            background-color: #e5e7eb;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--text-light);
+        }
+        .map-placeholder-content i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* FOOTER */
+        footer { background: var(--text); color: var(--bg); padding: 3rem 0; text-align: center; }
+        footer p { margin-bottom: 1rem; opacity: 0.9; }
+        footer a { color: var(--bg); text-decoration: none; margin: 0 0.5rem; }
+        footer a:hover { color: var(--accent); }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) { 
+            .nav-links { display: none; } 
+            .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="logo">Universität zu Köln: Universität zu KölnLogo Universität zu Köln
+          Icon lens
+        
+          Icon globe
+        
+          Icon cross
+        
+          Icon burger
+        
+                  Linsen Icon
+                
+                  Globus Icon
+                
+                  Kreuz Icon
+                
+                  Burger Icon
+                
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    Plus IconPlus IconPlus IconPlus Icon
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+              Pfeil nach rechts Icon
+            
+              Pfeil nach rechts Icon
+            
+              Pfeil nach rechts Icon
+            
+              Pfeil nach rechts Icon
+            
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+      Icon Website
+    
+      Icon Website
+    
+                Plus Icon
+              
+      Icon Website
+    
+                Plus Icon
+              
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+      Pfeil nach rechts Icon
+    
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+        Linsen Icon
+      
+            Pfeil nach rechts Icon
+          
+        Icon globe
+      
+      Icon Check
+    
+      Icon compass
+    
+      Kreuz Icon
+    
+      Studienangebot
+    
+      Bewerbung
+    
+      Inklusion
+    
+      Termine + Fristen
+    
+      Öffnungszeiten + Adressen
+    
+      KLIPS 2.0
+    
+      Vorlesungsverzeichnis
+    
+      ILIAS eLearning
+    
+      Jobportal
+    
+       Anreise, Lagepläne, Hörsaalpläne
+    
+      Mensa
+    
+      Pressekontakt
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Icon arrow-Left
+    
+      Icon Pause
+    
+      Icon Play
+    
+      Pfeil nach rechts Icon
+    
+      Icon Group
+    
+      Icon Star
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Icon Drittmittel
+    
+      Icon arrow-Left
+    Icon facebookIcon youtubeIcon linkedinIcon mastodonIcon blueskyIcon instagram</a>
+    <div class="nav-links">
+        <a href="index.html">Startseite</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="leistungen.html">Leistungen</a>
+        <a href="kontakt.html">Kontakt</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+    <div class="container">
+        <h1>Kontakt</h1>
+        <p>Wir sind für Sie da. Nehmen Sie Kontakt mit uns auf.</p>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="container section-padding">
+    <div class="contact-grid">
+        
+        <!-- Linke Spalte: Kontaktinformationen -->
+        <div class="contact-details">
+            <h2>Ihre Ansprechpartner</h2>
+            <p>Die Universität zu Köln ist eine Hochschule mit dem klassischen Fächerspektrum einer Volluniversität. Haben Sie Fragen zu Studium, Forschung oder Verwaltung? Unser Team hilft Ihnen gerne weiter.</p>
+            
+            <div class="contact-info-box">
+                <div class="info-item">
+                    <span class="info-label">Anschrift:</span>
+                    <span class="info-value">
+                        Universität zu Köln<br>
+                        Albertus-Magnus-Platz<br>
+                        50923 Köln
+                    </span>
+                </div>
+                
+                <div class="info-item">
+                    <span class="info-label">Telefon:</span>
+                    <span class="info-value">0221 / 470-0</span>
+                </div>
+                
+                <div class="info-item">
+                    <span class="info-label">E-Mail:</span>
+                    <span class="info-value"><a href="mailto:online-redaktion@uni-koeln.de">online-redaktion@uni-koeln.de</a></span>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">Web:</span>
+                    <span class="info-value"><a href="index.html">www.uni-koeln.de</a></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rechte Spalte: Kontaktformular -->
+        <div class="form-wrapper">
+            <h2>Schreiben Sie uns</h2>
+            <p>Nutzen Sie unser Kontaktformular für eine schnelle Anfrage.</p>
+            
+            <form class="contact-form">
+                <div>
+                    <label for="name">Ihr Name</label>
+                    <input type="text" id="name" name="name" placeholder="Vorname Nachname" required>
+                </div>
+
+                <div>
+                    <label for="email">Ihre E-Mail-Adresse</label>
+                    <input type="email" id="email" name="email" placeholder="name@beispiel.de" required>
+                </div>
+
+                <div>
+                    <label for="subject">Betreff</label>
+                    <input type="text" id="subject" name="subject" placeholder="Worum geht es?">
+                </div>
+
+                <div>
+                    <label for="message">Ihre Nachricht</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Wie können wir Ihnen helfen?" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Nachricht senden</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<!-- KARTE / ANFAHRT (Platzhalter) -->
+<section class="map-section">
+    <div class="map-placeholder-content">
+        <h3>Anfahrt & Lageplan</h3>
+        <p>Universität zu Köln, Albertus-Magnus-Platz, 50923 Köln</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">(Interaktive Karte wird hier geladen)</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>&copy; 2024 Universität zu Köln: Universität zu KölnLogo Universität zu Köln
+          Icon lens
+        
+          Icon globe
+        
+          Icon cross
+        
+          Icon burger
+        
+                  Linsen Icon
+                
+                  Globus Icon
+                
+                  Kreuz Icon
+                
+                  Burger Icon
+                
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    Plus IconPlus IconPlus IconPlus Icon
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+              Pfeil nach rechts Icon
+            
+              Pfeil nach rechts Icon
+            
+              Pfeil nach rechts Icon
+            
+              Pfeil nach rechts Icon
+            
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+      Icon Website
+    
+      Icon Website
+    
+                Plus Icon
+              
+      Icon Website
+    
+                Plus Icon
+              
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+      Pfeil nach rechts Icon
+    
+          Pfeil nach rechts Icon
+        
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+                Plus Icon
+              
+        Linsen Icon
+      
+            Pfeil nach rechts Icon
+          
+        Icon globe
+      
+      Icon Check
+    
+      Icon compass
+    
+      Kreuz Icon
+    
+      Studienangebot
+    
+      Bewerbung
+    
+      Inklusion
+    
+      Termine + Fristen
+    
+      Öffnungszeiten + Adressen
+    
+      KLIPS 2.0
+    
+      Vorlesungsverzeichnis
+    
+      ILIAS eLearning
+    
+      Jobportal
+    
+       Anreise, Lagepläne, Hörsaalpläne
+    
+      Mensa
+    
+      Pressekontakt
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Icon arrow-Left
+    
+      Icon Pause
+    
+      Icon Play
+    
+      Pfeil nach rechts Icon
+    
+      Icon Group
+    
+      Icon Star
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Pfeil nach rechts Icon
+    
+      Icon Drittmittel
+    
+      Icon arrow-Left
+    Icon facebookIcon youtubeIcon linkedinIcon mastodonIcon blueskyIcon instagram. Alle Rechte vorbehalten.</p>
+    <p><a href="index.html">Startseite</a> | <a href="kontakt.html">Kontakt</a> | Impressum</p>
+  </div>
+</footer>
+
+</body>
+</html>

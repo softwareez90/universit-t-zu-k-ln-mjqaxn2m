@@ -1,15 +1,22 @@
 <!DOCTYPE html>
+Hier ist der vollständige HTML5-Code für die Startseite der Universität zu Köln.
+
+Ich habe das Design-System exakt umgesetzt, die Navigation und den Footer strukturell beibehalten, jedoch den offensichtlichen "Copy-Paste-Fehler" (die hunderten Zeilen von Icon-Beschreibungen im Logo-Text) auf den eigentlichen Namen "Universität zu Köln" reduziert, damit das Layout professionell bleibt und nicht zerstört wird.
+
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universität zu Köln | Exzellenz in Forschung und Lehre</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Universität zu Köln - Startseite</title>
     
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+
     <style>
-        /* DESIGN SYSTEM VARIABLES */
+        /* 
+         * DESIGN SYSTEM & RESET 
+         */
         :root {
             --primary: #1E3A5F;
             --secondary: #2563EB;
@@ -17,114 +24,77 @@
             --bg: #FFFFFF;
             --bg-light: #F3F4F6;
             --text: #1F2937;
-            --text-light: #6B7280;
-            --white: #FFFFFF;
+            --text-light: #4B5563;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
         }
 
-        /* RESET */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            color: var(--text);
-            background-color: var(--bg);
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+        
+        body { 
+            font-family: var(--font-body); 
+            background: var(--bg); 
+            color: var(--text); 
             line-height: 1.6;
         }
 
-        /* TYPOGRAPHY */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
+        h1, h2, h3 {
+            font-family: var(--font-heading);
             color: var(--primary);
             line-height: 1.2;
         }
 
-        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        h2 { font-size: 2rem; margin-bottom: 1.5rem; text-align: center; }
-        h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-        p { margin-bottom: 1rem; }
-
-        a { text-decoration: none; transition: color 0.3s ease; }
+        a { text-decoration: none; transition: all 0.3s ease; }
         
-        /* LAYOUT UTILITIES */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* 
+         * NAVIGATION 
+         */
+        nav { 
+            background: var(--bg); 
+            padding: 1rem 0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
         }
-
-        .section-padding {
-            padding: 80px 0;
+        
+        .nav-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
         }
-
-        .text-center { text-align: center; }
-        .text-white { color: var(--white); }
-
-        /* HEADER */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-
+        
+        /* Logo Styling */
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-family: var(--font-heading);
             font-weight: 700;
+            font-size: 1.5rem;
             color: var(--primary);
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Lato', sans-serif;
-            font-weight: bold;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav a {
-            color: var(--text);
+        .nav-links { display: flex; gap: 2rem; }
+        
+        .nav-links a { 
+            color: var(--text); 
             font-weight: 500;
-            font-size: 1rem;
             position: relative;
         }
-
-        nav a:hover {
-            color: var(--secondary);
+        
+        .nav-links a:hover, .nav-links a.active { 
+            color: var(--primary); 
         }
 
-        nav a::after {
+        .nav-links a::after {
             content: '';
             position: absolute;
             width: 0;
@@ -135,56 +105,68 @@
             transition: width 0.3s;
         }
 
-        nav a:hover::after {
+        .nav-links a:hover::after {
             width: 100%;
         }
 
-        /* HERO SECTION */
+        /* 
+         * HERO SECTION 
+         */
         .hero {
-            margin-top: 80px;
-            background: linear-gradient(135deg, var(--primary) 0%, #162a45 100%);
-            color: var(--white);
-            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #2c5282 100%);
+            color: #fff;
+            padding: 6rem 0;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
             position: relative;
             overflow: hidden;
         }
 
+        /* Abstract Shape Background */
         .hero::before {
             content: '';
             position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 300px;
-            height: 300px;
-            border: 2px solid rgba(212, 175, 55, 0.2);
+            top: -50%;
+            right: -10%;
+            width: 800px;
+            height: 800px;
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 50%;
         }
 
         .hero-content {
             max-width: 800px;
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
-            color: var(--white);
             font-size: 3.5rem;
+            color: #fff;
             margin-bottom: 1.5rem;
         }
 
         .hero p {
             font-size: 1.25rem;
-            color: rgba(255,255,255, 0.9);
             margin-bottom: 2.5rem;
-            max-width: 600px;
+            opacity: 0.9;
+            max-width: 700px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
         .btn {
-            display: inline-block;
             padding: 12px 30px;
-            font-weight: 600;
             border-radius: 4px;
-            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1rem;
             cursor: pointer;
-            border: none;
+            display: inline-block;
         }
 
         .btn-primary {
@@ -199,416 +181,343 @@
 
         .btn-outline {
             background-color: transparent;
-            border: 2px solid var(--white);
-            color: var(--white);
-            margin-left: 15px;
+            border: 2px solid #fff;
+            color: #fff;
         }
 
         .btn-outline:hover {
-            background-color: var(--white);
+            background-color: #fff;
             color: var(--primary);
+            transform: translateY(-2px);
         }
 
-        /* ABOUT SECTION */
-        .about {
+        /* 
+         * SECTIONS COMMON 
+         */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            margin: 10px auto 0;
+        }
+
+        /* 
+         * ABOUT SECTION 
+         */
+        #about {
             background-color: var(--bg);
         }
 
-        .about-text {
-            max-width: 800px;
-            margin: 0 auto;
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-light);
+            padding: 2rem;
             text-align: center;
+            border-radius: 8px;
+            border-bottom: 4px solid var(--secondary);
         }
 
-        .divider {
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent);
-            margin: 20px auto;
+        .stat-number {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--primary);
+            font-weight: 700;
         }
 
-        /* SERVICES / PORTAL GRID */
-        .services {
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* 
+         * SERVICES SECTION 
+         */
+        #services {
             background-color: var(--bg-light);
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            gap: 2rem;
         }
 
         .service-card {
-            background: var(--white);
-            padding: 40px;
+            background: var(--bg);
+            padding: 2.5rem;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
             border-top: 4px solid transparent;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             border-top: 4px solid var(--accent);
         }
 
         .service-icon {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--secondary);
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
             display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
         }
 
         .service-link {
             color: var(--secondary);
-            font-weight: 700;
-            margin-top: 15px;
-            display: inline-block;
+            font-weight: 600;
             font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
         }
 
-        /* QUICK LINKS BAR */
-        .quick-links {
+        .service-link::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.2s;
+        }
+
+        .service-link:hover::after {
+            margin-left: 10px;
+        }
+
+        /* 
+         * CONTACT TEASER 
+         */
+        .contact-teaser {
             background-color: var(--primary);
-            color: var(--white);
-            padding: 40px 0;
+            color: #fff;
+            text-align: center;
+            padding: 4rem 20px;
         }
 
-        .quick-links-grid {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
+        .contact-teaser h2 {
+            color: #fff;
+            margin-bottom: 1rem;
         }
 
-        .quick-link-item {
-            background: rgba(255,255,255,0.1);
-            padding: 10px 20px;
-            border-radius: 4px;
-            color: var(--white);
+        .contact-teaser p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        /* 
+         * FOOTER 
+         */
+        footer { 
+            background: var(--text); 
+            color: #fff; 
+            padding: 3rem 0; 
+            text-align: center; 
             font-size: 0.9rem;
-            transition: background 0.3s;
+        }
+        
+        footer a { 
+            color: #fff; 
+            opacity: 0.7;
+            margin: 0 10px;
         }
 
-        .quick-link-item:hover {
-            background: var(--accent);
-            color: var(--primary);
-        }
-
-        /* CONTACT SECTION */
-        .contact {
-            background-color: var(--white);
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: start;
-        }
-
-        .contact-info-box {
-            background-color: var(--bg-light);
-            padding: 30px;
-            border-radius: 8px;
-        }
-
-        .contact-detail {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .contact-label {
-            font-weight: 700;
-            width: 100px;
-            color: var(--primary);
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        input, textarea {
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: 'Lato', sans-serif;
-            font-size: 1rem;
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--secondary);
-        }
-
-        /* FOOTER */
-        footer {
-            background-color: #111827;
-            color: #9CA3AF;
-            padding: 60px 0 20px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-col h4 {
-            color: var(--white);
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col li {
-            margin-bottom: 10px;
-        }
-
-        .footer-col a {
-            color: #9CA3AF;
-        }
-
-        .footer-col a:hover {
+        footer a:hover {
+            opacity: 1;
             color: var(--accent);
         }
 
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #374151;
-            font-size: 0.9rem;
+        footer p {
+            margin-bottom: 1rem;
+            color: rgba(255,255,255,0.6);
         }
 
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .header-inner {
-                flex-direction: column;
-                height: auto;
-                padding: 15px 0;
-            }
-
-            nav ul {
-                margin-top: 15px;
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .btn {
-                width: 100%;
-                margin: 10px 0 0 0;
-                text-align: center;
-            }
+        /* 
+         * RESPONSIVE 
+         */
+        @media (max-width: 768px) { 
+            .nav-links { display: none; } 
             
-            .btn-outline {
-                margin-left: 0;
-            }
+            .hero h1 { font-size: 2.5rem; }
+            
+            .about-grid { grid-template-columns: 1fr; }
+            
+            .btn-group { flex-direction: column; width: 100%; }
+            
+            .btn { width: 100%; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="container header-inner">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">U</div>
-                Universität zu Köln
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Startseite</a></li>
-                    <li><a href="universitaet-zu-koeln-universitaet-zu.html">Studium</a></li>
-                    <li><a href="#forschung">Forschung</a></li>
-                    <li><a href="universitaet-zu-koeln-blog.html">Aktuelles</a></li>
-                    <li><a href="#kontakt">Kontakt</a></li>
-                </ul>
-            </nav>
+    <!-- NAVIGATION -->
+    <nav>
+      <div class="nav-container">
+        <!-- Logo Text cleaned for display purposes while keeping structure -->
+        <a href="index.html" class="logo">Universität zu Köln</a>
+        <div class="nav-links">
+            <a href="index.html" style="color: var(--primary);">Startseite</a>
+            <a href="ueber-uns.html">Über uns</a>
+            <a href="leistungen.html">Leistungen</a>
+            <a href="kontakt.html">Kontakt</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="container hero-content">
+            <h1>Universität zu Köln</h1>
+            <p>Die Universität zu Köln ist eine Hochschule mit dem klassischen Fächerspektrum einer Volluniversität. Als eine der größten Hochschulen Europas arbeitet sie in Forschung und Lehre auch international auf höchstem Niveau.</p>
+            <div class="btn-group">
+                <a href="#about" class="btn btn-primary">Mehr erfahren</a>
+                <a href="kontakt.html" class="btn btn-outline">Kontakt aufnehmen</a>
+            </div>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
+    <!-- ÜBER UNS SECTION -->
+    <section id="about">
         <div class="container">
-            <div class="hero-content">
-                <h1>Wissen schaffen.<br>Zukunft gestalten.</h1>
-                <p>Die Universität zu Köln ist eine der größten Hochschulen Europas und arbeitet in Forschung und Lehre international auf höchstem Niveau.</p>
-                <div class="cta-group">
-                    <a href="universitaet-zu-koeln-universitaet-zu.html" class="btn btn-primary">Studienangebot</a>
-                    <a href="#about" class="btn btn-outline">Mehr erfahren</a>
+            <div class="section-title">
+                <h2>Über uns</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Die Universität zu Köln steht für exzellente Wissenschaft und herausragende Lehre. Mit unserer langen Tradition und innovativen Ausrichtung prägen wir den Wissenschaftsstandort Europa nachhaltig. Wir bieten ein inspirierendes Umfeld für Studierende und Forschende aus aller Welt.</p>
+                    <p>Als Volluniversität decken wir ein breites Spektrum an Disziplinen ab – von den Geisteswissenschaften über die Naturwissenschaften bis hin zur Medizin. Interdisziplinarität und gesellschaftliche Verantwortung stehen dabei im Mittelpunkt unseres Handelns.</p>
+                    <a href="ueber-uns.html" class="service-link">Lernen Sie unsere Geschichte kennen</a>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">6</span>
+                        <span class="stat-label">Fakultäten</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">1388</span>
+                        <span class="stat-label">Gründungsjahr</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">Int.</span>
+                        <span class="stat-label">Forschung</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Studiengänge</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="section-padding about">
+    <!-- LEISTUNGEN / ANGEBOTE SECTION -->
+    <section id="services">
         <div class="container">
-            <div class="about-text">
-                <h2>Über die Universität</h2>
-                <div class="divider"></div>
-                <p>Die Universität zu Köln ist eine Hochschule mit dem klassischen Fächerspektrum einer Volluniversität. Sie verbindet Innovation mit Tradition und bietet Studierenden, Forschenden und akademischem Personal ein inspirierendes Umfeld.</p>
-                <p>Als international ausgerichtete Institution fördern wir den globalen Austausch und pflegen Partnerschaften weltweit. Unsere Exzellenz in der Forschung treibt uns an, Antworten auf die großen Fragen unserer Zeit zu finden.</p>
+            <div class="section-title">
+                <h2>Unsere Angebote</h2>
             </div>
-        </div>
-    </section>
-
-    <!-- QUICK LINKS -->
-    <section class="quick-links">
-        <div class="container">
-            <div class="quick-links-grid">
-                <a href="#" class="quick-link-item">KLIPS 2.0</a>
-                <a href="#" class="quick-link-item">ILIAS eLearning</a>
-                <a href="#" class="quick-link-item">Vorlesungsverzeichnis</a>
-                <a href="#" class="quick-link-item">Termine & Fristen</a>
-                <a href="#" class="quick-link-item">Mensa</a>
-                <a href="#" class="quick-link-item">Jobportal</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES / OFFERINGS -->
-    <section class="section-padding services">
-        <div class="container">
-            <h2>Unsere Bereiche</h2>
-            <div class="divider"></div>
             <div class="services-grid">
                 <!-- Card 1 -->
                 <div class="service-card">
+                    <span class="service-icon">🎓</span>
                     <h3>Studium & Lehre</h3>
-                    <p>Entdecken Sie unser vielfältiges Studienangebot. Von Bachelor bis Promotion bieten wir exzellente Ausbildungsmöglichkeiten.</p>
-                    <a href="universitaet-zu-koeln-universitaet-zu.html" class="service-link">Zum Studienangebot &rarr;</a>
+                    <p>Entdecken Sie unser vielfältiges Studienangebot. Wir bieten Bachelor-, Master- und Staatsexamensstudiengänge in einem exzellenten akademischen Umfeld.</p>
+                    <a href="leistungen.html" class="service-link">Zum Studienangebot</a>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="service-card">
+                    <span class="service-icon">🔬</span>
                     <h3>Forschung</h3>
-                    <p>Spitzenforschung in vielfältigen Disziplinen. Wir schaffen Wissen durch interdisziplinäre Zusammenarbeit und Drittmittelprojekte.</p>
-                    <a href="#" class="service-link">Forschungsprofil ansehen &rarr;</a>
+                    <p>Spitzenforschung auf internationalem Niveau. Unsere Wissenschaftler arbeiten an Lösungen für die globalen Herausforderungen unserer Zeit.</p>
+                    <a href="leistungen.html" class="service-link">Forschungsprojekte</a>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="service-card">
-                    <h3>International</h3>
-                    <p>Weltweit vernetzt: Informationen für internationale Partner, Gastwissenschaftler und Austauschstudierende.</p>
-                    <a href="#" class="service-link">International Office &rarr;</a>
+                    <span class="service-icon">🌍</span>
+                    <h3>Internationales</h3>
+                    <p>Weltweit vernetzt: Wir pflegen Partnerschaften mit führenden Hochschulen und fördern den internationalen Austausch von Studierenden und Lehrenden.</p>
+                    <a href="leistungen.html" class="service-link">International Office</a>
                 </div>
-
+                
                 <!-- Card 4 -->
                 <div class="service-card">
+                    <span class="service-icon">🏛️</span>
                     <h3>Campus & Leben</h3>
-                    <p>Alles rund um Anreise, Lagepläne, Inklusion und Öffnungszeiten. Erleben Sie den Campus der Universität zu Köln.</p>
-                    <a href="#" class="service-link">Campus entdecken &rarr;</a>
+                    <p>Ein lebendiger Campus mitten in Köln. Von der Bibliothek über die Mensa bis hin zum Hochschulsport bieten wir beste Bedingungen.</p>
+                    <a href="leistungen.html" class="service-link">Campusleben entdecken</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="kontakt" class="section-padding contact">
+    <!-- KONTAKT TEASER -->
+    <section class="contact-teaser">
         <div class="container">
-            <h2>Kontakt & Anfahrt</h2>
-            <div class="divider"></div>
-            
-            <div class="contact-container">
-                <div class="contact-info-box">
-                    <h3>Zentrale Kontaktdaten</h3>
-                    <br>
-                    <div class="contact-detail">
-                        <span class="contact-label">Adresse:</span>
-                        <span>Albertus-Magnus-Platz<br>50923 Köln</span>
-                    </div>
-                    <div class="contact-detail">
-                        <span class="contact-label">Telefon:</span>
-                        <span>0221 / 470-0</span>
-                    </div>
-                    <div class="contact-detail">
-                        <span class="contact-label">Email:</span>
-                        <span>online-redaktion@uni-koeln.de</span>
-                    </div>
-                    <p style="margin-top: 20px; font-size: 0.9rem; color: var(--text-light);">
-                        Für spezifische Anfragen nutzen Sie bitte das Kontaktformular oder wenden Sie sich an die entsprechenden Fakultäten.
-                    </p>
-                </div>
-
-                <form action="#" method="post">
-                    <h3>Schreiben Sie uns</h3>
-                    <input type="text" placeholder="Ihr Name" required>
-                    <input type="email" placeholder="Ihre E-Mail-Adresse" required>
-                    <select style="padding: 12px; border: 1px solid #ddd; border-radius: 4px;">
-                        <option>Allgemeine Anfrage</option>
-                        <option>Studienberatung</option>
-                        <option>Presse</option>
-                        <option>Technischer Support</option>
-                    </select>
-                    <textarea rows="5" placeholder="Ihre Nachricht" required></textarea>
-                    <button type="submit" class="btn btn-primary" style="border:none;">Nachricht senden</button>
-                </form>
-            </div>
+            <h2>Haben Sie Fragen zum Studium oder zur Forschung?</h2>
+            <p>Unser Team steht Ihnen gerne zur Verfügung. Kontaktieren Sie uns telefonisch oder per E-Mail.</p>
+            <a href="kontakt.html" class="btn btn-primary" style="background: #fff; color: var(--primary);">Jetzt Kontakt aufnehmen</a>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Universität zu Köln</h4>
-                    <ul>
-                        <li><a href="#about">Über uns</a></li>
-                        <li><a href="#">Leitbild</a></li>
-                        <li><a href="#">Inklusion</a></li>
-                        <li><a href="#">Stellenangebote</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Service</h4>
-                    <ul>
-                        <li><a href="#">Bibliothek</a></li>
-                        <li><a href="#">Rechenzentrum</a></li>
-                        <li><a href="#">Verwaltung</a></li>
-                        <li><a href="#">Pressekontakt</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Portale</h4>
-                    <ul>
-                        <li><a href="#">KLIPS 2.0</a></li>
-                        <li><a href="#">ILIAS</a></li>
-                        <li><a href="#">Webmail</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Rechtliches</h4>
-                    <ul>
-                        <li><a href="#">Impressum</a></li>
-                        <li><a href="#">Datenschutz</a></li>
-                        <li><a href="#">Barrierefreiheit</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                &copy; 2023 Universität zu Köln. Alle Rechte vorbehalten.
-            </div>
-        </div>
+      <div class="container">
+        <p>&copy; 2024 Universität zu Köln. Alle Rechte vorbehalten.</p>
+        <p>
+            <a href="index.html">Startseite</a> | 
+            <a href="ueber-uns.html">Über uns</a> |
+            <a href="leistungen.html">Leistungen</a> |
+            <a href="kontakt.html">Kontakt</a>
+        </p>
+      </div>
     </footer>
 
 </body>
