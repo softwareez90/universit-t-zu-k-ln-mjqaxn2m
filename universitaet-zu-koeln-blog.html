@@ -1,83 +1,131 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universität zu Köln: Blog Baumassnahmen</title>
+    <title>Universität zu Köln: Blog Baumaßnahmen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Lato', sans-serif;
+            background-color: #FFFFFF;
+            color: #1F2937;
             margin: 0;
             padding: 0;
-            color: #333;
         }
+
         header {
-            background-color: #1E6091;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        header h1 {
-            margin: 0;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-        }
-        .content {
+            background-color: #1E3A5F;
+            color: #FFFFFF;
             padding: 20px;
-        }
-        .content h2 {
-            color: #1E6091;
-        }
-        .content p {
-            margin: 10px 0;
-        }
-        footer {
-            background-color: #76C893;
-            color: white;
             text-align: center;
-            padding: 10px 0;
-            position: absolute;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #2563EB;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        h1 {
+            color: #1E3A5F;
+        }
+
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            background-color: #1E3A5F;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 10px;
+            position: relative;
             bottom: 0;
             width: 100%;
         }
-        @media (max-width: 768px) {
-            nav {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            nav a {
-                margin: 5px 0;
-            }
+
+        .responsive-img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
+
 <body>
     <header>
-        <h1>Universität zu Köln: Blog Baumassnahmen</h1>
-        <nav>
-            <a href="#">Startseite</a>
-            <a href="#">Presseinformationen</a>
-            <a href="#">Berichte & Statements</a>
-            <a href="#">Personalia</a>
-            <a href="#">Veranstaltungskalender</a>
-            <a href="#">Termine & Fristen</a>
-        </nav>
+        <a href="index.html"><img src="logo-universitaet-koeln.png" alt="Logo Universität zu Köln" class="responsive-img"></a>
+        <h1>Universität zu Köln: Blog Baumaßnahmen</h1>
     </header>
 
-    <div class="content">
-        <h2>Die Universität zu Köln baut</h2>
-        <p>Neue Gebäude werden für die Wissenschaft errichtet, der Baubestand wird saniert, neue und energiesparende Techniken werden installiert. Wir berichten über neue und laufende Projekte im BauBlog.</p>
-        <p>Der erste Teilabschnitt, das untere Niveau des Platzes, ist bald fertig und wieder zur Begehung freigegeben. Dafür verschiebt sich die Fläche der Baustelle. Der Bereich des Albertus-Magnus Platzes am westlichen Ende direkt am Philosophikum wird bis zum 13. Oktober mit Grauwacke gepflastert sein. Damit wird die Baustelle dort aufgehoben und der Platz in diesem Bereich kann wieder begangen werden. Auch die zugehörigen Türen im Philosophikum sind dann wieder nutzbar. Dafür wandert die Baustelle ein Stück Richtung Hauptgebäude. Ein Teil des Fahrradweges auf dem zum Hörsaalgebäude hin liegenden sogenannten „Uni-Boulevard“ (dort, wo der Pizza-Wagen „PiKa“ steht).</p>
-    </div>
+    <nav>
+        <a href="index.html">Startseite</a>
+        <a href="studienangebot-studienangebot.html">Studienangebot</a>
+        <a href="bewerbung-bewerbung.html">Bewerbung</a>
+        <a href="inklusion-inklusion.html">Inklusion</a>
+        <a href="termine-fristen-termine-fristen.html">Termine + Fristen</a>
+        <a href="oeffnungszeiten-adressen.html">Öffnungszeiten + Adressen</a>
+        <a href="klips-2-0-klips-2-0.html">KLIPS 2.0</a>
+        <a href="vorlesungsverzeichnis.html">Vorlesungsverzeichnis</a>
+        <a href="ilias-elearning-ilias-elearning.html">ILIAS eLearning</a>
+        <a href="jobportal-jobportal.html">Jobportal</a>
+    </nav>
+
+    <main>
+        <div class="content-section">
+            <h2>Die Universität zu Köln baut</h2>
+            <p>Neue Gebäude werden für die Wissenschaft errichtet, der Baubestand wird saniert, neue und energiesparende Techniken werden installiert. Wir berichten über neue und laufende Projekte im BauBlog.</p>
+            <p>Der erste Teilabschnitt, das untere Niveau des Platzes, ist bald fertig und wieder zur Begehung freigegeben. Dafür verschiebt sich die Fläche der Baustelle...</p>
+            <!-- Weiterer Inhalt -->
+        </div>
+        
+        <div class="content-section">
+            <h2>Skulptur „revisited“ von Martin Pfeifle</h2>
+            <p>Die Skulptur „revisited“ des Bildhauers Martin Pfeifle wurde auf dem Albertus-Magnus-Platz aufgestellt...</p>
+            <!-- Weiterer Inhalt -->
+        </div>
+
+        <div class="content-section">
+            <h2>Mehr Selbstlernplätze für Studierende</h2>
+            <p>Die Universität zu Köln stattet zwei Gebäude mit mehr Gelegenheiten zum Lernen aus, ein drittes folgt bis Ende des Jahres...</p>
+            <!-- Weiterer Inhalt -->
+        </div>
+
+        <div class="content-section">
+            <h2>Nachhaltigkeitsstrategie der Universität</h2>
+            <p>Die Universität zu Köln setzt ihre Nachhaltigkeitsstrategie weiter um: Der Labor-Neubau der Physik und das ehemalige COPT-Gebäude an der Luxemburger Straße erhalten eine Photovoltaik-Anlage (PV) auf dem Dach...</p>
+            <!-- Weiterer Inhalt -->
+        </div>
+
+        <div class="content-section">
+            <h2>Sanierung des Albertus-Magnus-Platzes</h2>
+            <p>Die Sanierung des Albertus-Magnus-Platzes läuft auf Hochtouren. Was ist geplant und wann sollen die Bauarbeiten beendet sein?... </p>
+            <!-- Weiterer Inhalt -->
+        </div>
+    </main>
 
     <footer>
-        <p>© 2023 Universität zu Köln</p>
+        <p>© Universität zu Köln</p>
     </footer>
 </body>
+
 </html>

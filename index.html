@@ -2,161 +2,142 @@
 <html lang="de">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Universität zu Köln</title>
-  <style>
-    :root {
-      --primary-color: #1E6091;
-      --secondary-color: #76C893;
-      --background-color: #F4F1DE;
-      --text-color: #333533;
-      --border-radius: 10px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universität zu Köln</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1E3A5F;
+            --secondary-color: #2563EB;
+            --accent-color: #D4AF37;
+            --background-color: #FFFFFF;
+            --text-color: #1F2937;
+        }
 
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: var(--background-color);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
 
-    header {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
+        header {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            padding: 1rem;
+        }
 
-    header h1 {
-      font-family: 'Merriweather', serif;
-      margin: 0;
-    }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      padding: 0.5rem;
-      background-color: var(--secondary-color);
-    }
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
 
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-    }
+        .hero {
+            background: url('https://example.com/forschung-bild.jpg') no-repeat center center;
+            background-size: cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+        }
 
-    .hero {
-      text-align: center;
-      padding: 4rem 1rem;
-    }
+        .hero h1 {
+            font-size: 3rem;
+        }
 
-    .hero h2 {
-      font-family: 'Merriweather', serif;
-      font-size: 2rem;
-      margin: 0.5rem 0;
-    }
+        main {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
 
-    .cta-button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
-      background-color: var(--primary-color);
-      color: white;
-      border-radius: var(--border-radius);
-      text-decoration: none;
-    }
+        section {
+            background-color: #F9FAFB;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
 
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      padding: 2rem 1rem;
-    }
+        footer {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 1rem;
+        }
 
-    .feature-item {
-      background-color: white;
-      border-radius: var(--border-radius);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin: 1rem;
-      padding: 1rem;
-      flex: 1 1 250px;
-      max-width: 300px;
-    }
+        @media (min-width: 768px) {
+            nav {
+                justify-content: space-around;
+            }
 
-    .feature-item h3 {
-      font-family: 'Merriweather', serif;
-      margin-top: 0;
-    }
-
-    .contact {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-
-    footer {
-      background-color: var(--secondary-color);
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    footer a {
-      color: white;
-      text-decoration: none;
-    }
-  </style>
+            main {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <header>
-    <h1>Universität zu Köln</h1>
-  </header>
+    <header>
+        <nav>
+            <div>
+                <a href="index.html">Universität zu Köln</a>
+            </div>
+            <div>
+                <a href="universitaet-zu-koeln-universitaet-zu.html">Universität</a>
+                <a href="universitaet-zu-koeln-blog.html">Blog</a>
+                <a href="universitaet-zu-koeln.html">Universitätspreis</a>
+                <a href="universitaet-zu-koeln-geschichte.html">Geschichte & Archiv</a>
+            </div>
+        </nav>
+    </header>
 
-  <nav>
-    <a href="#studienangebot">Studienangebot</a>
-    <a href="#kontakt">Kontakt</a>
-    <a href="#impressum">Impressum</a>
-  </nav>
-
-  <section class="hero">
-    <h2>Willkommen an der Universität zu Köln</h2>
-    <p>Die Universität zu Köln ist eine Hochschule mit dem klassischen Fächerspektrum einer Volluniversität.</p>
-    <a href="#studienangebot" class="cta-button">Mehr erfahren</a>
-  </section>
-
-  <section class="features" id="studienangebot">
-    <div class="feature-item">
-      <h3>Studienangebot</h3>
-      <p>Entdecken Sie unsere vielfältigen Studienmöglichkeiten.</p>
+    <div class="hero">
+        <h1>Forschung auf höchstem Niveau</h1>
     </div>
-    <div class="feature-item">
-      <h3>Bewerbung</h3>
-      <p>Informationen zu Bewerbungsverfahren und Fristen.</p>
-    </div>
-    <div class="feature-item">
-      <h3>Inklusion</h3>
-      <p>Unsere Universität steht für Vielfalt und Chancengleichheit.</p>
-    </div>
-    <div class="feature-item">
-      <h3>Termine + Fristen</h3>
-      <p>Wichtige Termine und Fristen auf einen Blick.</p>
-    </div>
-  </section>
 
-  <section class="contact" id="kontakt">
-    <h2>Kontakt</h2>
-    <p>Universität zu Köln<br>Albertus-Magnus-Platz<br>50923 Köln</p>
-    <p>Email: info@uni-koeln.de</p>
-    <p>Telefon: +49 221 470-0</p>
-  </section>
+    <main>
+        <section>
+            <h2>Über uns</h2>
+            <p>Die Universität zu Köln ist eine Hochschule mit dem klassischen Fächerspektrum einer Volluniversität. Als eine der größten Hochschulen Europas arbeitet sie in Forschung und Lehre auch international auf höchstem Niveau.</p>
+        </section>
 
-  <footer>
-    <p>&copy; 2023 Universität zu Köln | <a href="#impressum">Impressum</a></p>
-  </footer>
+        <section>
+            <h2>Hauptinhalte</h2>
+            <p>Wir wünschen Ihnen frohe Festtage und alles Gute für 2026 Wirtschafts- und Sozialwissenschaftliche Fakultät, Rechtswissenschaftliche Fakultät, Medizinische Fakultät, Philosophische Fakultät, Mathematisch-Naturwissenschaftliche Fakultät, Humanwissenschaftliche Fakultät.</p>
+            <p>Neuigkeiten & Meldungen:</p>
+            <ul>
+                <li>23.12.2025 | Forschung: Entzündung fördert eine der aggressivsten Krebsarten.</li>
+                <li>19.12.2025 | Forschung: Studie modelliert den Übergang von Neandertalern zu modernen Menschen in Europa.</li>
+                <li>18.12.2025 | Forschung, Medizin: EU-finanziertes VACCELERATE-Projekt erfolgreich abgeschlossen und positiv bewertet.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Kontakt</h2>
+            <p>Universität zu Köln<br>
+                Albertus-Magnus-Platz<br>
+                50923 Köln<br>
+                Tel.: 0221 / 470-0<br>
+                E-Mail: <a href="mailto:online-redaktion@uni-koeln.de">online-redaktion@uni-koeln.de</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Universität zu Köln | <a href="universitaet-zu-koeln.html" style="color: #FFFFFF;">Impressum</a></p>
+    </footer>
 </body>
 
 </html>
